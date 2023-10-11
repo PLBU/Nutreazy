@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017972AD6B4E0000ECF18 /* NutreazyApp.swift */; };
+		6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017992AD6B4E0000ECF18 /* ContentView.swift */; };
+		6070179C2AD6B4E1000ECF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6070179B2AD6B4E1000ECF18 /* Assets.xcassets */; };
+		607017A02AD6B4E1000ECF18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6070179F2AD6B4E1000ECF18 /* Preview Assets.xcassets */; };
+		607017AA2AD6B4E1000ECF18 /* NutreazyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017A92AD6B4E1000ECF18 /* NutreazyTests.swift */; };
+		607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017B32AD6B4E1000ECF18 /* NutreazyUITests.swift */; };
+		607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017B52AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		607017A62AD6B4E1000ECF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6070178C2AD6B4E0000ECF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607017932AD6B4E0000ECF18;
+			remoteInfo = Nutreazy;
+		};
+		607017B02AD6B4E1000ECF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6070178C2AD6B4E0000ECF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607017932AD6B4E0000ECF18;
+			remoteInfo = Nutreazy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		607017942AD6B4E0000ECF18 /* Nutreazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutreazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607017972AD6B4E0000ECF18 /* NutreazyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyApp.swift; sourceTree = "<group>"; };
+		607017992AD6B4E0000ECF18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6070179B2AD6B4E1000ECF18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6070179D2AD6B4E1000ECF18 /* Nutreazy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nutreazy.entitlements; sourceTree = "<group>"; };
+		6070179F2AD6B4E1000ECF18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		607017A52AD6B4E1000ECF18 /* NutreazyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutreazyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607017A92AD6B4E1000ECF18 /* NutreazyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyTests.swift; sourceTree = "<group>"; };
+		607017AF2AD6B4E1000ECF18 /* NutreazyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutreazyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607017B32AD6B4E1000ECF18 /* NutreazyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyUITests.swift; sourceTree = "<group>"; };
+		607017B52AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607017912AD6B4E0000ECF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607017A22AD6B4E1000ECF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607017AC2AD6B4E1000ECF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6070178B2AD6B4E0000ECF18 = {
+			isa = PBXGroup;
+			children = (
+				607017962AD6B4E0000ECF18 /* Nutreazy */,
+				607017A82AD6B4E1000ECF18 /* NutreazyTests */,
+				607017B22AD6B4E1000ECF18 /* NutreazyUITests */,
+				607017952AD6B4E0000ECF18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		607017952AD6B4E0000ECF18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607017942AD6B4E0000ECF18 /* Nutreazy.app */,
+				607017A52AD6B4E1000ECF18 /* NutreazyTests.xctest */,
+				607017AF2AD6B4E1000ECF18 /* NutreazyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607017962AD6B4E0000ECF18 /* Nutreazy */ = {
+			isa = PBXGroup;
+			children = (
+				607017972AD6B4E0000ECF18 /* NutreazyApp.swift */,
+				607017992AD6B4E0000ECF18 /* ContentView.swift */,
+				6070179B2AD6B4E1000ECF18 /* Assets.xcassets */,
+				6070179D2AD6B4E1000ECF18 /* Nutreazy.entitlements */,
+				6070179E2AD6B4E1000ECF18 /* Preview Content */,
+			);
+			path = Nutreazy;
+			sourceTree = "<group>";
+		};
+		6070179E2AD6B4E1000ECF18 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6070179F2AD6B4E1000ECF18 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		607017A82AD6B4E1000ECF18 /* NutreazyTests */ = {
+			isa = PBXGroup;
+			children = (
+				607017A92AD6B4E1000ECF18 /* NutreazyTests.swift */,
+			);
+			path = NutreazyTests;
+			sourceTree = "<group>";
+		};
+		607017B22AD6B4E1000ECF18 /* NutreazyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				607017B32AD6B4E1000ECF18 /* NutreazyUITests.swift */,
+				607017B52AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift */,
+			);
+			path = NutreazyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607017932AD6B4E0000ECF18 /* Nutreazy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607017B92AD6B4E1000ECF18 /* Build configuration list for PBXNativeTarget "Nutreazy" */;
+			buildPhases = (
+				607017902AD6B4E0000ECF18 /* Sources */,
+				607017912AD6B4E0000ECF18 /* Frameworks */,
+				607017922AD6B4E0000ECF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nutreazy;
+			productName = Nutreazy;
+			productReference = 607017942AD6B4E0000ECF18 /* Nutreazy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		607017A42AD6B4E1000ECF18 /* NutreazyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607017BC2AD6B4E1000ECF18 /* Build configuration list for PBXNativeTarget "NutreazyTests" */;
+			buildPhases = (
+				607017A12AD6B4E1000ECF18 /* Sources */,
+				607017A22AD6B4E1000ECF18 /* Frameworks */,
+				607017A32AD6B4E1000ECF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607017A72AD6B4E1000ECF18 /* PBXTargetDependency */,
+			);
+			name = NutreazyTests;
+			productName = NutreazyTests;
+			productReference = 607017A52AD6B4E1000ECF18 /* NutreazyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		607017AE2AD6B4E1000ECF18 /* NutreazyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607017BF2AD6B4E1000ECF18 /* Build configuration list for PBXNativeTarget "NutreazyUITests" */;
+			buildPhases = (
+				607017AB2AD6B4E1000ECF18 /* Sources */,
+				607017AC2AD6B4E1000ECF18 /* Frameworks */,
+				607017AD2AD6B4E1000ECF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607017B12AD6B4E1000ECF18 /* PBXTargetDependency */,
+			);
+			name = NutreazyUITests;
+			productName = NutreazyUITests;
+			productReference = 607017AF2AD6B4E1000ECF18 /* NutreazyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6070178C2AD6B4E0000ECF18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					607017932AD6B4E0000ECF18 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					607017A42AD6B4E1000ECF18 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 607017932AD6B4E0000ECF18;
+					};
+					607017AE2AD6B4E1000ECF18 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 607017932AD6B4E0000ECF18;
+					};
+				};
+			};
+			buildConfigurationList = 6070178F2AD6B4E0000ECF18 /* Build configuration list for PBXProject "Nutreazy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6070178B2AD6B4E0000ECF18;
+			productRefGroup = 607017952AD6B4E0000ECF18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607017932AD6B4E0000ECF18 /* Nutreazy */,
+				607017A42AD6B4E1000ECF18 /* NutreazyTests */,
+				607017AE2AD6B4E1000ECF18 /* NutreazyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607017922AD6B4E0000ECF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607017A02AD6B4E1000ECF18 /* Preview Assets.xcassets in Resources */,
+				6070179C2AD6B4E1000ECF18 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607017A32AD6B4E1000ECF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607017AD2AD6B4E1000ECF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607017902AD6B4E0000ECF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */,
+				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607017A12AD6B4E1000ECF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607017AA2AD6B4E1000ECF18 /* NutreazyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607017AB2AD6B4E1000ECF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
+				607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		607017A72AD6B4E1000ECF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607017932AD6B4E0000ECF18 /* Nutreazy */;
+			targetProxy = 607017A62AD6B4E1000ECF18 /* PBXContainerItemProxy */;
+		};
+		607017B12AD6B4E1000ECF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607017932AD6B4E0000ECF18 /* Nutreazy */;
+			targetProxy = 607017B02AD6B4E1000ECF18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		607017B72AD6B4E1000ECF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607017B82AD6B4E1000ECF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		607017BA2AD6B4E1000ECF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nutreazy/Nutreazy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Nutreazy/Preview Content\"";
+				DEVELOPMENT_TEAM = NY68P36NY4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linar.Nutreazy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		607017BB2AD6B4E1000ECF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nutreazy/Nutreazy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Nutreazy/Preview Content\"";
+				DEVELOPMENT_TEAM = NY68P36NY4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linar.Nutreazy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		607017BD2AD6B4E1000ECF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY68P36NY4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linar.NutreazyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nutreazy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nutreazy";
+			};
+			name = Debug;
+		};
+		607017BE2AD6B4E1000ECF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY68P36NY4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linar.NutreazyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nutreazy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nutreazy";
+			};
+			name = Release;
+		};
+		607017C02AD6B4E1000ECF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY68P36NY4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linar.NutreazyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nutreazy;
+			};
+			name = Debug;
+		};
+		607017C12AD6B4E1000ECF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY68P36NY4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = linar.NutreazyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nutreazy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6070178F2AD6B4E0000ECF18 /* Build configuration list for PBXProject "Nutreazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607017B72AD6B4E1000ECF18 /* Debug */,
+				607017B82AD6B4E1000ECF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607017B92AD6B4E1000ECF18 /* Build configuration list for PBXNativeTarget "Nutreazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607017BA2AD6B4E1000ECF18 /* Debug */,
+				607017BB2AD6B4E1000ECF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607017BC2AD6B4E1000ECF18 /* Build configuration list for PBXNativeTarget "NutreazyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607017BD2AD6B4E1000ECF18 /* Debug */,
+				607017BE2AD6B4E1000ECF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607017BF2AD6B4E1000ECF18 /* Build configuration list for PBXNativeTarget "NutreazyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607017C02AD6B4E1000ECF18 /* Debug */,
+				607017C12AD6B4E1000ECF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6070178C2AD6B4E0000ECF18 /* Project object */;
+}
