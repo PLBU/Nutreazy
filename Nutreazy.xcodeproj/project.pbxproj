@@ -14,6 +14,9 @@
 		607017AA2AD6B4E1000ECF18 /* NutreazyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017A92AD6B4E1000ECF18 /* NutreazyTests.swift */; };
 		607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017B32AD6B4E1000ECF18 /* NutreazyUITests.swift */; };
 		607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017B52AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift */; };
+		607017C72AD6B848000ECF18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* User.swift */; };
+		607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C82AD6B871000ECF18 /* FoodLog.swift */; };
+		607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017CA2AD6B88E000ECF18 /* FoodInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		607017AF2AD6B4E1000ECF18 /* NutreazyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutreazyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607017B32AD6B4E1000ECF18 /* NutreazyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyUITests.swift; sourceTree = "<group>"; };
 		607017B52AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		607017C62AD6B848000ECF18 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		607017C82AD6B871000ECF18 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
+		607017CA2AD6B88E000ECF18 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,10 @@
 		607017962AD6B4E0000ECF18 /* Nutreazy */ = {
 			isa = PBXGroup;
 			children = (
+				607017C42AD6B7C1000ECF18 /* Data */,
+				607017C32AD6B6F0000ECF18 /* Domain */,
+				607017C22AD6B6CE000ECF18 /* Presentation */,
 				607017972AD6B4E0000ECF18 /* NutreazyApp.swift */,
-				607017992AD6B4E0000ECF18 /* ContentView.swift */,
 				6070179B2AD6B4E1000ECF18 /* Assets.xcassets */,
 				6070179D2AD6B4E1000ECF18 /* Nutreazy.entitlements */,
 				6070179E2AD6B4E1000ECF18 /* Preview Content */,
@@ -127,6 +135,39 @@
 				607017B52AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift */,
 			);
 			path = NutreazyUITests;
+			sourceTree = "<group>";
+		};
+		607017C22AD6B6CE000ECF18 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				607017992AD6B4E0000ECF18 /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		607017C32AD6B6F0000ECF18 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				607017C52AD6B81F000ECF18 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		607017C42AD6B7C1000ECF18 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		607017C52AD6B81F000ECF18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				607017C62AD6B848000ECF18 /* User.swift */,
+				607017C82AD6B871000ECF18 /* FoodLog.swift */,
+				607017CA2AD6B88E000ECF18 /* FoodInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +302,9 @@
 			files = (
 				6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
+				607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */,
+				607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */,
+				607017C72AD6B848000ECF18 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
