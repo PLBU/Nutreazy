@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60020DBB2ADD30A300209EE7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DBA2ADD30A300209EE7 /* Colors.swift */; };
+		60020DBE2ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */; };
+		60020DBF2ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */; };
+		60020DC02ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */; };
+		60020DC22ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DC12ADD33F800209EE7 /* Poppins-Medium.ttf */; };
+		60020DC32ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DC12ADD33F800209EE7 /* Poppins-Medium.ttf */; };
+		60020DC42ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DC12ADD33F800209EE7 /* Poppins-Medium.ttf */; };
+		60020DC62ADD340200209EE7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DC52ADD340200209EE7 /* Poppins-Light.ttf */; };
+		60020DC72ADD340200209EE7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DC52ADD340200209EE7 /* Poppins-Light.ttf */; };
+		60020DC82ADD340200209EE7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60020DC52ADD340200209EE7 /* Poppins-Light.ttf */; };
+		606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606900B02AD8ED78002280D8 /* CustomButton.swift */; };
 		607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017972AD6B4E0000ECF18 /* NutreazyApp.swift */; };
 		6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017992AD6B4E0000ECF18 /* ContentView.swift */; };
 		6070179C2AD6B4E1000ECF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6070179B2AD6B4E1000ECF18 /* Assets.xcassets */; };
@@ -37,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60020DBA2ADD30A300209EE7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		60020DC12ADD33F800209EE7 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		60020DC52ADD340200209EE7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		60020DC92ADD353300209EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		606900B02AD8ED78002280D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		607017942AD6B4E0000ECF18 /* Nutreazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutreazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607017972AD6B4E0000ECF18 /* NutreazyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyApp.swift; sourceTree = "<group>"; };
 		607017992AD6B4E0000ECF18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +95,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60020DB92ADD307600209EE7 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				60020DBC2ADD33C300209EE7 /* Fonts */,
+				60020DBA2ADD30A300209EE7 /* Colors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		60020DBC2ADD33C300209EE7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				60020DC52ADD340200209EE7 /* Poppins-Light.ttf */,
+				60020DC12ADD33F800209EE7 /* Poppins-Medium.ttf */,
+				60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		606900AF2AD8E838002280D8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				606900B02AD8ED78002280D8 /* CustomButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		6070178B2AD6B4E0000ECF18 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +145,7 @@
 		607017962AD6B4E0000ECF18 /* Nutreazy */ = {
 			isa = PBXGroup;
 			children = (
+				60020DC92ADD353300209EE7 /* Info.plist */,
 				607017C42AD6B7C1000ECF18 /* Data */,
 				607017C32AD6B6F0000ECF18 /* Domain */,
 				607017C22AD6B6CE000ECF18 /* Presentation */,
@@ -140,6 +185,8 @@
 		607017C22AD6B6CE000ECF18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				60020DB92ADD307600209EE7 /* Styles */,
+				606900AF2AD8E838002280D8 /* Component */,
 				607017992AD6B4E0000ECF18 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -275,6 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607017A02AD6B4E1000ECF18 /* Preview Assets.xcassets in Resources */,
+				60020DC62ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
+				60020DC22ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */,
+				60020DBE2ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */,
 				6070179C2AD6B4E1000ECF18 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60020DBF2ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */,
+				60020DC72ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
+				60020DC32ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +343,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60020DC02ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */,
+				60020DC82ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
+				60020DC42ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60020DBB2ADD30A300209EE7 /* Colors.swift in Sources */,
 				6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
+				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */,
 				607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */,
 				607017C72AD6B848000ECF18 /* User.swift in Sources */,
@@ -463,6 +521,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nutreazy/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -501,6 +560,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nutreazy/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
