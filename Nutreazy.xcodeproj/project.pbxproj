@@ -20,6 +20,9 @@
 		60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCA2ADD37A700209EE7 /* TextStyles.swift */; };
 		60020DCC2ADD37A700209EE7 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCA2ADD37A700209EE7 /* TextStyles.swift */; };
 		60020DCD2ADD37A700209EE7 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCA2ADD37A700209EE7 /* TextStyles.swift */; };
+		60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
+		60020DD02ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
+		60020DD12ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606900B02AD8ED78002280D8 /* CustomButton.swift */; };
 		607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017972AD6B4E0000ECF18 /* NutreazyApp.swift */; };
 		6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017992AD6B4E0000ECF18 /* ContentView.swift */; };
@@ -57,6 +60,7 @@
 		60020DC52ADD340200209EE7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		60020DC92ADD353300209EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60020DCA2ADD37A700209EE7 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		60020DCE2ADD390B00209EE7 /* EditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditText.swift; sourceTree = "<group>"; };
 		606900B02AD8ED78002280D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		607017942AD6B4E0000ECF18 /* Nutreazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutreazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607017972AD6B4E0000ECF18 /* NutreazyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyApp.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				606900B02AD8ED78002280D8 /* CustomButton.swift */,
+				60020DCE2ADD390B00209EE7 /* EditText.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
+				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */,
 				607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */,
@@ -377,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60020DCC2ADD37A700209EE7 /* TextStyles.swift in Sources */,
+				60020DD02ADD390B00209EE7 /* EditText.swift in Sources */,
 				607017AA2AD6B4E1000ECF18 /* NutreazyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60020DD12ADD390B00209EE7 /* EditText.swift in Sources */,
 				60020DCD2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
 				607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */,
