@@ -34,6 +34,9 @@
 		607017C72AD6B848000ECF18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* User.swift */; };
 		607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C82AD6B871000ECF18 /* FoodLog.swift */; };
 		607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017CA2AD6B88E000ECF18 /* FoodInfo.swift */; };
+		609F669B2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
+		609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
+		609F669D2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,7 @@
 		607017C62AD6B848000ECF18 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		607017C82AD6B871000ECF18 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
 		607017CA2AD6B88E000ECF18 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
+		609F669A2ADE26140007C42D /* ShortTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			children = (
 				606900B02AD8ED78002280D8 /* CustomButton.swift */,
 				60020DCE2ADD390B00209EE7 /* EditText.swift */,
+				609F669A2ADE26140007C42D /* ShortTextField.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609F669B2ADE26140007C42D /* ShortTextField.swift in Sources */,
 				60020DBB2ADD30A300209EE7 /* Colors.swift in Sources */,
 				6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
@@ -382,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */,
 				60020DCC2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60020DD02ADD390B00209EE7 /* EditText.swift in Sources */,
 				607017AA2AD6B4E1000ECF18 /* NutreazyTests.swift in Sources */,
@@ -392,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609F669D2ADE26140007C42D /* ShortTextField.swift in Sources */,
 				60020DD12ADD390B00209EE7 /* EditText.swift in Sources */,
 				60020DCD2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,

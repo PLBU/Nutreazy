@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditText: View {
-    @State private var value = ""
+    @Binding private var value: String
     @FocusState private var isFocused: Bool
     private var placeholder = ""
     private var label = ""
@@ -16,8 +16,8 @@ struct EditText: View {
     private var width = Double.infinity
     private var isCenter = false
     
-    init(value: String = "", placeholder: String = "", label: String = "", unitName: String = "", width: Double = Double.infinity, isCenter: Bool = false) {
-        self.value = value
+    init(value: Binding<String>, placeholder: String = "", label: String = "", unitName: String = "", width: Double = Double.infinity, isCenter: Bool = false) {
+        self._value = value
         self.placeholder = placeholder
         self.label = label
         self.unitName = unitName
@@ -48,7 +48,7 @@ struct EditText: View {
                 .stroke(PRIMARY_COLOR, lineWidth: 1)
         )
         .onTapGesture {
-            isFocused = true
+            isFocused.toggle()
         }
     }
     
@@ -58,11 +58,12 @@ struct EditText: View {
 }
 
 struct EditText_Previews: PreviewProvider {
+    
     static var previews: some View {
         VStack {
-            EditText(placeholder: "I am an EditText")
-            EditText(placeholder: "0", unitName: "kg", width: 160)
-            EditText(placeholder: "0", unitName: "kg", width: 120, isCenter: true)
+            EditText(value: .constant(""), placeholder: "I am an EditText")
+            EditText(value: .constant(""), placeholder: "0", unitName: "kg", width: 160)
+            EditText(value: .constant(""), placeholder: "0", unitName: "kg", width: 120, isCenter: true)
         }
     }
 }
