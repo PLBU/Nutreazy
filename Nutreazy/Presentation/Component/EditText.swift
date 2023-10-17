@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EditText: View {
     @State private var value = ""
+    @FocusState private var isFocused: Bool
     private var placeholder = ""
     private var label = ""
     private var unitName = ""
@@ -22,19 +23,22 @@ struct EditText: View {
         self.unitName = unitName
         self.width = width
         self.isCenter = isCenter
+        self.isFocused = false
     }
     
     
     var body: some View {
         HStack {
             TextField(placeholder, text: $value)
+                .foregroundColor(TEXT_COLOR)
                 .fixedSize(horizontal: isCenter, vertical: false)
                 .font(PARAGRAPH_1)
-            !unitName.isEmpty
-                ? Text(unitName)
+                .focused($isFocused)
+            if !unitName.isEmpty {
+                Text(unitName)
                     .font(PARAGRAPH_1)
                     .foregroundColor(ACCENT_COLOR)
-                : nil
+            }
         }
         .frame(maxWidth: width)
         .padding(.horizontal, 24)
@@ -43,6 +47,9 @@ struct EditText: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(PRIMARY_COLOR, lineWidth: 1)
         )
+        .onTapGesture {
+            isFocused = true
+        }
     }
     
     public func getValue() -> String {
