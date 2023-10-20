@@ -51,10 +51,6 @@ struct EditText: View {
             isFocused.toggle()
         }
     }
-    
-    public func getValue() -> String {
-        return value
-    }
 }
 
 struct EditText_Previews: PreviewProvider {
