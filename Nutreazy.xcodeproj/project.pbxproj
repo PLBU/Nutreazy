@@ -139,7 +139,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		606900AF2AD8E838002280D8 /* Component */ = {
+		6066CE952AE39E2A006F2C89 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		606900AF2AD8E838002280D8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				606900B02AD8ED78002280D8 /* CustomButton.swift */,
@@ -149,7 +156,7 @@
 				604E94152ADE7BAB007B1FF2 /* Dropdown.swift */,
 				6066CE912AE39B53006F2C89 /* DropdownField.swift */,
 			);
-			path = Component;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6070178B2AD6B4E0000ECF18 = {
@@ -215,8 +222,9 @@
 		607017C22AD6B6CE000ECF18 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				6066CE952AE39E2A006F2C89 /* Screens */,
 				60020DB92ADD307600209EE7 /* Styles */,
-				606900AF2AD8E838002280D8 /* Component */,
+				606900AF2AD8E838002280D8 /* Components */,
 				607017992AD6B4E0000ECF18 /* ContentView.swift */,
 			);
 			path = Presentation;
