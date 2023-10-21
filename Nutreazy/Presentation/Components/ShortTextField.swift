@@ -9,15 +9,9 @@
 import SwiftUI
 
 struct ShortTextField: View {
-    @Binding private var value: String
-    private var label: String
-    private var unitName: String
-    
-    init(value: Binding<String>, label: String, unitName: String) {
-        self._value = value
-        self.label = label
-        self.unitName = unitName
-    }
+    @Binding var value: String
+    var label: String
+    var unitName: String
 
     var body: some View {
         HStack {
@@ -25,7 +19,7 @@ struct ShortTextField: View {
                 .font(PARAGRAPH_1)
                 .foregroundColor(TEXT_COLOR)
             Spacer()
-            EditText(value: $value, unitName: unitName, width: 160, isCenter: true)
+            EditText(value: $value, unitName: unitName, width: 140, isCenter: true)
         }
     }
 }

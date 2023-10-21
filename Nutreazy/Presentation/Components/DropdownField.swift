@@ -8,17 +8,10 @@
 import SwiftUI
 
 struct DropdownField: View {
-    @Binding private var value: String
-    private var label: String
-    private var placeholder: String? = "Pilih"
-    private var options: [String]
-    
-    init(value: Binding<String>, label: String, placeholder: String? = "Pilih", options: [String]) {
-        self._value = value
-        self.label = label
-        self.placeholder = placeholder
-        self.options = options
-    }
+    @Binding var value: String
+    var label: String
+    var placeholder: String = "Pilih"
+    var options: [String]
 
     var body: some View {
         HStack {
@@ -26,7 +19,7 @@ struct DropdownField: View {
                 .font(PARAGRAPH_1)
                 .foregroundColor(TEXT_COLOR)
             Spacer()
-            Dropdown(value: $value, width: 160, options: options, placeholder: placeholder)
+            Dropdown(value: $value, placeholder: placeholder, options: options, width: 140)
         }
     }
 }

@@ -8,24 +8,12 @@
 import SwiftUI
 
 struct EditText: View {
-    @Binding private var value: String
+    @Binding var value: String
     @FocusState private var isFocused: Bool
-    private var placeholder = ""
-    private var label = ""
-    private var unitName = ""
-    private var width = Double.infinity
-    private var isCenter = false
-    
-    init(value: Binding<String>, placeholder: String = "", label: String = "", unitName: String = "", width: Double = Double.infinity, isCenter: Bool = false) {
-        self._value = value
-        self.placeholder = placeholder
-        self.label = label
-        self.unitName = unitName
-        self.width = width
-        self.isCenter = isCenter
-        self.isFocused = false
-    }
-    
+    var placeholder = ""
+    var unitName = ""
+    var width = Double.infinity
+    var isCenter = false
     
     var body: some View {
         HStack {

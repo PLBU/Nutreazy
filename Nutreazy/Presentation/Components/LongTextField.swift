@@ -9,15 +9,9 @@ import SwiftUI
 
 
 struct LongTextField: View {
-    @Binding private var value: String
-    private var label: String
-    private var placeholder: String
-    
-    init(value: Binding<String>, label: String, placeholder: String) {
-        self._value = value
-        self.label = label
-        self.placeholder = placeholder
-    }
+    @Binding var value: String
+    var label: String
+    var placeholder: String
 
     var body: some View {
         VStack(alignment: .leading) {
