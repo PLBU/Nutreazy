@@ -26,6 +26,9 @@
 		604E94162ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
 		604E94172ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
 		604E94182ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
+		6066CE922AE39B53006F2C89 /* DropdownField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6066CE912AE39B53006F2C89 /* DropdownField.swift */; };
+		6066CE932AE39B53006F2C89 /* DropdownField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6066CE912AE39B53006F2C89 /* DropdownField.swift */; };
+		6066CE942AE39B53006F2C89 /* DropdownField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6066CE912AE39B53006F2C89 /* DropdownField.swift */; };
 		606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606900B02AD8ED78002280D8 /* CustomButton.swift */; };
 		607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017972AD6B4E0000ECF18 /* NutreazyApp.swift */; };
 		6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017992AD6B4E0000ECF18 /* ContentView.swift */; };
@@ -71,6 +74,7 @@
 		60020DCA2ADD37A700209EE7 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		60020DCE2ADD390B00209EE7 /* EditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditText.swift; sourceTree = "<group>"; };
 		604E94152ADE7BAB007B1FF2 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		6066CE912AE39B53006F2C89 /* DropdownField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownField.swift; sourceTree = "<group>"; };
 		606900B02AD8ED78002280D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		607017942AD6B4E0000ECF18 /* Nutreazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutreazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607017972AD6B4E0000ECF18 /* NutreazyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutreazyApp.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				609F669A2ADE26140007C42D /* ShortTextField.swift */,
 				609F669E2ADE71030007C42D /* LongTextField.swift */,
 				604E94152ADE7BAB007B1FF2 /* Dropdown.swift */,
+				6066CE912AE39B53006F2C89 /* DropdownField.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				60020DBB2ADD30A300209EE7 /* Colors.swift in Sources */,
 				6070179A2AD6B4E0000ECF18 /* ContentView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
+				6066CE922AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
@@ -402,6 +408,7 @@
 			files = (
 				609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */,
 				609F66A02ADE71030007C42D /* LongTextField.swift in Sources */,
+				6066CE932AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				60020DCC2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60020DD02ADD390B00209EE7 /* EditText.swift in Sources */,
 				604E94172ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
@@ -420,6 +427,7 @@
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
 				607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */,
 				604E94182ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
+				6066CE942AE39B53006F2C89 /* DropdownField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

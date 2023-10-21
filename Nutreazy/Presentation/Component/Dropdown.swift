@@ -10,15 +10,16 @@ import SwiftUI
 struct Dropdown: View {
     @Binding private var value: String
     @FocusState private var isFocused: Bool
-    private let placeholder = "Pilih"
+    private var placeholder: String? = "Pilih"
     private var options: [String] = []
     private var unitName = ""
     private var width = Double.infinity
     
-    init(value: Binding<String>, label: String = "", width: Double = Double.infinity, options: [String] = []) {
+    init(value: Binding<String>, label: String = "", width: Double = Double.infinity, options: [String] = [], placeholder: String? = "Pilih") {
         self._value = value
         self.width = width
         self.options = options
+        self.placeholder = placeholder
     }
     
     let colors = ["Red", "Green", "Blue"]
@@ -33,7 +34,7 @@ struct Dropdown: View {
                         .foregroundColor(TEXT_COLOR)
                 }
             } label: {
-                Text(value.isEmpty ? placeholder : value)
+                Text(value.isEmpty ? placeholder! : value)
                     .font(PARAGRAPH_1)
                     .foregroundColor(value.isEmpty ? ACCENT_COLOR : TEXT_COLOR)
             }
