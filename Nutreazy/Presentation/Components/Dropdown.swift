@@ -20,11 +20,11 @@ struct Dropdown: View {
     var body: some View {
         HStack {
             Menu {
-                ForEach(options, id: \.self) {
+                Picker(placeholder, selection: $value) { ForEach(options, id: \.self) {
                     option in Text(option)
                         .font(PARAGRAPH_1)
                         .foregroundColor(TEXT_COLOR)
-                }
+                }}
             } label: {
                 Text(value.isEmpty ? placeholder : value)
                     .font(PARAGRAPH_1)

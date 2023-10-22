@@ -28,7 +28,7 @@ struct EditText: View {
                     .foregroundColor(ACCENT_COLOR)
             }
         }
-        .frame(maxWidth: width)
+        .frame(width: width)
         .padding(.horizontal, 24)
         .padding(.vertical, 12)
         .overlay(
