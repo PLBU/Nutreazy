@@ -14,10 +14,12 @@ struct EditText: View {
     var unitName = ""
     var width = Double.infinity
     var isCenter = false
+    var isNumeric = false
     
     var body: some View {
         HStack {
             TextField(placeholder, text: $value)
+                .keyboardType(isNumeric ? .numberPad : .default)
                 .foregroundColor(TEXT_COLOR)
                 .fixedSize(horizontal: isCenter, vertical: false)
                 .font(PARAGRAPH_1)
