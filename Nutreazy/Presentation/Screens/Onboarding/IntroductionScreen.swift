@@ -9,10 +9,15 @@ import SwiftUI
 
 struct IntroductionScreen: View {
     @State private var name: String = ""
+    @State private var gender: String = ""
+    @State private var age: String = ""
+    @State private var height: String = ""
+    @State private var weight: String = ""
+    @State private var actIntesity: String = ""
     
     var body: some View {
         VStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
                     Group {
                         Text("Pertama, Nizy ")
@@ -29,18 +34,18 @@ struct IntroductionScreen: View {
                     LongTextField(value: $name, label: "Nama kamu siapa?", placeholder: "Nama kamu")
                         .padding(.top, 24)
                     
-                    DropdownField(value: $name, label: "Gender", options: ["String"])
+                    DropdownField(value: $gender, label: "Gender", options: genderListID)
                     
-                    ShortTextField(value: $name, label: "Umur", unitName: "tahun")
+                    ShortTextField(value: $age, label: "Umur", unitName: "tahun")
                     
-                    ShortTextField(value: $name, label: "Tinggi Badan", unitName: "cm")
+                    ShortTextField(value: $height, label: "Tinggi Badan", unitName: "cm")
                     
-                    ShortTextField(value: $name, label: "Berat Badan", unitName: "kg")
+                    ShortTextField(value: $weight, label: "Berat Badan", unitName: "kg")
 
-                    DropdownField(value: $name, label: "Aktivitas", options: ["String"])
+                    DropdownField(value: $actIntesity, label: "Aktivitas*", options: activityIntensityListID, info: "Mageran => Tidak olahraga\nRingan => Olahraga 1-2x seminggu\nSedang => 3-5x seminggu\nBerat => 6-7x seminggu\nAtlet => 2x sehari")
+                        .padding(.bottom, 16)
                 }
             }
-
             
             CustomButton(label: "Lanjut") {
                 print(name)
