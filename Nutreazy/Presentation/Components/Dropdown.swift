@@ -22,8 +22,6 @@ struct Dropdown: View {
             Menu {
                 Picker(placeholder, selection: $value) { ForEach(options, id: \.self) {
                     option in Text(option)
-                        .font(PARAGRAPH_1)
-                        .foregroundColor(TEXT_COLOR)
                 }}
             } label: {
                 Text(value.isEmpty ? placeholder : value)
