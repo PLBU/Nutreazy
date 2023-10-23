@@ -49,6 +49,9 @@
 		609F669F2ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
 		609F66A02ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
 		609F66A12ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
+		60E683642AE66D2500D3F3E8 /* WelcomeScreeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E683632AE66D2500D3F3E8 /* WelcomeScreeen.swift */; };
+		60E683652AE66D2500D3F3E8 /* WelcomeScreeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E683632AE66D2500D3F3E8 /* WelcomeScreeen.swift */; };
+		60E683662AE66D2500D3F3E8 /* WelcomeScreeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E683632AE66D2500D3F3E8 /* WelcomeScreeen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,7 @@
 		607017CA2AD6B88E000ECF18 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
 		609F669A2ADE26140007C42D /* ShortTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextField.swift; sourceTree = "<group>"; };
 		609F669E2ADE71030007C42D /* LongTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextField.swift; sourceTree = "<group>"; };
+		60E683632AE66D2500D3F3E8 /* WelcomeScreeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreeen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				607017992AD6B4E0000ECF18 /* IntroductionScreen.swift */,
+				60E683632AE66D2500D3F3E8 /* WelcomeScreeen.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				6066CE992AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
+				60E683642AE66D2500D3F3E8 /* WelcomeScreeen.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */,
 				609F669F2ADE71030007C42D /* LongTextField.swift in Sources */,
 				607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */,
@@ -442,6 +448,7 @@
 				6066CE9A2AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCC2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60020DD02ADD390B00209EE7 /* EditText.swift in Sources */,
+				60E683652AE66D2500D3F3E8 /* WelcomeScreeen.swift in Sources */,
 				604E94172ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
 				607017AA2AD6B4E1000ECF18 /* NutreazyTests.swift in Sources */,
 			);
@@ -455,6 +462,7 @@
 				60020DD12ADD390B00209EE7 /* EditText.swift in Sources */,
 				6066CE9B2AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCD2ADD37A700209EE7 /* TextStyles.swift in Sources */,
+				60E683662AE66D2500D3F3E8 /* WelcomeScreeen.swift in Sources */,
 				609F66A12ADE71030007C42D /* LongTextField.swift in Sources */,
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
 				607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */,
