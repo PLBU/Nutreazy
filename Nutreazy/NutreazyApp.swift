@@ -11,7 +11,7 @@ import SwiftUI
 struct NutreazyApp: App {
     var body: some Scene {
         WindowGroup {
-            IntroductionScreen()
+            OnboardingScreen()
         }
     }
 }

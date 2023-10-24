@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct IntroductionScreen: View {
+struct IntroductionView: View {
     @State private var name: String = ""
     @State private var gender: String = ""
     @State private var age: String = ""
@@ -53,11 +53,12 @@ struct IntroductionScreen: View {
             .frame(alignment: .bottom)
         }
         .padding(40)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct IntroductionScreen_Previews: PreviewProvider {
     static var previews: some View {
-        IntroductionScreen()
+        IntroductionView()
     }
 }

@@ -8,13 +8,8 @@
 import SwiftUI
 
 
-struct WelcomeScreen: View {
-    @State private var name: String = ""
-    @State private var gender: String = ""
-    @State private var age: String = ""
-    @State private var height: String = ""
-    @State private var weight: String = ""
-    @State private var actIntesity: String = ""
+struct WelcomeView: View {
+    @State private var isGoingToIntroView: Bool = false
     
     var body: some View {
         VStack {
@@ -43,7 +38,7 @@ struct WelcomeScreen: View {
                         Text("Nizy ")
                             .font(PARAGRAPH_1)
                             .foregroundColor(PRIMARY_COLOR) +
-                        Text("singaktnya.")
+                        Text("singkatnya.")
                             .font(PARAGRAPH_1)
                             .foregroundColor(TEXT_COLOR)
                     }
@@ -64,16 +59,19 @@ struct WelcomeScreen: View {
             }
             
             CustomButton(label: "Yuk kita mulai diet!") {
-                print(name)
+                isGoingToIntroView = true
             }
-            .frame(alignment: .bottom)
         }
         .padding(40)
+        .navigationDestination(isPresented: $isGoingToIntroView) {
+            IntroductionView()
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct WelcomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeScreen()
+        WelcomeView()
     }
 }
