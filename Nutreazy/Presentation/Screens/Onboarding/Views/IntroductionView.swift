@@ -57,7 +57,7 @@ struct IntroductionView: View {
     }
 }
 
-struct IntroductionScreen_Previews: PreviewProvider {
+struct IntroductionView_Previews: PreviewProvider {
     static var previews: some View {
         IntroductionView()
     }

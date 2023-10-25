@@ -70,7 +70,7 @@ struct WelcomeView: View {
     }
 }
 
-struct WelcomeScreen_Previews: PreviewProvider {
+struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
     }
