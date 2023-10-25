@@ -14,6 +14,7 @@ struct IntroductionView: View {
     @State private var height: String = ""
     @State private var weight: String = ""
     @State private var actIntesity: String = ""
+    @State private var isGoingToTargetView: Bool = false
     
     var body: some View {
         VStack {
@@ -48,11 +49,14 @@ struct IntroductionView: View {
             }
             
             CustomButton(label: "Lanjut") {
-                print(name)
+                isGoingToTargetView = true
             }
             .frame(alignment: .bottom)
         }
         .padding(40)
+        .navigationDestination(isPresented: $isGoingToTargetView) {
+            TargetView()
+        }
         .navigationBarBackButtonHidden(true)
     }
 }
