@@ -47,6 +47,9 @@
 		607017C72AD6B848000ECF18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* User.swift */; };
 		607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C82AD6B871000ECF18 /* FoodLog.swift */; };
 		607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017CA2AD6B88E000ECF18 /* FoodInfo.swift */; };
+		6075D13A2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
+		6075D13B2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
+		6075D13C2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		609F669B2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
 		609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
 		609F669D2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
@@ -103,6 +106,7 @@
 		607017C62AD6B848000ECF18 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		607017C82AD6B871000ECF18 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
 		607017CA2AD6B88E000ECF18 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
+		6075D1392AE96C310085E802 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		609F669A2ADE26140007C42D /* ShortTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextField.swift; sourceTree = "<group>"; };
 		609F669E2ADE71030007C42D /* LongTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextField.swift; sourceTree = "<group>"; };
 		60E683632AE66D2500D3F3E8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				607017992AD6B4E0000ECF18 /* IntroductionView.swift */,
 				60E683632AE66D2500D3F3E8 /* WelcomeView.swift */,
 				6069A7452AE8D0DA005288AB /* TargetView.swift */,
+				6075D1392AE96C310085E802 /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				609F669F2ADE71030007C42D /* LongTextField.swift in Sources */,
 				607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */,
 				604E94162ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
+				6075D13A2AE96C310085E802 /* InfoView.swift in Sources */,
 				607017C72AD6B848000ECF18 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */,
+				6075D13B2AE96C310085E802 /* InfoView.swift in Sources */,
 				609F66A02ADE71030007C42D /* LongTextField.swift in Sources */,
 				6066CE932AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				6069A7472AE8D0DA005288AB /* TargetView.swift in Sources */,
@@ -481,6 +488,7 @@
 				60020DD12ADD390B00209EE7 /* EditText.swift in Sources */,
 				6066CE9B2AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCD2ADD37A700209EE7 /* TextStyles.swift in Sources */,
+				6075D13C2AE96C310085E802 /* InfoView.swift in Sources */,
 				60E683662AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
 				609F66A12ADE71030007C42D /* LongTextField.swift in Sources */,
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
