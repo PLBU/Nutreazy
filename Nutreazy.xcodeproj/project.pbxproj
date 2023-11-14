@@ -56,6 +56,7 @@
 		609F669F2ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
 		609F66A02ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
 		609F66A12ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
+		60DA934B2B03ACF40004EA5C /* StrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA934A2B03ACF40004EA5C /* StrategyView.swift */; };
 		60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E683632AE66D2500D3F3E8 /* WelcomeView.swift */; };
 		60E683652AE66D2500D3F3E8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E683632AE66D2500D3F3E8 /* WelcomeView.swift */; };
 		60E683662AE66D2500D3F3E8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E683632AE66D2500D3F3E8 /* WelcomeView.swift */; };
@@ -109,6 +110,7 @@
 		6075D1392AE96C310085E802 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		609F669A2ADE26140007C42D /* ShortTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextField.swift; sourceTree = "<group>"; };
 		609F669E2ADE71030007C42D /* LongTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextField.swift; sourceTree = "<group>"; };
+		60DA934A2B03ACF40004EA5C /* StrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyView.swift; sourceTree = "<group>"; };
 		60E683632AE66D2500D3F3E8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 				60E683632AE66D2500D3F3E8 /* WelcomeView.swift */,
 				6069A7452AE8D0DA005288AB /* TargetView.swift */,
 				6075D1392AE96C310085E802 /* InfoView.swift */,
+				60DA934A2B03ACF40004EA5C /* StrategyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				6069A7462AE8D0DA005288AB /* TargetView.swift in Sources */,
+				60DA934B2B03ACF40004EA5C /* StrategyView.swift in Sources */,
 				6066CE992AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
