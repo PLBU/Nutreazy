@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum Gender {
+enum Gender: Int, PersistableEnum {
     case Male
     case Female
 }
 
-enum ActivityIntensity {
+enum ActivityIntensity: Int, PersistableEnum {
     case Sedentary  // Office jobs
     case Light      // 1-2 days/week
     case Moderate   // 3-5 days/week
@@ -20,24 +21,26 @@ enum ActivityIntensity {
     case Athlete    // 2x per day
 }
 
-enum DietTarget {
+enum DietTarget: Int, PersistableEnum {
     case Decrease
     case Maintain
     case Increase
 }
 
-class User {
-    var name: String
-    var gender: Gender
-    var age: Int
-    var height: Int
-    var weight: Int
-    var activity: ActivityIntensity
-    var targetCalorie: Int
-    var dietTarget: DietTarget
-    var maintenanceCalorie: Int
+class User: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var name: String
+    @Persisted var gender: Gender
+    @Persisted var age: Int
+    @Persisted var height: Int
+    @Persisted var weight: Int
+    @Persisted var activity: ActivityIntensity
+    @Persisted var targetCalorie: Int
+    @Persisted var dietTarget: DietTarget
+    @Persisted var maintenanceCalorie: Int
     
-    init(name: String, gender: Gender, age: Int, height: Int, weight: Int, activity: ActivityIntensity, targetCalorie: Int, dietTarget: DietTarget, maintenanceCalorie: Int) {
+    convenience init(name: String, gender: Gender, age: Int, height: Int, weight: Int, activity: ActivityIntensity, targetCalorie: Int, dietTarget: DietTarget, maintenanceCalorie: Int) {
+        self.init()
         self.name = name
         self.gender = gender
         self.age = age

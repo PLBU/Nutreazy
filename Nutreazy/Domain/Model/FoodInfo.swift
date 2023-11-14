@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-class FoodInfo {
-    var id: UUID
-    var name: String
-    var servingName: String // g, grams, spoon(s), cup(s)
-    var servingSize: Int
-    var calories: Int       // in cal
-    var carbohydrate: Int   // in grams
-    var protein: Int        // in grams
-    var fat: Int            // in grams
+class FoodInfo: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var name: String
+    @Persisted var servingName: String // g, grams, spoon(s), cup(s)
+    @Persisted var servingSize: Int
+    @Persisted var calories: Int       // in cal
+    @Persisted var carbohydrate: Int   // in grams
+    @Persisted var protein: Int        // in grams
+    @Persisted var fat: Int            // in grams
     
-    init(id: UUID, name: String, servingName: String, servingSize: Int, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
-        self.id = id
+    init(name: String, servingName: String, servingSize: Int, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+        self.init()
         self.name = name
         self.servingName = servingName
         self.servingSize = servingSize

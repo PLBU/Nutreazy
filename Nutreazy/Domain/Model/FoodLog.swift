@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum MealType {
+enum MealType: Int, PersistableEnum {
     case Breakfast
     case Brunch
     case Lunch
@@ -15,18 +16,18 @@ enum MealType {
     case ExtraMeal
 }
 
-class FoodLog {
-    var id: UUID
-    var foodInfo: FoodInfo
-    var amount: Int
-    var mealType: MealType
-    var calories: Int       // in cal
-    var carbohydrate: Int   // in grams
-    var protein: Int        // in grams
-    var fat: Int            // in grams
+class FoodLog: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var foodInfo: FoodInfo
+    @Persisted var amount: Int
+    @Persisted var mealType: MealType
+    @Persisted var calories: Int       // in cal
+    @Persisted var carbohydrate: Int   // in grams
+    @Persisted var protein: Int        // in grams
+    @Persisted var fat: Int            // in grams
 
-    init(id: UUID, foodInfo: FoodInfo, amount: Int, mealType: MealType, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
-        self.id = id
+    init(foodInfo: FoodInfo, amount: Int, mealType: MealType, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+        self.init()
         self.foodInfo = foodInfo
         self.amount = amount
         self.mealType = mealType
