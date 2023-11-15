@@ -237,12 +237,12 @@
 			isa = PBXGroup;
 			children = (
 				6066CE972AE55E9F006F2C89 /* Util */,
-				607017972AD6B4E0000ECF18 /* NutreazyApp.swift */,
-				60020DC92ADD353300209EE7 /* Info.plist */,
 				607017C42AD6B7C1000ECF18 /* Data */,
 				607017C32AD6B6F0000ECF18 /* Domain */,
 				607017C22AD6B6CE000ECF18 /* Presentation */,
 				6070179B2AD6B4E1000ECF18 /* Assets.xcassets */,
+				60020DC92ADD353300209EE7 /* Info.plist */,
+				607017972AD6B4E0000ECF18 /* NutreazyApp.swift */,
 				6070179D2AD6B4E1000ECF18 /* Nutreazy.entitlements */,
 				6070179E2AD6B4E1000ECF18 /* Preview Content */,
 			);
