@@ -18,7 +18,7 @@ class FoodInfo: Object {
     @Persisted var protein: Int        // in grams
     @Persisted var fat: Int            // in grams
     
-    init(name: String, servingName: String, servingSize: Int, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+    convenience init(name: String, servingName: String, servingSize: Int, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
         self.init()
         self.name = name
         self.servingName = servingName

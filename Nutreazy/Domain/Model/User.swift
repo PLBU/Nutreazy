@@ -36,10 +36,10 @@ class User: Object {
     @Persisted var weight: Int
     @Persisted var activity: ActivityIntensity
     @Persisted var targetCalorie: Int
-    @Persisted var dietTarget: DietTarget
+    @Persisted var dietTarget: DietTarget?
     @Persisted var maintenanceCalorie: Int
     
-    convenience init(name: String, gender: Gender, age: Int, height: Int, weight: Int, activity: ActivityIntensity, targetCalorie: Int, dietTarget: DietTarget, maintenanceCalorie: Int) {
+    convenience init(name: String, gender: Gender, age: Int, height: Int, weight: Int, activity: ActivityIntensity) {
         self.init()
         self.name = name
         self.gender = gender
@@ -47,8 +47,8 @@ class User: Object {
         self.height = height
         self.weight = weight
         self.activity = activity
-        self.targetCalorie = targetCalorie
-        self.dietTarget = dietTarget
-        self.maintenanceCalorie = maintenanceCalorie
+        self.targetCalorie = -1
+        self.dietTarget = nil
+        self.maintenanceCalorie = -1
     }
 }

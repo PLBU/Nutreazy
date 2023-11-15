@@ -26,7 +26,7 @@ class FoodLog: Object {
     @Persisted var protein: Int        // in grams
     @Persisted var fat: Int            // in grams
 
-    init(foodInfo: FoodInfo, amount: Int, mealType: MealType, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+    convenience init(foodInfo: FoodInfo, amount: Int, mealType: MealType, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
         self.init()
         self.foodInfo = foodInfo
         self.amount = amount
