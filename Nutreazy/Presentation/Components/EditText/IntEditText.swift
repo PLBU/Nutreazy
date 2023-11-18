@@ -9,8 +9,7 @@ import SwiftUI
 import Combine
 
 struct IntEditText: View {
-    @Binding var value: Int
-    @State var text: String = ""
+    @Binding var value: String
     @FocusState private var isFocused: Bool
     var placeholder = ""
     var unitName = ""
@@ -20,17 +19,16 @@ struct IntEditText: View {
     
     var body: some View {
         HStack {
-            TextField(placeholder, text: $text)
+            TextField(placeholder, text: $value)
                 .keyboardType(.numberPad)
-                .onReceive(Just(text)) { newValue in
+                .onReceive(Just(value)) { newValue in
                     let filtered = newValue.filter { Set("0123456789").contains($0) }
                     if filtered.count > maxLength {
-                        self.text = String(text.prefix(maxLength))
+                        self.value = String(value.prefix(maxLength))
                         return
                     }
                     if filtered != newValue {
-                        self.text = filtered
-                        self.value = Int(filtered) ?? 0
+                        self.value = filtered
                     }
                 }
                 .foregroundColor(TEXT_COLOR)
@@ -60,7 +58,7 @@ struct IntEditText_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            IntEditText(value: .constant(0), placeholder: "I am an EditText", maxLength: 3)
+            IntEditText(value: .constant(""), placeholder: "I am an EditText", maxLength: 3)
         }
     }
 }

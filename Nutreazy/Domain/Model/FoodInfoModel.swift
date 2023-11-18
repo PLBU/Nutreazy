@@ -1,5 +1,5 @@
 //
-//  FoodInfo.swift
+//  FoodInfoModel.swift
 //  Nutreazy
 //
 //  Created by Renaldi Arlin on 11/10/23.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class FoodInfo: Object, ObjectKeyIdentifiable {
+class FoodInfoModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var servingName: String // g, grams, spoon(s), cup(s)

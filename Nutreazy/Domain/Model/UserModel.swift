@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserModel.swift
 //  Nutreazy
 //
 //  Created by Renaldi Arlin on 11/10/23.
@@ -27,7 +27,7 @@ enum DietTarget: Int, PersistableEnum {
     case Increase
 }
 
-class User: Object, ObjectKeyIdentifiable {
+class UserModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var gender: Gender
@@ -52,7 +52,7 @@ class User: Object, ObjectKeyIdentifiable {
         self.maintenanceCalorie = -1
     }
     
-    static func createDummy() -> User {
-        return User(name: "", gender: Gender.Male, age: 0, height: 0, weight: 0, activity: ActivityIntensity.Athlete)
+    static func createDummy() -> UserModel {
+        return UserModel(name: "", gender: Gender.Male, age: 0, height: 0, weight: 0, activity: ActivityIntensity.Athlete)
     }
 }

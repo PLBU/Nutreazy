@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct IntTextField: View {
-    @Binding var value: Int
+    @Binding var value: String
     var label: String
     var unitName: String
     var maxLength = 3
@@ -28,8 +28,8 @@ struct IntTextField: View {
 struct IntTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            IntTextField(value: .constant(0), label: "I am a Label", unitName: "unitName")
-            IntTextField(value: .constant(0), label: "Umur", unitName: "tahun")
+            IntTextField(value: .constant(""), label: "I am a Label", unitName: "unitName")
+            IntTextField(value: .constant(""), label: "Umur", unitName: "tahun")
         }
     }
 }

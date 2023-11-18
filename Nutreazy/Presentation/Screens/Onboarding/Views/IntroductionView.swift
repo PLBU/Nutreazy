@@ -9,14 +9,10 @@ import SwiftUI
 import RealmSwift
 
 struct IntroductionView: View {
-    @ObservedResults(User.self) var users
+    @ObservedResults(UserModel.self) var users
     
-    @State private var name: String = ""
-    @State private var gender: String = ""
-    @State private var age: String = ""
-    @State private var height: String = ""
-    @State private var weight: String = ""
-    @State private var actIntesity: String = ""
+    @State private var userState: UserState = UserState()
+    @State private var isButtonEnabled: Bool = false
     @State private var isGoingToTargetView: Bool = false
     
     var body: some View {
@@ -34,26 +30,29 @@ struct IntroductionView: View {
                             .font(HEADING_2)
                             .foregroundColor(TEXT_COLOR)
                     }
-                        
-                    LongTextField(value: $name, label: "Nama kamu siapa?", placeholder: "Nama kamu")
+                    
+                    LongStringTextField(value: $userState.name, label: "Nama kamu siapa?", placeholder: "Nama kamu", maxLength: 20)
                         .padding(.top, 24)
                     
-                    DropdownField(value: $gender, label: "Gender", options: genderListID)
+                    DropdownField(value: $userState.gender, label: "Gender", options: genderListID)
                     
-                    ShortTextField(value: $age, label: "Umur", unitName: "tahun")
+                    IntTextField(value: $userState.age, label: "Umur", unitName: "tahun", maxLength: 3)
                     
-                    ShortTextField(value: $height, label: "Tinggi Badan", unitName: "cm")
+                    IntTextField(value: $userState.height, label: "Tinggi Badan", unitName: "cm", maxLength: 3)
                     
-                    ShortTextField(value: $weight, label: "Berat Badan", unitName: "kg")
-
-                    DropdownField(value: $actIntesity, label: "Aktivitas*", options: activityIntensityListID, info: "Mageran => Tidak olahraga\nRingan => Olahraga 1-2x seminggu\nSedang => 3-5x seminggu\nBerat => 6-7x seminggu\nAtlet => 2x sehari")
+                    DoubleTextField(value: $userState.weight, label: "Berat Badan", unitName: "kg", maxLength: 5)
+                    
+                    DropdownField(value: $userState.actIntesity, label: "Aktivitas*", options: activityIntensityListID, info: "Mageran => Tidak olahraga\nRingan => Olahraga 1-2x seminggu\nSedang => 3-5x seminggu\nBerat => 6-7x seminggu\nAtlet => 2x sehari")
                         .padding(.bottom, 16)
+                }
+                .onChange(of: userState) { _ in
+                    isButtonEnabled = userState.isValid()
                 }
             }
             
-            CustomButton(label: "Lanjut") {
+            CustomButton(label: "Lanjut", isEnabled: $isButtonEnabled) {
                 isGoingToTargetView = true
-                $users.append(User.createDummy())
+                $users.append(userState.toModel())
             }
             .frame(alignment: .bottom)
         }

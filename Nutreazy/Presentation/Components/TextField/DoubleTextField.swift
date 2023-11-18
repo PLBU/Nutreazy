@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DoubleTextField: View {
-    @Binding var value: Double
+    @Binding var value: String
     var label: String
     var unitName: String
     var maxLength = 4
@@ -28,8 +28,8 @@ struct DoubleTextField: View {
 struct DoubleTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            DoubleTextField(value: .constant(0), label: "I am a Label", unitName: "unitName")
-            DoubleTextField(value: .constant(0), label: "Umur", unitName: "tahun")
+            DoubleTextField(value: .constant(""), label: "I am a Label", unitName: "unitName")
+            DoubleTextField(value: .constant(""), label: "Umur", unitName: "tahun")
         }
     }
 }

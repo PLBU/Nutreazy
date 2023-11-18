@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct TargetView: View {
-    @ObservedResults(User.self) var users
+    @ObservedResults(UserModel.self) var users
     
     @State private var isGoingToInfoView: Bool = false
     

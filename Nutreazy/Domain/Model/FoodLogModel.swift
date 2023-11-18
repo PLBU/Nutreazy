@@ -1,5 +1,5 @@
 //
-//  FoodLog.swift
+//  FoodLogModel.swift
 //  Nutreazy
 //
 //  Created by Renaldi Arlin on 11/10/23.
@@ -16,9 +16,9 @@ enum MealType: Int, PersistableEnum {
     case ExtraMeal
 }
 
-class FoodLog: Object, ObjectKeyIdentifiable {
+class FoodLogModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var foodInfo: FoodInfo?
+    @Persisted var foodInfo: FoodInfoModel?
     @Persisted var amount: Int
     @Persisted var mealType: MealType?
     @Persisted var calories: Int       // in cal
@@ -26,7 +26,7 @@ class FoodLog: Object, ObjectKeyIdentifiable {
     @Persisted var protein: Int        // in grams
     @Persisted var fat: Int            // in grams
 
-    convenience init(foodInfo: FoodInfo?, amount: Int, mealType: MealType?, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+    convenience init(foodInfo: FoodInfoModel?, amount: Int, mealType: MealType?, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
         self.init()
         self.foodInfo = foodInfo
         self.amount = amount
