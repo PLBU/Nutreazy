@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct InfoView: View {
+    @ObservedResults(UserModel.self) var users
+    
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
@@ -103,6 +106,10 @@ struct InfoView: View {
             }
         }
         .padding(40)
+        .navigationBarBackButtonHidden(true)
+        .onAppear() {
+            print(users)
+        }
     }
 }
 

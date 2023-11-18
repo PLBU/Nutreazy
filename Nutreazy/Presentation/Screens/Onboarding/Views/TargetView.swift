@@ -7,11 +7,26 @@
 
 import SwiftUI
 import RealmSwift
+import AlertToast
 
 struct TargetView: View {
-    @ObservedResults(UserModel.self) var users
-    
+    @State private var isShowAlert: Bool = false
     @State private var isGoingToInfoView: Bool = false
+    
+    private func updateDietTarget(dietTarget: DietTarget) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                let myUser = realm.objects(UserModel.self).first
+                
+                myUser?.dietTarget = dietTarget
+                isGoingToInfoView = true
+            }
+        } catch {
+            isShowAlert = true
+        }
+        
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,21 +43,24 @@ struct TargetView: View {
             
             VStack(spacing: 32) {
                 CustomButton(label: "Kurusan nihh") {
-                    isGoingToInfoView = true
+                    updateDietTarget(dietTarget: DietTarget.Decrease)
                 }
                 CustomButton(label: "Jaga berat badan") {
-                    isGoingToInfoView = true
+                    updateDietTarget(dietTarget: DietTarget.Maintain)
                 }
-                CustomButton(label: "Tambah gedee") {
-                    isGoingToInfoView = true
+                CustomButton(label: "Get BIGger") {
+                    updateDietTarget(dietTarget: DietTarget.Increase)
                 }
             }
         }
+        .toast(isPresenting: $isShowAlert) {
+            AlertToast(type: .regular, title: "Terjadi kesalahan!")
+        }
         .padding(40)
+        .navigationDestination(isPresented: $isGoingToInfoView) {
+            InfoView()
+        }
         .navigationBarBackButtonHidden(true)
-        .onAppear(perform: {
-            print(users)
-        })
     }
 }
 
