@@ -50,12 +50,21 @@
 		6075D13A2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		6075D13B2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		6075D13C2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
-		609F669B2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
-		609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
-		609F669D2ADE26140007C42D /* ShortTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* ShortTextField.swift */; };
-		609F669F2ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
-		609F66A02ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
-		609F66A12ADE71030007C42D /* LongTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongTextField.swift */; };
+		609B1F5A2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
+		609B1F5B2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
+		609B1F5C2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
+		609B1F5F2B08A87C00AAC37B /* DoubleEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */; };
+		609B1F602B08A87C00AAC37B /* DoubleEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */; };
+		609B1F612B08A87C00AAC37B /* DoubleEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */; };
+		609B1F652B08A9FE00AAC37B /* DoubleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */; };
+		609B1F662B08A9FE00AAC37B /* DoubleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */; };
+		609B1F672B08A9FE00AAC37B /* DoubleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */; };
+		609F669B2ADE26140007C42D /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* IntTextField.swift */; };
+		609F669C2ADE26140007C42D /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* IntTextField.swift */; };
+		609F669D2ADE26140007C42D /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669A2ADE26140007C42D /* IntTextField.swift */; };
+		609F669F2ADE71030007C42D /* LongStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongStringTextField.swift */; };
+		609F66A02ADE71030007C42D /* LongStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongStringTextField.swift */; };
+		609F66A12ADE71030007C42D /* LongStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongStringTextField.swift */; };
 		60DA934B2B03ACF40004EA5C /* StrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA934A2B03ACF40004EA5C /* StrategyView.swift */; };
 		60DA934E2B03B3790004EA5C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 60DA934D2B03B3790004EA5C /* Realm */; };
 		60DA93502B03B3790004EA5C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 60DA934F2B03B3790004EA5C /* RealmSwift */; };
@@ -110,8 +119,11 @@
 		607017C82AD6B871000ECF18 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
 		607017CA2AD6B88E000ECF18 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
 		6075D1392AE96C310085E802 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		609F669A2ADE26140007C42D /* ShortTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextField.swift; sourceTree = "<group>"; };
-		609F669E2ADE71030007C42D /* LongTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextField.swift; sourceTree = "<group>"; };
+		609B1F592B089E0B00AAC37B /* IntEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntEditText.swift; sourceTree = "<group>"; };
+		609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEditText.swift; sourceTree = "<group>"; };
+		609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTextField.swift; sourceTree = "<group>"; };
+		609F669A2ADE26140007C42D /* IntTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextField.swift; sourceTree = "<group>"; };
+		609F669E2ADE71030007C42D /* LongStringTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongStringTextField.swift; sourceTree = "<group>"; };
 		60DA934A2B03ACF40004EA5C /* StrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyView.swift; sourceTree = "<group>"; };
 		60E683632AE66D2500D3F3E8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,10 +215,9 @@
 		606900AF2AD8E838002280D8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				609B1F622B08A94B00AAC37B /* TextField */,
+				609B1F5D2B08A76E00AAC37B /* EditText */,
 				606900B02AD8ED78002280D8 /* CustomButton.swift */,
-				60020DCE2ADD390B00209EE7 /* EditText.swift */,
-				609F669A2ADE26140007C42D /* ShortTextField.swift */,
-				609F669E2ADE71030007C42D /* LongTextField.swift */,
 				604E94152ADE7BAB007B1FF2 /* Dropdown.swift */,
 				6066CE912AE39B53006F2C89 /* DropdownField.swift */,
 			);
@@ -307,6 +318,26 @@
 				607017CA2AD6B88E000ECF18 /* FoodInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		609B1F5D2B08A76E00AAC37B /* EditText */ = {
+			isa = PBXGroup;
+			children = (
+				60020DCE2ADD390B00209EE7 /* EditText.swift */,
+				609B1F592B089E0B00AAC37B /* IntEditText.swift */,
+				609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */,
+			);
+			path = EditText;
+			sourceTree = "<group>";
+		};
+		609B1F622B08A94B00AAC37B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				609F669A2ADE26140007C42D /* IntTextField.swift */,
+				609F669E2ADE71030007C42D /* LongStringTextField.swift */,
+				609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,8 +486,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609F669B2ADE26140007C42D /* ShortTextField.swift in Sources */,
+				609F669B2ADE26140007C42D /* IntTextField.swift in Sources */,
 				60020DBB2ADD30A300209EE7 /* Colors.swift in Sources */,
+				609B1F5F2B08A87C00AAC37B /* DoubleEditText.swift in Sources */,
 				6070179A2AD6B4E0000ECF18 /* IntroductionView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
 				605A15332AE802DA007E5CC6 /* OnboardingScreen.swift in Sources */,
@@ -465,11 +497,13 @@
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				6069A7462AE8D0DA005288AB /* TargetView.swift in Sources */,
 				60DA934B2B03ACF40004EA5C /* StrategyView.swift in Sources */,
+				609B1F5A2B089E0B00AAC37B /* IntEditText.swift in Sources */,
 				6066CE992AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLog.swift in Sources */,
-				609F669F2ADE71030007C42D /* LongTextField.swift in Sources */,
+				609B1F652B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
+				609F669F2ADE71030007C42D /* LongStringTextField.swift in Sources */,
 				607017CB2AD6B88E000ECF18 /* FoodInfo.swift in Sources */,
 				604E94162ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
 				6075D13A2AE96C310085E802 /* InfoView.swift in Sources */,
@@ -481,9 +515,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609F669C2ADE26140007C42D /* ShortTextField.swift in Sources */,
+				609B1F662B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
+				609F669C2ADE26140007C42D /* IntTextField.swift in Sources */,
 				6075D13B2AE96C310085E802 /* InfoView.swift in Sources */,
-				609F66A02ADE71030007C42D /* LongTextField.swift in Sources */,
+				609B1F602B08A87C00AAC37B /* DoubleEditText.swift in Sources */,
+				609B1F5B2B089E0B00AAC37B /* IntEditText.swift in Sources */,
+				609F66A02ADE71030007C42D /* LongStringTextField.swift in Sources */,
 				6066CE932AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				6069A7472AE8D0DA005288AB /* TargetView.swift in Sources */,
 				6066CE9A2AE55EB2006F2C89 /* Constant.swift in Sources */,
@@ -499,15 +536,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				609F669D2ADE26140007C42D /* ShortTextField.swift in Sources */,
+				609F669D2ADE26140007C42D /* IntTextField.swift in Sources */,
 				60020DD12ADD390B00209EE7 /* EditText.swift in Sources */,
 				6066CE9B2AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCD2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				6075D13C2AE96C310085E802 /* InfoView.swift in Sources */,
 				60E683662AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
-				609F66A12ADE71030007C42D /* LongTextField.swift in Sources */,
+				609F66A12ADE71030007C42D /* LongStringTextField.swift in Sources */,
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
+				609B1F672B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
 				6069A7482AE8D0DA005288AB /* TargetView.swift in Sources */,
+				609B1F612B08A87C00AAC37B /* DoubleEditText.swift in Sources */,
+				609B1F5C2B089E0B00AAC37B /* IntEditText.swift in Sources */,
 				607017B42AD6B4E1000ECF18 /* NutreazyUITests.swift in Sources */,
 				604E94182ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
 				6066CE942AE39B53006F2C89 /* DropdownField.swift in Sources */,

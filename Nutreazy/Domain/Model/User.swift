@@ -33,13 +33,13 @@ class User: Object, ObjectKeyIdentifiable {
     @Persisted var gender: Gender
     @Persisted var age: Int
     @Persisted var height: Int
-    @Persisted var weight: Int
+    @Persisted var weight: Double
     @Persisted var activity: ActivityIntensity
     @Persisted var targetCalorie: Int
     @Persisted var dietTarget: DietTarget?
     @Persisted var maintenanceCalorie: Int
     
-    convenience init(name: String, gender: Gender, age: Int, height: Int, weight: Int, activity: ActivityIntensity) {
+    convenience init(name: String, gender: Gender, age: Int, height: Int, weight: Double, activity: ActivityIntensity) {
         self.init()
         self.name = name
         self.gender = gender

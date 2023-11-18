@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct EditText: View {
     @Binding var value: String
@@ -14,12 +15,17 @@ struct EditText: View {
     var unitName = ""
     var width = Double.infinity
     var isCenter = false
-    var isNumeric = false
+    var maxLength: Int
     
     var body: some View {
         HStack {
             TextField(placeholder, text: $value)
-                .keyboardType(isNumeric ? .numberPad : .default)
+                .keyboardType(.default)
+                .onReceive(Just(value)) { newValue in
+                    if newValue.count > maxLength {
+                        self.value = String(value.prefix(maxLength))
+                    }
+                }
                 .foregroundColor(TEXT_COLOR)
                 .fixedSize(horizontal: isCenter, vertical: false)
                 .font(PARAGRAPH_1)
@@ -47,9 +53,9 @@ struct EditText_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            EditText(value: .constant(""), placeholder: "I am an EditText")
-            EditText(value: .constant(""), placeholder: "0", unitName: "kg", width: 160)
-            EditText(value: .constant(""), placeholder: "0", unitName: "kg", width: 120, isCenter: true)
+            EditText(value: .constant(""), placeholder: "I am an EditText", maxLength: 12)
+            EditText(value: .constant(""), placeholder: "0", unitName: "kg", width: 160, maxLength: 15)
+            EditText(value: .constant(""), placeholder: "0", unitName: "kg", width: 120, isCenter: true, maxLength: 10)
         }
     }
 }
