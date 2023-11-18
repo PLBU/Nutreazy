@@ -27,7 +27,7 @@ enum DietTarget: Int, PersistableEnum {
     case Increase
 }
 
-class User: Object {
+class User: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var gender: Gender
@@ -50,5 +50,9 @@ class User: Object {
         self.targetCalorie = -1
         self.dietTarget = nil
         self.maintenanceCalorie = -1
+    }
+    
+    static func createDummy() -> User {
+        return User(name: "", gender: Gender.Male, age: 0, height: 0, weight: 0, activity: ActivityIntensity.Athlete)
     }
 }

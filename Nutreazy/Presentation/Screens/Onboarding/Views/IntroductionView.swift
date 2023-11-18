@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct IntroductionView: View {
+    @ObservedResults(User.self) var users
+    
     @State private var name: String = ""
     @State private var gender: String = ""
     @State private var age: String = ""
@@ -50,6 +53,7 @@ struct IntroductionView: View {
             
             CustomButton(label: "Lanjut") {
                 isGoingToTargetView = true
+                $users.append(User.createDummy())
             }
             .frame(alignment: .bottom)
         }

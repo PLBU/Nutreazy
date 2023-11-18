@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class FoodInfo: Object {
+class FoodInfo: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var servingName: String // g, grams, spoon(s), cup(s)

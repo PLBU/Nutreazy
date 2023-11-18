@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TargetView: View {
+    @ObservedResults(User.self) var users
+    
     @State private var isGoingToInfoView: Bool = false
     
     var body: some View {
@@ -37,6 +40,9 @@ struct TargetView: View {
         }
         .padding(40)
         .navigationBarBackButtonHidden(true)
+        .onAppear(perform: {
+            print(users)
+        })
     }
 }
 
