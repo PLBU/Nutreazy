@@ -24,6 +24,9 @@
 		60020DD02ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD12ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		603F19102B08F216006B385B /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 603F190F2B08F216006B385B /* AlertToast */; };
+		603F19122B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
+		603F19132B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
+		603F19172B08FEED006B385B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603F19162B08FEED006B385B /* UserManager.swift */; };
 		604E94162ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
 		604E94172ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
 		604E94182ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
@@ -102,6 +105,7 @@
 		60020DC92ADD353300209EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60020DCA2ADD37A700209EE7 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		60020DCE2ADD390B00209EE7 /* EditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditText.swift; sourceTree = "<group>"; };
+		603F19162B08FEED006B385B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		604E94152ADE7BAB007B1FF2 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		605A15322AE802DA007E5CC6 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		6066CE912AE39B53006F2C89 /* DropdownField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownField.swift; sourceTree = "<group>"; };
@@ -179,6 +183,32 @@
 				60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		603F19112B08FEA9006B385B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				609B1F692B08BFA500AAC37B /* UserState.swift */,
+				607017C62AD6B848000ECF18 /* UserModel.swift */,
+				603F19162B08FEED006B385B /* UserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		603F19142B08FEB7006B385B /* FoodLog */ = {
+			isa = PBXGroup;
+			children = (
+				607017C82AD6B871000ECF18 /* FoodLogModel.swift */,
+			);
+			path = FoodLog;
+			sourceTree = "<group>";
+		};
+		603F19152B08FEC1006B385B /* FoodInfo */ = {
+			isa = PBXGroup;
+			children = (
+				607017CA2AD6B88E000ECF18 /* FoodInfoModel.swift */,
+			);
+			path = FoodInfo;
 			sourceTree = "<group>";
 		};
 		605A15312AE802C9007E5CC6 /* Views */ = {
@@ -304,8 +334,9 @@
 		607017C32AD6B6F0000ECF18 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				609B1F682B08BF8200AAC37B /* StructState */,
-				607017C52AD6B81F000ECF18 /* Model */,
+				603F19112B08FEA9006B385B /* User */,
+				603F19142B08FEB7006B385B /* FoodLog */,
+				603F19152B08FEC1006B385B /* FoodInfo */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -315,16 +346,6 @@
 			children = (
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		607017C52AD6B81F000ECF18 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				607017C62AD6B848000ECF18 /* UserModel.swift */,
-				607017C82AD6B871000ECF18 /* FoodLogModel.swift */,
-				607017CA2AD6B88E000ECF18 /* FoodInfoModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		609B1F5D2B08A76E00AAC37B /* EditText */ = {
@@ -345,14 +366,6 @@
 				609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */,
 			);
 			path = TextField;
-			sourceTree = "<group>";
-		};
-		609B1F682B08BF8200AAC37B /* StructState */ = {
-			isa = PBXGroup;
-			children = (
-				609B1F692B08BFA500AAC37B /* UserState.swift */,
-			);
-			path = StructState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +522,7 @@
 				6070179A2AD6B4E0000ECF18 /* IntroductionView.swift in Sources */,
 				607017982AD6B4E0000ECF18 /* NutreazyApp.swift in Sources */,
 				605A15332AE802DA007E5CC6 /* OnboardingScreen.swift in Sources */,
+				603F19172B08FEED006B385B /* UserManager.swift in Sources */,
 				6066CE922AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
@@ -543,6 +557,7 @@
 				6066CE932AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				6069A7472AE8D0DA005288AB /* TargetView.swift in Sources */,
 				6066CE9A2AE55EB2006F2C89 /* Constant.swift in Sources */,
+				603F19132B08FEAF006B385B /* UserModel.swift in Sources */,
 				60020DCC2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60020DD02ADD390B00209EE7 /* EditText.swift in Sources */,
 				60E683652AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
@@ -563,6 +578,7 @@
 				60E683662AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
 				609F66A12ADE71030007C42D /* LongStringTextField.swift in Sources */,
 				607017B62AD6B4E1000ECF18 /* NutreazyUITestsLaunchTests.swift in Sources */,
+				603F19122B08FEAF006B385B /* UserModel.swift in Sources */,
 				609B1F672B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
 				6069A7482AE8D0DA005288AB /* TargetView.swift in Sources */,
 				609B1F6C2B08BFA500AAC37B /* UserState.swift in Sources */,
