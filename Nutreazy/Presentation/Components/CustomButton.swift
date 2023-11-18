@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct CustomButton: View {
-    private var label: String
-    private var action: () -> Void
+    @Binding var isEnabled: Bool
+    var label: String
+    var action: () -> Void
     
-    init(label: String, action: @escaping () -> Void) {
+    init(label: String, isEnabled: Binding<Bool> = .constant(true), action: @escaping () -> Void) {
         self.action = action
         self.label = label
+        self._isEnabled = isEnabled
     }
     
     var body: some View {
@@ -23,15 +25,16 @@ struct CustomButton: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
         }
+        .disabled(!isEnabled)
         .padding(12)
-        .background(PRIMARY_COLOR)
+        .background(isEnabled ? PRIMARY_COLOR : DISABLED_COLOR)
         .cornerRadius(16)
     }
 }
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButton(label:"I am a Button", action: {
+        CustomButton(label:"I am a Button", isEnabled: .constant(false), action: {
             print("Button clicked")
         })
     }
