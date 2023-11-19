@@ -7,13 +7,13 @@
 
 import SwiftUI
 import RealmSwift
+import AlertToast
 
 struct IntroductionView: View {
-    @ObservedResults(UserModel.self) var users
-    
     @State private var userState: UserState = UserState()
     @State private var isButtonEnabled: Bool = false
     @State private var isGoingToTargetView: Bool = false
+    @State private var isShowAlert: Bool = false
     
     var body: some View {
         VStack {
@@ -51,10 +51,17 @@ struct IntroductionView: View {
             }
             
             CustomButton(label: "Lanjut", isEnabled: $isButtonEnabled) {
-                isGoingToTargetView = true
-                $users.append(userState.toModel())
+                do {
+                    try MyUserManager.instance.setMyUser(user: userState.toModel())
+                    isGoingToTargetView = true
+                } catch {
+                    isShowAlert = true
+                }
             }
             .frame(alignment: .bottom)
+        }
+        .toast(isPresenting: $isShowAlert) {
+            AlertToast(type: .regular, title: "Terjadi kesalahan!")
         }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToTargetView) {

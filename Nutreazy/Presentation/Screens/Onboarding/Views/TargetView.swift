@@ -15,13 +15,8 @@ struct TargetView: View {
     
     private func updateDietTarget(dietTarget: DietTarget) {
         do {
-            let realm = try Realm()
-            try realm.write {
-                let myUser = realm.objects(UserModel.self).first
-                
-                myUser?.dietTarget = dietTarget
-                isGoingToInfoView = true
-            }
+            try MyUserManager.instance.setMyUserDietTarget(dietTarget: dietTarget)
+            isGoingToInfoView = true
         } catch {
             isShowAlert = true
         }
