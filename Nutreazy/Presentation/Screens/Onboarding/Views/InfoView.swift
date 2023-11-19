@@ -67,7 +67,7 @@ struct InfoView: View {
                         Text("asupan calorie ")
                             .font(PARAGRAPH_1_MEDIUM)
                             .foregroundColor(PRIMARY_COLOR) +
-                        Text("[Renaldi] ")
+                        Text("\(users.first?.name ?? "") ")
                             .font(PARAGRAPH_1)
                             .foregroundColor(TEXT_COLOR) +
                         Text("tidak melebihi ")

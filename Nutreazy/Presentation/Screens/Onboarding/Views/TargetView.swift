@@ -10,6 +10,7 @@ import RealmSwift
 import AlertToast
 
 struct TargetView: View {
+    @ObservedResults(UserModel.self) var users
     @State private var isShowAlert: Bool = false
     @State private var isGoingToInfoView: Bool = false
     
@@ -20,7 +21,6 @@ struct TargetView: View {
         } catch {
             isShowAlert = true
         }
-        
     }
     
     var body: some View {
@@ -29,7 +29,7 @@ struct TargetView: View {
                 Text("Target 🎯\n")
                     .font(HEADING_1)
                     .foregroundColor(PRIMARY_COLOR) +
-                Text("Renaldi\napa nih?")
+                Text("\(users.first?.name ?? "")\napa nih?")
                     .font(HEADING_1)
                     .foregroundColor(TEXT_COLOR)
             }

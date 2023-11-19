@@ -60,7 +60,8 @@ class MyUserManager {
         
     }
     
-    func getMyUser() -> UserModel? {
+    private func getMyUser() -> UserModel? {
+        // Read for runtime only, for faster Declarative Reading, use @ObservedResults
         return localRealm?.objects(UserModel.self).first ?? nil
     }
     
