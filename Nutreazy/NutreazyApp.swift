@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct NutreazyApp: App {
+struct NutreazyApp: SwiftUI.App {
+    @ObservedResults(RegisterModel.self) var register
+    
     var body: some Scene {
         WindowGroup {
-            OnboardingScreen()
+            if (register.first != nil) {
+                MainScreen()
+            } else {
+                OnboardingScreen()
+            }
         }
     }
 }

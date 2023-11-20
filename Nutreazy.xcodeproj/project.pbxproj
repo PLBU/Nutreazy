@@ -23,6 +23,8 @@
 		60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD02ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD12ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
+		60295DC62B0B969D00E6955C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60295DC52B0B969D00E6955C /* MainScreen.swift */; };
+		60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60295DC82B0B979900E6955C /* RegisterModel.swift */; };
 		603F19102B08F216006B385B /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 603F190F2B08F216006B385B /* AlertToast */; };
 		603F19122B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
 		603F19132B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
@@ -105,6 +107,8 @@
 		60020DC92ADD353300209EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60020DCA2ADD37A700209EE7 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		60020DCE2ADD390B00209EE7 /* EditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditText.swift; sourceTree = "<group>"; };
+		60295DC52B0B969D00E6955C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		60295DC82B0B979900E6955C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		603F19162B08FEED006B385B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		604E94152ADE7BAB007B1FF2 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		605A15322AE802DA007E5CC6 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
@@ -185,6 +189,30 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		60295DC42B0B968100E6955C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				60295DCA2B0B9B9F00E6955C /* Views */,
+				60295DC52B0B969D00E6955C /* MainScreen.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		60295DC72B0B978800E6955C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				60295DC82B0B979900E6955C /* RegisterModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		60295DCA2B0B9B9F00E6955C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		603F19112B08FEA9006B385B /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +254,7 @@
 		6066CE952AE39E2A006F2C89 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				60295DC42B0B968100E6955C /* Main */,
 				6066CE962AE39E6B006F2C89 /* Onboarding */,
 			);
 			path = Screens;
@@ -334,6 +363,7 @@
 		607017C32AD6B6F0000ECF18 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				60295DC72B0B978800E6955C /* Register */,
 				603F19112B08FEA9006B385B /* User */,
 				603F19142B08FEB7006B385B /* FoodLog */,
 				603F19152B08FEC1006B385B /* FoodInfo */,
@@ -528,9 +558,11 @@
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				6069A7462AE8D0DA005288AB /* TargetView.swift in Sources */,
 				60DA934B2B03ACF40004EA5C /* StrategyView.swift in Sources */,
+				60295DC62B0B969D00E6955C /* MainScreen.swift in Sources */,
 				609B1F5A2B089E0B00AAC37B /* IntEditText.swift in Sources */,
 				6066CE992AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
+				60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */,
 				60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLogModel.swift in Sources */,
 				609B1F652B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct StrategyView: View {
+    @ObservedResults(RegisterModel.self) var register
     @ObservedResults(UserModel.self) var users
     @State private var isGoingToWelcomeView: Bool = false
     
@@ -68,7 +69,7 @@ struct StrategyView: View {
             .padding(.bottom, 24)
             
             CustomButton(label: "Mulai!") {
-                
+                $register.append(RegisterModel())
             }
         }
         .padding(40)
