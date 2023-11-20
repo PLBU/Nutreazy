@@ -63,6 +63,11 @@ struct IntroductionView: View {
         .toast(isPresenting: $isShowAlert) {
             AlertToast(type: .regular, title: "Terjadi kesalahan!")
         }
+        .onAppear() {
+            if let myUser = MyUserManager.instance.getMyUser() {
+                userState = myUser.toState()
+            }
+        }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToTargetView) {
             TargetView()

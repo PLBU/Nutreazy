@@ -6,8 +6,27 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct StrategyView: View {
+    @ObservedResults(UserModel.self) var users
+    @State private var isGoingToWelcomeView: Bool = false
+    
+    private func getExplanationString(name: String, calorie: Int, dietTarget: DietTarget) -> String {
+        var result: String = "Agar berat badan \(name) "
+        
+        switch (dietTarget) {
+            case .Decrease:
+                result += "turun berarti asupan kalorimu setiap harinya harus di bawah \(calorie)cal. Nizy rekomen kurangin 15%."
+            case .Increase:
+                result += "naik berarti asupan kalorimu setiap harinya harus di atas. Nizy rekomen naikin 15%."
+            default:
+                result += "tetap berarti asupan kalorimu setiap harinya harus stay"
+        }
+        
+        return result
+    }
+    
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
@@ -16,21 +35,21 @@ struct StrategyView: View {
                         Text("Maintenance Calorie kamu\n")
                             .font(HEADING_2)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("2500 cal")
-                            .font(HEADING_2)
-                            .foregroundColor(PRIMARY_COLOR)
+                        Text("\(users.first?.maintenanceCalorie ?? 0)cal")
+                            .font(HEADING_3)
+                            .foregroundColor(TEXT_COLOR)
                     }
                     
-                    Text("Agar berat badan [Renaldi] [turun] berarti asupan kalorimu setiap harinya harus di bawah 2500cal")
+                    Text(getExplanationString(name: users.first?.name ?? "", calorie: users.first?.maintenanceCalorie ?? 0, dietTarget: users.first?.dietTarget ?? DietTarget.Maintain))
                         .font(PARAGRAPH_1)
                         .foregroundColor(TEXT_COLOR)
                     
                     Group {
-                        Text("Nizy coba targetin asupan kalori [Renaldi] di ")
+                        Text("Nizy coba targetin asupan kalori \(users.first?.name ?? "") di ")
                             .font(HEADING_5)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("2500 cal")
-                            .font(HEADING_5)
+                        Text("\(users.first?.targetCalorie ?? 0)cal")
+                            .font(HEADING_3)
                             .foregroundColor(PRIMARY_COLOR) +
                         Text(" ya")
                             .font(HEADING_5)
@@ -39,11 +58,24 @@ struct StrategyView: View {
                 }
             }
             
+            Button() {
+                isGoingToWelcomeView = true
+            } label : {
+                Text("Ulangi onboarding")
+                    .font(PARAGRAPH_2)
+                    .foregroundColor(ACCENT_COLOR)
+            }
+            .padding(.bottom, 24)
+            
             CustomButton(label: "Mulai!") {
                 
             }
         }
         .padding(40)
+        .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $isGoingToWelcomeView) {
+            WelcomeView()
+        }
     }
 }
 

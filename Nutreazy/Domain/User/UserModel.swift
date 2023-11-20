@@ -36,8 +36,19 @@ class UserModel: Object, ObjectKeyIdentifiable {
     @Persisted var weight: Double
     @Persisted var activity: ActivityIntensity
     @Persisted var targetCalorie: Int
-    @Persisted var dietTarget: DietTarget?
     @Persisted var maintenanceCalorie: Int
+    @Persisted var dietTarget: DietTarget? {
+        didSet {
+            switch (dietTarget) {
+                case .Decrease:
+                    self.targetCalorie = maintenanceCalorie - Int(15.0/100.0 * Double(maintenanceCalorie))
+                case .Increase:
+                    self.targetCalorie = maintenanceCalorie + Int(15.0/100.0 * Double(maintenanceCalorie))
+                default:
+                    self.targetCalorie = maintenanceCalorie
+            }
+        }
+    }
     
     convenience init(name: String, gender: Gender, age: Int, height: Int, weight: Double, activity: ActivityIntensity) {
         self.init()
@@ -49,10 +60,46 @@ class UserModel: Object, ObjectKeyIdentifiable {
         self.activity = activity
         self.targetCalorie = -1
         self.dietTarget = nil
-        self.maintenanceCalorie = -1
+        self.maintenanceCalorie = countMaintenanceCalorie()
     }
     
     static func createDummy() -> UserModel {
         return UserModel(name: "", gender: Gender.Male, age: 0, height: 0, weight: 0, activity: ActivityIntensity.Athlete)
+    }
+    
+    func countMaintenanceCalorie() -> Int {
+        // Follows Mifflin St. Jeor Formula
+        var BMR: Double
+        if (self.gender == Gender.Male) {
+            BMR = 9.99 * self.weight + 6.25 * Double(self.height) - 4.92 * Double(self.age) + 5
+        } else {
+            BMR = 9.99 * self.weight + 6.25 * Double(self.height) - 4.92 * Double(self.age) - 161
+        }
+        
+        var TDEE: Double
+        switch (self.activity) {
+            case .Sedentary:
+                TDEE = BMR * 1.2
+            case .Light:
+                TDEE = BMR * 1.375
+            case .Moderate:
+                TDEE = BMR * 1.55
+            case .Heavy:
+                TDEE = BMR * 1.725
+            default:
+                TDEE = BMR * 1.9
+        }
+        
+        return Int(TDEE)
+    }
+    
+    func toState() -> UserState {
+        return UserState(
+            name: self.name,
+            gender: genderListID[self.gender.rawValue],
+            age: String(self.age),
+            height: String(self.height),
+            weight: String(self.weight),
+            actIntesity: activityIntensityListID[self.activity.rawValue])
     }
 }

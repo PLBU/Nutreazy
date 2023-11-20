@@ -16,7 +16,6 @@ class MyUserManager {
         openRealm()
     }
 
-    // Function to open a Realm (like a box) - needed for saving data inside of the Realm
     func openRealm() {
         do {
             // Setting the schema version
@@ -48,6 +47,8 @@ class MyUserManager {
                     }
                     if (user.maintenanceCalorie > 0) {
                         myUser.maintenanceCalorie = user.maintenanceCalorie
+                    } else {
+                        myUser.maintenanceCalorie = user.countMaintenanceCalorie()
                     }
                 } else {
                     localRealm!.add(user)
@@ -60,8 +61,8 @@ class MyUserManager {
         
     }
     
-    private func getMyUser() -> UserModel? {
-        // Read for runtime only, for faster Declarative Reading, use @ObservedResults
+    func getMyUser() -> UserModel? {
+        // Better read for runtime only, for faster Declarative Reading, use @ObservedResults
         return localRealm?.objects(UserModel.self).first ?? nil
     }
     

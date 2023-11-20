@@ -10,6 +10,7 @@ import RealmSwift
 
 struct InfoView: View {
     @ObservedResults(UserModel.self) var users
+    @State var isGoingToStrategyView: Bool = false
     
     var body: some View {
         VStack {
@@ -102,14 +103,14 @@ struct InfoView: View {
             }
             
             CustomButton(label: "Lanjut!") {
-                
+                isGoingToStrategyView = true
             }
         }
         .padding(40)
-        .navigationBarBackButtonHidden(true)
-        .onAppear() {
-            print(users)
+        .navigationDestination(isPresented: $isGoingToStrategyView) {
+            StrategyView()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
