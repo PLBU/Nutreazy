@@ -23,6 +23,9 @@
 		60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD02ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD12ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
+		60225C782B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */; };
+		60225C792B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */; };
+		60225C7A2B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */; };
 		60295DC62B0B969D00E6955C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60295DC52B0B969D00E6955C /* MainScreen.swift */; };
 		60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60295DC82B0B979900E6955C /* RegisterModel.swift */; };
 		603F19102B08F216006B385B /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 603F190F2B08F216006B385B /* AlertToast */; };
@@ -107,6 +110,7 @@
 		60020DC92ADD353300209EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60020DCA2ADD37A700209EE7 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		60020DCE2ADD390B00209EE7 /* EditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditText.swift; sourceTree = "<group>"; };
+		60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		60295DC52B0B969D00E6955C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		60295DC82B0B979900E6955C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		603F19162B08FEED006B385B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 		60020DBC2ADD33C300209EE7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */,
 				60020DC52ADD340200209EE7 /* Poppins-Light.ttf */,
 				60020DC12ADD33F800209EE7 /* Poppins-Medium.ttf */,
 				60020DBD2ADD33E400209EE7 /* OpenSans-Regular.ttf */,
@@ -512,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607017A02AD6B4E1000ECF18 /* Preview Assets.xcassets in Resources */,
+				60225C782B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */,
 				60020DC62ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
 				60020DC22ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */,
 				60020DBE2ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */,
@@ -526,6 +532,7 @@
 				60020DBF2ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */,
 				60020DC72ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
 				60020DC32ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */,
+				60225C792B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +543,7 @@
 				60020DC02ADD33E400209EE7 /* OpenSans-Regular.ttf in Resources */,
 				60020DC82ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
 				60020DC42ADD33F800209EE7 /* Poppins-Medium.ttf in Resources */,
+				60225C7A2B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,7 +787,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = linar.Nutreazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -818,7 +828,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = linar.Nutreazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
