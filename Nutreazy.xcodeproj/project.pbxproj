@@ -61,6 +61,7 @@
 		6075D13A2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		6075D13B2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		6075D13C2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
+		607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E5AF32B0F940100E8452A /* FloatingButton.swift */; };
 		609B1F5A2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
 		609B1F5B2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
 		609B1F5C2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
@@ -139,6 +140,7 @@
 		607353182B0E39030049F5AC /* FoodLogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogListView.swift; sourceTree = "<group>"; };
 		6073531A2B0E46780049F5AC /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip.swift; sourceTree = "<group>"; };
 		6075D1392AE96C310085E802 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		607E5AF32B0F940100E8452A /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		609B1F592B089E0B00AAC37B /* IntEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntEditText.swift; sourceTree = "<group>"; };
 		609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEditText.swift; sourceTree = "<group>"; };
 		609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTextField.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				604E94152ADE7BAB007B1FF2 /* Dropdown.swift */,
 				6066CE912AE39B53006F2C89 /* DropdownField.swift */,
 				6073531A2B0E46780049F5AC /* Chip.swift */,
+				607E5AF32B0F940100E8452A /* FloatingButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				6066CE992AE55EB2006F2C89 /* Constant.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */,
+				607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */,
 				60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLogModel.swift in Sources */,
 				609B1F652B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
