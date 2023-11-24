@@ -86,9 +86,21 @@ struct FoodLogListView: View {
             .padding(.horizontal, 20)
             .padding(.top, 20)
             
-            FloatingButton {
+            FloatingButton(
+                secondaryButtons: [
+                    ExpandableButtonItem(
+                        label: Image(systemName: "scalemass.fill"),
+                        action: { print("I am clicked 3") }
+                    ),
+                    ExpandableButtonItem(
+                        label: Image(systemName: "fork.knife"),
+                        action: { print("I am clicked 2") }
+                    )
+                ]
+            ) {
                 // Choose between food or weight
             }
+            .padding(20)
         }
     }
 }

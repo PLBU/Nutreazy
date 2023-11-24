@@ -7,26 +7,88 @@
 
 import SwiftUI
 
+struct ExpandableButtonItem: Identifiable {
+    let id = UUID()
+    let label: Image
+    let action: () -> Void
+}
+
 struct FloatingButton: View {
-    var action: () -> Void
+    var secondaryButtons: [ExpandableButtonItem]? = nil
+    let primaryAction: () -> Void
+
+    var body: some View {
+        ExpandableButtonPanel(
+            primaryButton: ExpandableButtonItem(
+                label: Image(systemName: "plus"),
+                action: { self.primaryAction() }
+            ),
+            secondaryButtons: secondaryButtons
+        )
+    }
+}
+
+struct ExpandableButtonPanel: View {
+    let primaryButton: ExpandableButtonItem
+    let secondaryButtons: [ExpandableButtonItem]?
+    
+    private let size: CGFloat = 64
+    private var cornerRadius: CGFloat { get{size/2} }
+    private var iconSize: CGFloat { get{size/4} }
+    
+    @State private var isExpanded = false
     
     var body: some View {
-        Button(action: action) {
-            Image(systemName: "plus")
-                .font(.title.weight(.medium))
-                .padding(24)
-                .background(PRIMARY_COLOR)
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                .shadow(radius: 2, x: -1, y: 2)
-
+        VStack {
+            if secondaryButtons != nil && isExpanded {
+                ForEach(secondaryButtons!) { button in
+                    Button(action: {button.action()}, label: {
+                        button.label
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: iconSize, height: iconSize)
+                            .foregroundColor(Color.white)
+                        
+                    })
+                        .frame(width: self.size, height: self.size)
+                }
+            }
+            
+            Button(
+                action: {
+                    self.primaryButton.action()
+                    if secondaryButtons != nil { isExpanded.toggle() }
+                },
+                label: {
+                    primaryButton.label
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: iconSize, height: iconSize)
+                        .foregroundColor(Color.white)
+                }
+            )
+            .frame(width: self.size, height: self.size)
         }
-        .padding(20)
+        .background(PRIMARY_COLOR)
+        .foregroundColor(.white)
+        .cornerRadius(self.cornerRadius)
+        .shadow(radius: 2, x: -1, y: 2)
     }
 }
 
 struct FloatingButton_Previews: PreviewProvider {
     static var previews: some View {
-        FloatingButton(action: { print("I am clicked")})
+        VStack {
+            FloatingButton(
+                secondaryButtons: [
+                    ExpandableButtonItem(
+                        label: Image(systemName: "plus"),
+                        action: { print("I am clicked 2") }
+                    )
+                ],
+                primaryAction: { print("I am clicked")}
+            )
+            FloatingButton(primaryAction: { print("I am clicked")})
+        }
     }
 }
