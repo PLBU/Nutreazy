@@ -7,7 +7,6 @@
 
 import SwiftUI
 import RealmSwift
-import AlertToast
 
 struct IntroductionView: View {
     @State private var userState: UserState = UserState()
@@ -60,8 +59,8 @@ struct IntroductionView: View {
             }
             .frame(alignment: .bottom)
         }
-        .toast(isPresenting: $isShowAlert) {
-            AlertToast(type: .regular, title: "Terjadi kesalahan!")
+        .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
+            Button("Ok", role: .cancel) { }
         }
         .onAppear() {
             if let myUser = MyUserManager.instance.getMyUser() {

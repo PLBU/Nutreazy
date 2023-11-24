@@ -48,8 +48,8 @@ struct TargetView: View {
                 }
             }
         }
-        .toast(isPresenting: $isShowAlert) {
-            AlertToast(type: .regular, title: "Terjadi kesalahan!")
+        .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
+            Button("Ok", role: .cancel) { }
         }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToInfoView) {

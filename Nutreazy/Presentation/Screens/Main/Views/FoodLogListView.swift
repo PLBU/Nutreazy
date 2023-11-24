@@ -78,8 +78,6 @@ struct FoodLogListView: View {
                             .font(HEADING_4)
                             .foregroundColor(TEXT_COLOR)
                     }
-                    
-                    
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

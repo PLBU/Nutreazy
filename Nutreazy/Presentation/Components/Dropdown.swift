@@ -28,11 +28,7 @@ struct Dropdown: View {
                     .font(PARAGRAPH_1)
                     .foregroundColor(value.isEmpty ? ACCENT_COLOR : TEXT_COLOR)
             }
-            Image(uiImage:
-                UIImage(named: "ic_dropdown")!.withConfiguration(
-                    UIImage.SymbolConfiguration(weight: .thin)
-                )
-            )
+            Image(systemName: "chevron.down")
             .renderingMode(.template)
             .foregroundColor(ACCENT_COLOR)
         }
