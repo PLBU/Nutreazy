@@ -79,6 +79,7 @@
 		609F669F2ADE71030007C42D /* LongStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongStringTextField.swift */; };
 		609F66A02ADE71030007C42D /* LongStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongStringTextField.swift */; };
 		609F66A12ADE71030007C42D /* LongStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609F669E2ADE71030007C42D /* LongStringTextField.swift */; };
+		60AC71A42B11A89200DCB0AB /* FoodLogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AC71A32B11A89200DCB0AB /* FoodLogRow.swift */; };
 		60DA934B2B03ACF40004EA5C /* StrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DA934A2B03ACF40004EA5C /* StrategyView.swift */; };
 		60DA934E2B03B3790004EA5C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 60DA934D2B03B3790004EA5C /* Realm */; };
 		60DA93502B03B3790004EA5C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 60DA934F2B03B3790004EA5C /* RealmSwift */; };
@@ -146,6 +147,7 @@
 		609B1F692B08BFA500AAC37B /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		609F669A2ADE26140007C42D /* IntTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextField.swift; sourceTree = "<group>"; };
 		609F669E2ADE71030007C42D /* LongStringTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongStringTextField.swift; sourceTree = "<group>"; };
+		60AC71A32B11A89200DCB0AB /* FoodLogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogRow.swift; sourceTree = "<group>"; };
 		60DA934A2B03ACF40004EA5C /* StrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyView.swift; sourceTree = "<group>"; };
 		60E683632AE66D2500D3F3E8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -297,6 +299,7 @@
 				6066CE912AE39B53006F2C89 /* DropdownField.swift */,
 				6073531A2B0E46780049F5AC /* Chip.swift */,
 				607E5AF32B0F940100E8452A /* FloatingButton.swift */,
+				60AC71A32B11A89200DCB0AB /* FoodLogRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */,
 				607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */,
 				60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
+				60AC71A42B11A89200DCB0AB /* FoodLogRow.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLogModel.swift in Sources */,
 				609B1F652B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
 				609B1F6A2B08BFA500AAC37B /* UserState.swift in Sources */,
