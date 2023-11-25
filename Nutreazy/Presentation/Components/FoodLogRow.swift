@@ -39,11 +39,7 @@ struct FoodLogRow_Previews: PreviewProvider {
                     fat: 1
                 ),
                 amount: 125,
-                mealType: MealType.Breakfast,
-                calories: 2750,
-                carbohydrate: 125,
-                protein: 250,
-                fat: 125
+                mealType: MealType.Breakfast
             )
         )
     }

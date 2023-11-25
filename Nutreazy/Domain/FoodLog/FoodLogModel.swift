@@ -12,6 +12,7 @@ enum MealType: Int, PersistableEnum {
     case Breakfast
     case Brunch
     case Lunch
+    case Dinner
     case Snack
     case ExtraMeal
 }
@@ -26,14 +27,14 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
     @Persisted var protein: Int        // in grams
     @Persisted var fat: Int            // in grams
 
-    convenience init(foodInfo: FoodInfoModel?, amount: Int, mealType: MealType?, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+    convenience init(foodInfo: FoodInfoModel, amount: Int, mealType: MealType?) {
         self.init()
         self.foodInfo = foodInfo
         self.amount = amount
         self.mealType = mealType
-        self.calories = calories
-        self.carbohydrate = carbohydrate
-        self.protein = protein
-        self.fat = fat
+        self.calories = foodInfo.calories * amount
+        self.carbohydrate = foodInfo.carbohydrate * amount
+        self.protein = foodInfo.protein * protein
+        self.fat = foodInfo.fat * fat
     }
 }
