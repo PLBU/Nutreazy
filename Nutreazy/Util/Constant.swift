@@ -9,3 +9,4 @@ import Foundation
 
 let genderListID = ["Pria", "Wanita"]
 let activityIntensityListID = ["Mageran", "Ringan", "Sedang", "Tinggi", "Atlet"]
+let mealTypeListID = ["Sarapan", "Brunch", "Makan Siang", "Makan Malam", "Snack", "Tambahan"]
