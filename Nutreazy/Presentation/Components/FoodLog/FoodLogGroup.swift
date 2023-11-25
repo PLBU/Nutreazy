@@ -10,7 +10,7 @@ import SwiftUI
 struct FoodLogGroup: View {
     var foodLogs: [FoodLogModel]
     @State private var isExpanded = false
-    private var totalCalories: Int {
+    private var totalCalories: Double {
         get {
             foodLogs.reduce(0, { prev, foodLog in
                 prev + foodLog.calories

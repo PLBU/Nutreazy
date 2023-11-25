@@ -12,13 +12,13 @@ class FoodInfoModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var servingName: String // g, grams, spoon(s), cup(s)
-    @Persisted var servingSize: Int
-    @Persisted var calories: Int       // in cal
-    @Persisted var carbohydrate: Int   // in grams
-    @Persisted var protein: Int        // in grams
-    @Persisted var fat: Int            // in grams
+    @Persisted var servingSize: Double
+    @Persisted var calories: Double       // in cal
+    @Persisted var carbohydrate: Double   // in grams
+    @Persisted var protein: Double        // in grams
+    @Persisted var fat: Double            // in grams
     
-    convenience init(name: String, servingName: String, servingSize: Int, calories: Int, carbohydrate: Int, protein: Int, fat: Int) {
+    convenience init(name: String, servingName: String, servingSize: Double, calories: Double, carbohydrate: Double, protein: Double, fat: Double) {
         self.init()
         self.name = name
         self.servingName = servingName

@@ -21,14 +21,14 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var foodInfo: FoodInfoModel?
     @Persisted var date: Date
-    @Persisted var amount: Int
+    @Persisted var amount: Double
     @Persisted var mealType: MealType?
-    @Persisted var calories: Int       // in cal
-    @Persisted var carbohydrate: Int   // in grams
-    @Persisted var protein: Int        // in grams
-    @Persisted var fat: Int            // in grams
+    @Persisted var calories: Double       // in cal
+    @Persisted var carbohydrate: Double   // in grams
+    @Persisted var protein: Double        // in grams
+    @Persisted var fat: Double            // in grams
 
-    convenience init(foodInfo: FoodInfoModel, date: Date = Date().withoutTime(), amount: Int, mealType: MealType?) {
+    convenience init(foodInfo: FoodInfoModel, date: Date = Date().withoutTime(), amount: Double, mealType: MealType?) {
         self.init()
         self.foodInfo = foodInfo
         self.date = date
