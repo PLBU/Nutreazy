@@ -16,8 +16,10 @@ struct NutreazyApp: SwiftUI.App {
         WindowGroup {
             if (register.first != nil) {
                 MainScreen()
+                    .environment(\.realmConfiguration, globalRealmConfig)
             } else {
                 OnboardingScreen()
+                    .environment(\.realmConfiguration, globalRealmConfig)
             }
         }
     }

@@ -18,6 +18,7 @@ class MyUserManager {
 
     func openRealm() {
         do {
+            Realm.Configuration.defaultConfiguration = globalRealmConfig
             localRealm = try Realm()
         } catch {
             print("Error opening Realm", error)
