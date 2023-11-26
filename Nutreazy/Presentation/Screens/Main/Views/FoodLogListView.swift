@@ -55,10 +55,10 @@ struct FoodLogListView: View {
             .padding(20)
         }
         .onChange(of: date, perform: { _ in
-            foodLogsByDate = Array(foodLogs.where({ $0.date == date }))
+            foodLogsByDate = Array(foodLogs.where({ $0.createdAt == date }))
         })
         .onAppear {
-            foodLogsByDate = Array(foodLogs.where({ $0.date == date }))
+            foodLogsByDate = Array(foodLogs.where({ $0.createdAt == date }))
         }
     }
 }

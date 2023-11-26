@@ -20,7 +20,7 @@ enum MealType: Int, PersistableEnum {
 class FoodLogModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var foodInfo: FoodInfoModel?
-    @Persisted var date: Date
+    @Persisted var createdAt: Date
     @Persisted var amount: Double
     @Persisted var mealType: MealType?
     @Persisted var calories: Double       // in cal
@@ -28,10 +28,10 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
     @Persisted var protein: Double        // in grams
     @Persisted var fat: Double            // in grams
 
-    convenience init(foodInfo: FoodInfoModel, date: Date = Date().withoutTime(), amount: Double, mealType: MealType?) {
+    convenience init(foodInfo: FoodInfoModel, createdAt: Date = Date(), amount: Double, mealType: MealType) {
         self.init()
         self.foodInfo = foodInfo
-        self.date = date
+        self.createdAt = createdAt
         self.amount = amount
         self.mealType = mealType
         self.calories = foodInfo.calories * amount
