@@ -10,8 +10,10 @@ import RealmSwift
 
 struct FoodLogListView: View {
     @ObservedResults(UserModel.self) private var users
+    @ObservedResults(FoodLogModel.self) private var foodLogs
     
     @State private var date: Date = Date().withoutTime()
+    @State private var foodLogsByDate: [FoodLogModel] = []
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -29,9 +31,9 @@ struct FoodLogListView: View {
                             .foregroundColor(TEXT_COLOR)
                     }
 
-                    StatsView()
+                    StatsView(date: $date, foodLogsByDate: $foodLogsByDate)
 
-                    FoodDiaryView(date: $date)
+                    FoodDiaryView(foodLogsByDate: $foodLogsByDate)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding(.horizontal, 20)
@@ -51,6 +53,12 @@ struct FoodLogListView: View {
                 ]
             ) {}
             .padding(20)
+        }
+        .onChange(of: date, perform: { _ in
+            foodLogsByDate = Array(foodLogs.where({ $0.date == date }))
+        })
+        .onAppear {
+            foodLogsByDate = Array(foodLogs.where({ $0.date == date }))
         }
     }
 }

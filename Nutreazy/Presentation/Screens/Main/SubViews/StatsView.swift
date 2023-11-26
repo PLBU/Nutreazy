@@ -6,8 +6,30 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct StatsView: View {
+    @ObservedResults(UserModel.self) private var users
+    
+    @Binding var date: Date
+    @Binding var foodLogsByDate: [FoodLogModel]
+    
+    private var currCalorie: Double {
+        get {
+            foodLogsByDate.reduce(0) { prev, foodLog in
+                prev + foodLog.calories
+            }
+        }
+    }
+    
+    private var currProtein: Double {
+        get {
+            foodLogsByDate.reduce(0) { prev, foodLog in
+                prev + foodLog.protein
+            }
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Group {
@@ -28,7 +50,7 @@ struct StatsView: View {
                         .font(SUBHEADING_5)
                         .foregroundColor(TEXT_COLOR)
 
-                    Chip(text: "2300/2500cal")
+                    Chip(text: "\(Int(currCalorie))/\(Int(users.first?.targetCalorie ?? 0))cal")
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -36,7 +58,7 @@ struct StatsView: View {
                         .font(SUBHEADING_5)
                         .foregroundColor(TEXT_COLOR)
 
-                    Chip(text: "65/130g")
+                    Chip(text: "\(Int(currProtein))/\(Int(users.first?.targetProtein ?? 0))g")
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -59,6 +81,6 @@ struct StatsView: View {
 
 struct StatsViiew_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView()
+        StatsView(date: .constant(Date()), foodLogsByDate: .constant([]))
     }
 }

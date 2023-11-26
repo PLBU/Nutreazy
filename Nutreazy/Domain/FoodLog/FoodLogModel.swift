@@ -36,7 +36,7 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
         self.mealType = mealType
         self.calories = foodInfo.calories * amount
         self.carbohydrate = foodInfo.carbohydrate * amount
-        self.protein = foodInfo.protein * protein
-        self.fat = foodInfo.fat * fat
+        self.protein = foodInfo.protein * amount
+        self.fat = foodInfo.fat * amount
     }
 }

@@ -11,13 +11,13 @@ import RealmSwift
 struct FoodDiaryView: View {
     @ObservedResults(FoodLogModel.self) private var foodLogs
     
-    @Binding var date: Date
+    @Binding var foodLogsByDate: [FoodLogModel]
     @State private var filteredFoodLogs = [MealType: [FoodLogModel]]()
     
     private func filterFoodLogs() {
         filteredFoodLogs = [MealType: [FoodLogModel]]()
         
-        for foodLog in foodLogs.where({ $0.date == date }) {
+        for foodLog in foodLogsByDate {
             if filteredFoodLogs.keys.contains(foodLog.mealType!) {
                 filteredFoodLogs[foodLog.mealType!]!.append(foodLog)
             } else {
@@ -71,25 +71,25 @@ struct FoodDiaryView: View {
                 }
             }
         }
-        .onChange(of: date, perform: { _ in
+        .onChange(of: foodLogsByDate, perform: { _ in
             filterFoodLogs()
         })
         .onAppear {
-            $foodLogs.append(
-                FoodLogModel(
-                    foodInfo: FoodInfoModel(
-                        name: "Rice",
-                        servingName: "g",
-                        servingSize: 1,
-                        calories: 2,
-                        carbohydrate: 1,
-                        protein: 2,
-                        fat: 1
-                    ),
-                    amount: 125,
-                    mealType: MealType.ExtraMeal
-                )
-            )
+//            $foodLogs.append(
+//                FoodLogModel(
+//                    foodInfo: FoodInfoModel(
+//                        name: "Ayam Rebus",
+//                        servingName: "g",
+//                        servingSize: 1,
+//                        calories: 1,
+//                        carbohydrate: 1,
+//                        protein: 4,
+//                        fat: 1
+//                    ),
+//                    amount: 50,
+//                    mealType: MealType.ExtraMeal
+//                )
+//            )
             filterFoodLogs()
         }
     }
@@ -97,6 +97,6 @@ struct FoodDiaryView: View {
 
 struct FoodDiaryView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodDiaryView(date: .constant(Date()))
+        FoodDiaryView(foodLogsByDate: .constant([]))
     }
 }
