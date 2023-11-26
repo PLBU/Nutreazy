@@ -54,7 +54,7 @@ struct FoodLogGroup: View {
                     
                     Spacer()
                     
-                    Chip(text: String(totalCalories) + "cal")
+                    Chip(text: String(Int(totalCalories)) + "cal")
                 }
             }
         }

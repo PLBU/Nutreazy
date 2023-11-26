@@ -14,13 +14,13 @@ struct FoodLogRow: View {
         HStack{
             Group {
                 Text(foodLog.foodInfo?.name ?? "") +
-                Text(" (" + String(foodLog.amount)) +
+                Text(" (" + String(Int(foodLog.amount))) +
                 Text(String(foodLog.foodInfo?.servingName ?? "") + ")")
             }
             .font(PARAGRAPH_1)
             .foregroundColor(TEXT_COLOR)
             Spacer()
-            Chip(text: String(foodLog.calories) + "cal")
+            Chip(text: String(Int(foodLog.calories)) + "cal")
         }
     }
 }
