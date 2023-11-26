@@ -35,15 +35,16 @@ class UserModel: Object, ObjectKeyIdentifiable {
     @Persisted var height: Int
     @Persisted var weight: Double
     @Persisted var activity: ActivityIntensity
-    @Persisted var targetCalorie: Int
-    @Persisted var maintenanceCalorie: Int
+    @Persisted var targetCalorie: Double
+    @Persisted var targetProtein: Double
+    @Persisted var maintenanceCalorie: Double
     @Persisted var dietTarget: DietTarget? {
         didSet {
             switch (dietTarget) {
                 case .Decrease:
-                    self.targetCalorie = maintenanceCalorie - Int(15.0/100.0 * Double(maintenanceCalorie))
+                    self.targetCalorie = maintenanceCalorie - (15.0/100.0 * maintenanceCalorie)
                 case .Increase:
-                    self.targetCalorie = maintenanceCalorie + Int(15.0/100.0 * Double(maintenanceCalorie))
+                    self.targetCalorie = maintenanceCalorie + (15.0/100.0 * maintenanceCalorie)
                 default:
                     self.targetCalorie = maintenanceCalorie
             }
@@ -59,6 +60,7 @@ class UserModel: Object, ObjectKeyIdentifiable {
         self.weight = weight
         self.activity = activity
         self.targetCalorie = -1
+        self.targetProtein = 2.2 * weight
         self.dietTarget = nil
         self.maintenanceCalorie = countMaintenanceCalorie()
     }
@@ -67,7 +69,7 @@ class UserModel: Object, ObjectKeyIdentifiable {
         return UserModel(name: "", gender: Gender.Male, age: 0, height: 0, weight: 0, activity: ActivityIntensity.Athlete)
     }
     
-    func countMaintenanceCalorie() -> Int {
+    func countMaintenanceCalorie() -> Double {
         // Follows Mifflin St. Jeor Formula
         var BMR: Double
         if (self.gender == Gender.Male) {
@@ -90,7 +92,7 @@ class UserModel: Object, ObjectKeyIdentifiable {
                 TDEE = BMR * 1.9
         }
         
-        return Int(TDEE)
+        return TDEE
     }
     
     func toState() -> UserState {

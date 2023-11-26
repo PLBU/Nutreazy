@@ -20,7 +20,7 @@ struct StrategyView: View {
             case .Decrease:
                 result += "turun berarti asupan kalorimu setiap harinya harus di bawah \(calorie)cal. Nizy rekomen kurangin 15%."
             case .Increase:
-                result += "naik berarti asupan kalorimu setiap harinya harus di atas. Nizy rekomen naikin 15%."
+                result += "naik berarti asupan kalorimu setiap harinya harus di atas \(calorie)cal. Nizy rekomen naikin 15%."
             default:
                 result += "tetap berarti asupan kalorimu setiap harinya harus stay"
         }
@@ -36,12 +36,18 @@ struct StrategyView: View {
                         Text("Maintenance Calorie kamu\n")
                             .font(HEADING_2)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(users.first?.maintenanceCalorie ?? 0)cal")
+                        Text("\(Int(users.first?.maintenanceCalorie ?? 0))cal")
                             .font(HEADING_3)
                             .foregroundColor(TEXT_COLOR)
                     }
                     
-                    Text(getExplanationString(name: users.first?.name ?? "", calorie: users.first?.maintenanceCalorie ?? 0, dietTarget: users.first?.dietTarget ?? DietTarget.Maintain))
+                    Text(
+                        getExplanationString(
+                            name: users.first?.name ?? "",
+                            calorie: Int(users.first?.maintenanceCalorie ?? 0),
+                            dietTarget: users.first?.dietTarget ?? DietTarget.Maintain
+                        )
+                    )
                         .font(PARAGRAPH_1)
                         .foregroundColor(TEXT_COLOR)
                     
@@ -49,7 +55,7 @@ struct StrategyView: View {
                         Text("Nizy coba targetin asupan kalori \(users.first?.name ?? "") di ")
                             .font(HEADING_5)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(users.first?.targetCalorie ?? 0)cal")
+                        Text("\(Int(users.first?.targetCalorie ?? 0))cal")
                             .font(HEADING_3)
                             .foregroundColor(PRIMARY_COLOR) +
                         Text(" ya")
