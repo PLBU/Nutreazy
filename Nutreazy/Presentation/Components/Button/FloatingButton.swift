@@ -57,7 +57,11 @@ struct ExpandableButtonPanel: View {
             Button(
                 action: {
                     self.primaryButton.action()
-                    if secondaryButtons != nil { isExpanded.toggle() }
+                    if secondaryButtons != nil {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
+                    }
                 },
                 label: {
                     primaryButton.label

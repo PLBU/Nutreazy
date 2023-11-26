@@ -27,7 +27,9 @@ struct FoodLogGroup: View {
             .font(HEADING_5)
             .foregroundColor(TEXT_COLOR)
             .onTapGesture {
-                isExpanded.toggle()
+                withAnimation {
+                    isExpanded.toggle()
+                }
             }
         }
     }
