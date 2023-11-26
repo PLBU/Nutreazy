@@ -14,6 +14,8 @@ struct StatsView: View {
     @Binding var date: Date
     @Binding var foodLogsByDate: [FoodLogModel]
     
+    @State private var isShowingDatePicker = false
+    
     private var currCalorie: Double {
         get {
             foodLogsByDate.reduce(0) { prev, foodLog in
@@ -32,17 +34,28 @@ struct StatsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Group {
-                Text("Stats")
-                    .foregroundColor(PRIMARY_COLOR) +
-                Text("-mu ")
-                    .foregroundColor(TEXT_COLOR) +
-                Text("hari ini")
-                    .underline()
-                    .foregroundColor(TEXT_COLOR) +
-                Text(" 📊")
+            HStack {
+                Group {
+                    Text("Stats")
+                        .foregroundColor(PRIMARY_COLOR) +
+                    Text("-mu di")
+                        .foregroundColor(TEXT_COLOR)
+                }
+                .font(HEADING_4)
+                
+                Text(date.getFormattedDate())
+                    .font(HEADING_4)
+                    .foregroundColor(PRIMARY_COLOR)
+                    .overlay(
+                        DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
+                            .opacity(0.02)
+                            .tint(PRIMARY_COLOR)
+                            .fixedSize(horizontal: true, vertical: true)
+                    )
+                
+                Text("📊")
+                    .font(HEADING_4)
             }
-            .font(HEADING_4)
 
             HStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 8) {
