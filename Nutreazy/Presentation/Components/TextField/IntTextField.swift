@@ -10,6 +10,7 @@ import SwiftUI
 
 struct IntTextField: View {
     @Binding var value: String
+    var placeholder: String = ""
     var label: String
     var unitName: String
     var maxLength = 3
@@ -20,7 +21,7 @@ struct IntTextField: View {
                 .font(PARAGRAPH_1)
                 .foregroundColor(TEXT_COLOR)
             Spacer()
-            IntEditText(value: $value, unitName: unitName, width: 140, isCenter: true, maxLength: maxLength)
+            IntEditText(value: $value, placeholder: placeholder, unitName: unitName, width: 140, isCenter: true, maxLength: maxLength)
         }
     }
 }

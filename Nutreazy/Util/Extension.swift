@@ -34,4 +34,8 @@ extension Date {
             return dateFormatter2.string(from: self)
         }
     }
+    
+    func getCurrentYear() -> Int {
+        return Calendar.current.component(.year, from: Date())
+    }
 }

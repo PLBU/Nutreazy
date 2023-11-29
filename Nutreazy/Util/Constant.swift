@@ -18,7 +18,8 @@ let globalRealmConfig = Realm.Configuration(
     schemaVersion: newSchemaVersion,
     migrationBlock: { migration, oldSchemaVersion in
         if (oldSchemaVersion < newSchemaVersion) {
-            // Handle the migration manually, if you rename or change dataType, if add or remove, should be not needed
+            // Handle the migration manually, if you rename, remove, or change dataType
+            // if only add property, should be not needed, automatically will be changed by Realm
         }
     }
 )

@@ -36,7 +36,7 @@ struct StrategyView: View {
                         Text("Maintenance Calorie kamu\n")
                             .font(HEADING_2)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(Int(users.first?.maintenanceCalorie ?? 0))cal")
+                        Text("\(Int( 0))cal")
                             .font(HEADING_3)
                             .foregroundColor(TEXT_COLOR)
                     }
@@ -44,8 +44,8 @@ struct StrategyView: View {
                     Text(
                         getExplanationString(
                             name: users.first?.name ?? "",
-                            calorie: Int(users.first?.maintenanceCalorie ?? 0),
-                            dietTarget: users.first?.dietTarget ?? DietTarget.Maintain
+                            calorie: 0,
+                            dietTarget: DietTarget.Maintain
                         )
                     )
                         .font(PARAGRAPH_1)
@@ -55,7 +55,7 @@ struct StrategyView: View {
                         Text("Nizy coba targetin asupan kalori \(users.first?.name ?? "") di ")
                             .font(HEADING_5)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(Int(users.first?.targetCalorie ?? 0))cal")
+                        Text("\(Int( 0))cal")
                             .font(HEADING_3)
                             .foregroundColor(PRIMARY_COLOR) +
                         Text(" ya")

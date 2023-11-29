@@ -16,7 +16,7 @@ struct TargetView: View {
     
     private func updateDietTarget(dietTarget: DietTarget) {
         do {
-            try MyUserManager.instance.setMyUserDietTarget(dietTarget: dietTarget)
+//            try MyUserManager.instance.setMyUserDietTarget(dietTarget: dietTarget)
             isGoingToInfoView = true
         } catch {
             isShowAlert = true

@@ -45,7 +45,15 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
 //        }
 //    }
     
-    convenience init(date: Date = Date().withoutTime(), weight: Double, activityIntensity: ActivityIntensity, targetProtein: Double, targetCalorie: Double, maintenanceCalorie: Double, dietTarget: DietTarget) {
+    convenience init(
+        date: Date = Date().withoutTime(),
+        weight: Double = 0,
+        activityIntensity: ActivityIntensity = ActivityIntensity.Light,
+        targetProtein: Double = 0,
+        targetCalorie: Double = 0,
+        maintenanceCalorie: Double = 0,
+        dietTarget: DietTarget = DietTarget.Decrease
+    ) {
         self.init()
         self.date = date
         self.weight = weight
@@ -54,6 +62,7 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
         self.targetCalorie = targetCalorie
         self.maintenanceCalorie = maintenanceCalorie
         self.dietTarget = dietTarget
+        self.foodLogs = List<FoodLogModel>()
     }
 
 //    func countMaintenanceCalorie() -> Double {
@@ -81,4 +90,11 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
 //
 //        return TDEE
 //    }
+    
+    func toState() -> DayLogState {
+        return DayLogState(
+            weight: String(self.weight),
+            actIntesity: activityIntensityListID[self.activityIntensity.rawValue]
+        )
+    }
 }

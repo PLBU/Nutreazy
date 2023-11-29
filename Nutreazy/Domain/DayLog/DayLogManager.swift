@@ -24,4 +24,26 @@ class DayLogManager {
             print("Error opening Realm", error)
         }
     }
+    
+    func getCurrentDayLog(date: Date = Date().withoutTime()) -> DayLogModel? {
+        return localRealm?.objects(DayLogModel.self).where({
+            $0.date == date
+        }).first ?? nil
+    }
+    
+    func addCurrentDayLog(
+        dayLog: DayLogModel,
+        date: Date = Date().withoutTime()
+    ) throws {
+        do {
+            if (getCurrentDayLog(date: date) != nil) {
+                try localRealm!.write {
+                    localRealm!.add(dayLog)
+                }
+            }
+        } catch {
+            print("Error addCurrentDayLog", error)
+            throw error
+        }
+    }
 }

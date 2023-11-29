@@ -58,21 +58,21 @@ struct StatsView: View {
             }
 
             HStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Kalori")
-                        .font(SUBHEADING_5)
-                        .foregroundColor(TEXT_COLOR)
-
-                    Chip(text: "\(Int(currCalorie))/\(Int(users.first?.targetCalorie ?? 0))cal")
-                }
-
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Protein")
-                        .font(SUBHEADING_5)
-                        .foregroundColor(TEXT_COLOR)
-
-                    Chip(text: "\(Int(currProtein))/\(Int(users.first?.targetProtein ?? 0))g")
-                }
+//                VStack(alignment: .leading, spacing: 8) {
+//                    Text("Kalori")
+//                        .font(SUBHEADING_5)
+//                        .foregroundColor(TEXT_COLOR)
+//
+//                    Chip(text: "\(Int(currCalorie))/\(Int(users.first?.targetCalorie ?? 0))cal")
+//                }
+//
+//                VStack(alignment: .leading, spacing: 8) {
+//                    Text("Protein")
+//                        .font(SUBHEADING_5)
+//                        .foregroundColor(TEXT_COLOR)
+//
+//                    Chip(text: "\(Int(currProtein))/\(Int(users.first?.targetProtein ?? 0))g")
+//                }
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Berat")
