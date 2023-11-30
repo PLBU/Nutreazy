@@ -10,17 +10,18 @@ import RealmSwift
 
 struct StrategyView: View {
     @ObservedResults(RegisterModel.self) var register
+    @ObservedResults(DayLogModel.self, where: ({ $0.date == Date().withoutTime() })) var dayLogs
     @ObservedResults(UserModel.self) var users
     @State private var isGoingToWelcomeView: Bool = false
     
-    private func getExplanationString(name: String, calorie: Int, dietTarget: DietTarget) -> String {
+    private func getExplanationString(name: String, maintenanceCal: Int, dietTarget: DietTarget) -> String {
         var result: String = "Agar berat badan \(name) "
         
         switch (dietTarget) {
             case .Decrease:
-                result += "turun berarti asupan kalorimu setiap harinya harus di bawah \(calorie)cal. Nizy rekomen kurangin 15%."
+                result += "turun berarti asupan kalorimu setiap harinya harus di bawah \(maintenanceCal)cal. Nizy rekomen kurangin 15%."
             case .Increase:
-                result += "naik berarti asupan kalorimu setiap harinya harus di atas \(calorie)cal. Nizy rekomen naikin 15%."
+                result += "naik berarti asupan kalorimu setiap harinya harus di atas \(maintenanceCal)cal. Nizy rekomen naikin 15%."
             default:
                 result += "tetap berarti asupan kalorimu setiap harinya harus stay"
         }
@@ -44,8 +45,8 @@ struct StrategyView: View {
                     Text(
                         getExplanationString(
                             name: users.first?.name ?? "",
-                            calorie: 0,
-                            dietTarget: DietTarget.Maintain
+                            maintenanceCal: Int(dayLogs.first?.maintenanceCalorie ?? 0),
+                            dietTarget: dayLogs.first?.dietTarget ?? DietTarget.Decrease
                         )
                     )
                         .font(PARAGRAPH_1)
@@ -55,7 +56,7 @@ struct StrategyView: View {
                         Text("Nizy coba targetin asupan kalori \(users.first?.name ?? "") di ")
                             .font(HEADING_5)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(Int( 0))cal")
+                        Text("\(Int(dayLogs.first?.targetCalorie ?? 0))cal")
                             .font(HEADING_3)
                             .foregroundColor(PRIMARY_COLOR) +
                         Text(" ya")

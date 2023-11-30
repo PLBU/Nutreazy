@@ -16,7 +16,12 @@ struct TargetView: View {
     
     private func updateDietTarget(dietTarget: DietTarget) {
         do {
-//            try MyUserManager.instance.setMyUserDietTarget(dietTarget: dietTarget)
+            try DayLogManager.instance.setCurrentDayLog(dietTarget: dietTarget)
+            if let currDayLog = DayLogManager.instance.getCurrentDayLog() {
+                currDayLog.setMaintenanceCalorie()
+                currDayLog.setTargetCalorie()
+                currDayLog.setTargetProtein()
+            }
             isGoingToInfoView = true
         } catch {
             isShowAlert = true

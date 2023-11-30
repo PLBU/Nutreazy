@@ -28,7 +28,12 @@ class DayLogManager {
     func getCurrentDayLog(date: Date = Date().withoutTime()) -> DayLogModel? {
         return localRealm?.objects(DayLogModel.self).where({
             $0.date == date
-        }).first ?? nil
+        }).first
+    }
+    
+    func getLastDayLog() -> DayLogModel? {
+        return localRealm?.objects(DayLogModel.self)
+            .sorted(byKeyPath: "date", ascending: false).first
     }
     
     func addCurrentDayLog(
@@ -36,13 +41,56 @@ class DayLogManager {
         date: Date = Date().withoutTime()
     ) throws {
         do {
-            if (getCurrentDayLog(date: date) != nil) {
+            if (getCurrentDayLog(date: date) == nil) {
                 try localRealm!.write {
                     localRealm!.add(dayLog)
                 }
             }
         } catch {
             print("Error addCurrentDayLog", error)
+            throw error
+        }
+    }
+    
+    func setCurrentDayLog(
+        date: Date = Date().withoutTime(),
+        weight: Double? = nil,
+        activityIntensity: ActivityIntensity? = nil,
+        targetProtein: Double? = nil,
+        targetCalorie: Double? = nil,
+        maintenanceCalorie: Double? = nil,
+        dietTarget: DietTarget? = nil
+    ) throws {
+        do {
+            if let currDayLog = getCurrentDayLog(date: date) {
+                try localRealm!.write {
+                    if let weight = weight {
+                        currDayLog.weight = weight
+                    }
+                    
+                    if let activityIntensity = activityIntensity {
+                        currDayLog.activityIntensity = activityIntensity
+                    }
+
+                    if let dietTarget = dietTarget {
+                        currDayLog.dietTarget = dietTarget
+                    }
+                    
+                    if let targetProtein = targetProtein {
+                        currDayLog.targetProtein = targetProtein
+                    }
+                    
+                    if let targetCalorie = targetCalorie {
+                        currDayLog.targetCalorie = targetCalorie
+                    }
+                    
+                    if let maintenanceCalorie = maintenanceCalorie {
+                        currDayLog.maintenanceCalorie = maintenanceCalorie
+                    }
+                }
+            }
+        } catch {
+            print("Error setCurrentDayLog", error)
             throw error
         }
     }

@@ -45,8 +45,11 @@ struct IntroductionView: View {
                     DropdownField(value: $dayLogState.actIntesity, label: "Aktivitas*", options: activityIntensityListID, info: "Mageran => Tidak olahraga\nRingan => Olahraga 1-2x seminggu\nSedang => 3-5x seminggu\nBerat => 6-7x seminggu\nAtlet => 2x sehari")
                         .padding(.bottom, 16)
                 }
-                .onChange(of: userState) { _ in
-                    isButtonEnabled = userState.isValid() && dayLogState.isValid()
+                .onChange(of: userState) {
+                    isButtonEnabled = $0.isValid() && dayLogState.isValid()
+                }
+                .onChange(of: dayLogState) {
+                    isButtonEnabled = userState.isValid() && $0.isValid()
                 }
             }
             

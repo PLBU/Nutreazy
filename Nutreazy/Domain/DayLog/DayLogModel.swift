@@ -32,64 +32,73 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
     @Persisted var maintenanceCalorie: Double
     @Persisted var dietTarget: DietTarget
     @Persisted var foodLogs: List<FoodLogModel>
-//    {
-//        didSet {
-//            switch (dietTarget) {
-//                case .Decrease:
-//                    self.targetCalorie = maintenanceCalorie - (15.0/100.0 * maintenanceCalorie)
-//                case .Increase:
-//                    self.targetCalorie = maintenanceCalorie + (15.0/100.0 * maintenanceCalorie)
-//                default:
-//                    self.targetCalorie = maintenanceCalorie
-//            }
-//        }
-//    }
     
     convenience init(
         date: Date = Date().withoutTime(),
-        weight: Double = 0,
-        activityIntensity: ActivityIntensity = ActivityIntensity.Light,
-        targetProtein: Double = 0,
-        targetCalorie: Double = 0,
-        maintenanceCalorie: Double = 0,
-        dietTarget: DietTarget = DietTarget.Decrease
+        weight: Double? = nil,
+        activityIntensity: ActivityIntensity? = nil,
+        targetProtein: Double? = nil,
+        targetCalorie: Double? = nil,
+        maintenanceCalorie: Double? = nil,
+        dietTarget: DietTarget? = nil
     ) {
         self.init()
+        
+        let lastDayLog = DayLogManager.instance.getLastDayLog()
+        
         self.date = date
-        self.weight = weight
-        self.activityIntensity = activityIntensity
-        self.targetProtein = targetProtein
-        self.targetCalorie = targetCalorie
-        self.maintenanceCalorie = maintenanceCalorie
-        self.dietTarget = dietTarget
+        self.weight = weight ?? lastDayLog?.weight ?? 0
+        self.activityIntensity = activityIntensity ?? lastDayLog?.activityIntensity ?? ActivityIntensity.Light
+        self.targetProtein = targetProtein ?? lastDayLog?.targetProtein ?? 0
+        self.targetCalorie = targetCalorie ?? lastDayLog?.targetCalorie ?? 0
+        self.maintenanceCalorie = maintenanceCalorie ?? lastDayLog?.maintenanceCalorie ?? 0
+        self.dietTarget = dietTarget ?? lastDayLog?.dietTarget ?? DietTarget.Decrease
         self.foodLogs = List<FoodLogModel>()
     }
+    
+    func setTargetProtein() {
+        self.targetProtein = self.weight * 2.2
+    }
+    
+    func setTargetCalorie() {
+        switch (dietTarget) {
+            case .Decrease:
+                self.targetCalorie = maintenanceCalorie - (15.0/100.0 * maintenanceCalorie)
+            case .Increase:
+                self.targetCalorie = maintenanceCalorie + (15.0/100.0 * maintenanceCalorie)
+            default:
+                self.targetCalorie = maintenanceCalorie
+        }
+    }
 
-//    func countMaintenanceCalorie() -> Double {
-//        // Follows Mifflin St. Jeor Formula
-//        var BMR: Double
-//        if (self.gender == Gender.Male) {
-//            BMR = 9.99 * self.weight + 6.25 * Double(self.height) - 4.92 * Double(self.age) + 5
-//        } else {
-//            BMR = 9.99 * self.weight + 6.25 * Double(self.height) - 4.92 * Double(self.age) - 161
-//        }
-//
-//        var TDEE: Double
-//        switch (self.activity) {
-//            case .Sedentary:
-//                TDEE = BMR * 1.2
-//            case .Light:
-//                TDEE = BMR * 1.375
-//            case .Moderate:
-//                TDEE = BMR * 1.55
-//            case .Heavy:
-//                TDEE = BMR * 1.725
-//            default:
-//                TDEE = BMR * 1.9
-//        }
-//
-//        return TDEE
-//    }
+    func setMaintenanceCalorie() {
+        if let myUser = MyUserManager.instance.getMyUser() {
+            // Follows Mifflin St. Jeor Formula
+            var BMR: Double
+            
+            if (myUser.gender == Gender.Male) {
+                BMR = 9.99 * self.weight + 6.25 * Double(myUser.height) - 4.92 * Double(myUser.age) + 5
+            } else {
+                BMR = 9.99 * self.weight + 6.25 * Double(myUser.height) - 4.92 * Double(myUser.age) - 161
+            }
+            
+            var TDEE: Double
+            switch (self.activityIntensity) {
+                case .Sedentary:
+                    TDEE = BMR * 1.2
+                case .Light:
+                    TDEE = BMR * 1.375
+                case .Moderate:
+                    TDEE = BMR * 1.55
+                case .Heavy:
+                    TDEE = BMR * 1.725
+                default:
+                    TDEE = BMR * 1.9
+            }
+            
+            self.maintenanceCalorie = TDEE
+        }
+    }
     
     func toState() -> DayLogState {
         return DayLogState(
