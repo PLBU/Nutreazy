@@ -89,6 +89,16 @@ class DayLogManager {
                         currDayLog.maintenanceCalorie = maintenanceCalorie
                     }
                 }
+            } else {
+                try addCurrentDayLog(dayLog: DayLogModel(
+                    date: date,
+                    weight: weight,
+                    activityIntensity: activityIntensity,
+                    targetProtein: targetProtein,
+                    targetCalorie: targetCalorie,
+                    maintenanceCalorie: maintenanceCalorie,
+                    dietTarget: dietTarget
+                ))
             }
         } catch {
             print("Error setCurrentDayLog", error)

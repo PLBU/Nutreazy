@@ -42,7 +42,12 @@ struct ExpandableButtonPanel: View {
         VStack {
             if secondaryButtons != nil && isExpanded {
                 ForEach(secondaryButtons!) { button in
-                    Button(action: {button.action()}, label: {
+                    Button(action: {
+                        button.action()
+                        withAnimation{    
+                            isExpanded.toggle()
+                        }
+                    }, label: {
                         button.label
                             .renderingMode(.template)
                             .resizable()

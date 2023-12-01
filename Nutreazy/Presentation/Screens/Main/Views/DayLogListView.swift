@@ -14,6 +14,7 @@ struct DayLogListView: View {
     
     @State private var date: Date = Date().withoutTime()
     @State private var dayLogByDate: DayLogModel = DayLogModel()
+    @State private var isShowAddWeightDialog: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -44,7 +45,11 @@ struct DayLogListView: View {
                 secondaryButtons: [
                     ExpandableButtonItem(
                         label: Image(systemName: "scalemass.fill"),
-                        action: { print("I am clicked 3") }
+                        action: {
+                            withAnimation {
+                                isShowAddWeightDialog = true
+                            }
+                        }
                     ),
                     ExpandableButtonItem(
                         label: Image(systemName: "fork.knife"),
@@ -53,6 +58,10 @@ struct DayLogListView: View {
                 ]
             ) {}
             .padding(20)
+            
+            CustomDialog(isActive: $isShowAddWeightDialog) {
+                AddWeightView(date: $date, isShowDialog: $isShowAddWeightDialog)
+            }
         }
         .onChange(of: date, perform: { _ in
             dayLogByDate = dayLogs.where({ $0.date == date.withoutTime() }).first ?? DayLogModel(date: date.withoutTime())
