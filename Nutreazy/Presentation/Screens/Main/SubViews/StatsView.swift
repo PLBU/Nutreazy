@@ -9,28 +9,10 @@ import SwiftUI
 import RealmSwift
 
 struct StatsView: View {
-    @ObservedResults(UserModel.self) private var users
-    
     @Binding var date: Date
-    @Binding var foodLogsByDate: [FoodLogModel]
+    @Binding var dayLogByDate: DayLogModel
     
     @State private var isShowingDatePicker = false
-    
-    private var currCalorie: Double {
-        get {
-            foodLogsByDate.reduce(0) { prev, foodLog in
-                prev + foodLog.calories
-            }
-        }
-    }
-    
-    private var currProtein: Double {
-        get {
-            foodLogsByDate.reduce(0) { prev, foodLog in
-                prev + foodLog.protein
-            }
-        }
-    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -58,28 +40,28 @@ struct StatsView: View {
             }
 
             HStack(spacing: 16) {
-//                VStack(alignment: .leading, spacing: 8) {
-//                    Text("Kalori")
-//                        .font(SUBHEADING_5)
-//                        .foregroundColor(TEXT_COLOR)
-//
-//                    Chip(text: "\(Int(currCalorie))/\(Int(users.first?.targetCalorie ?? 0))cal")
-//                }
-//
-//                VStack(alignment: .leading, spacing: 8) {
-//                    Text("Protein")
-//                        .font(SUBHEADING_5)
-//                        .foregroundColor(TEXT_COLOR)
-//
-//                    Chip(text: "\(Int(currProtein))/\(Int(users.first?.targetProtein ?? 0))g")
-//                }
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Kalori")
+                        .font(SUBHEADING_5)
+                        .foregroundColor(TEXT_COLOR)
+
+                    Chip(text: "\(Int(dayLogByDate.currentCalorie))/\(Int(dayLogByDate.targetCalorie))cal")
+                }
+
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Protein")
+                        .font(SUBHEADING_5)
+                        .foregroundColor(TEXT_COLOR)
+
+                    Chip(text: "\(Int(dayLogByDate.currentProtein))/\(Int(dayLogByDate.targetProtein))g")
+                }
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Berat")
                         .font(SUBHEADING_5)
                         .foregroundColor(TEXT_COLOR)
 
-                    Chip(text: "65kg")
+                    Chip(text: "\(dayLogByDate.weight)kg")
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -94,6 +76,6 @@ struct StatsView: View {
 
 struct StatsViiew_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(date: .constant(Date()), foodLogsByDate: .constant([]))
+        StatsView(date: .constant(Date()), dayLogByDate: .constant(DayLogModel()))
     }
 }

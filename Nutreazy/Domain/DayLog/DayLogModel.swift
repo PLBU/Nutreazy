@@ -33,6 +33,22 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
     @Persisted var dietTarget: DietTarget
     @Persisted var foodLogs: List<FoodLogModel>
     
+    var currentCalorie: Double {
+        get {
+            foodLogs.reduce(0) { prev, foodLog in
+                prev + foodLog.calories
+            }
+        }
+    }
+    
+    var currentProtein: Double {
+        get {
+            foodLogs.reduce(0) { prev, foodLog in
+                prev + foodLog.protein
+            }
+        }
+    }
+    
     convenience init(
         date: Date = Date().withoutTime(),
         weight: Double? = nil,
@@ -44,10 +60,10 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
     ) {
         self.init()
         
-        let lastDayLog = DayLogManager.instance.getLastDayLog()
+        let lastDayLog = DayLogManager.instance.getLastDayLog(date: date)
         
         self.date = date
-        self.weight = weight ?? lastDayLog?.weight ?? 0
+        self.weight = weight ?? 0
         self.activityIntensity = activityIntensity ?? lastDayLog?.activityIntensity ?? ActivityIntensity.Light
         self.targetProtein = targetProtein ?? lastDayLog?.targetProtein ?? 0
         self.targetCalorie = targetCalorie ?? lastDayLog?.targetCalorie ?? 0

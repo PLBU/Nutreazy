@@ -31,8 +31,9 @@ class DayLogManager {
         }).first
     }
     
-    func getLastDayLog() -> DayLogModel? {
+    func getLastDayLog(date: Date = Date().withoutTime()) -> DayLogModel? {
         return localRealm?.objects(DayLogModel.self)
+            .where({ $0.date <= date })
             .sorted(byKeyPath: "date", ascending: false).first
     }
     

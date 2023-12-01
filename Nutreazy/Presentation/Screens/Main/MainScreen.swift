@@ -10,7 +10,7 @@ import SwiftUI
 struct MainScreen: View {
     var body: some View {
         NavigationStack{
-            FoodLogListView()
+            DayLogListView()
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  FoodLogListView.swift
+//  DayLogListView.swift
 //  Nutreazy
 //
 //  Created by Renaldi Arlin on 22/11/23.
@@ -8,12 +8,12 @@
 import SwiftUI
 import RealmSwift
 
-struct FoodLogListView: View {
+struct DayLogListView: View {
     @ObservedResults(UserModel.self) private var users
-    @ObservedResults(FoodLogModel.self) private var foodLogs
+    @ObservedResults(DayLogModel.self) private var dayLogs
     
     @State private var date: Date = Date().withoutTime()
-    @State private var foodLogsByDate: [FoodLogModel] = []
+    @State private var dayLogByDate: DayLogModel = DayLogModel()
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -31,9 +31,7 @@ struct FoodLogListView: View {
                             .foregroundColor(TEXT_COLOR)
                     }
 
-                    StatsView(date: $date, foodLogsByDate: $foodLogsByDate)
-
-                    FoodDiaryView(foodLogsByDate: $foodLogsByDate)
+                    StatsView(date: $date, dayLogByDate: $dayLogByDate)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding(.horizontal, 20)
@@ -55,16 +53,16 @@ struct FoodLogListView: View {
             .padding(20)
         }
         .onChange(of: date, perform: { _ in
-            foodLogsByDate = Array(foodLogs.where({ $0.createdAt == date }))
+            dayLogByDate = dayLogs.where({ $0.date == date.withoutTime() }).first ?? DayLogModel(date: date.withoutTime())
         })
         .onAppear {
-            foodLogsByDate = Array(foodLogs.where({ $0.createdAt == date }))
+            dayLogByDate = dayLogs.where({ $0.date == date.withoutTime() }).first ?? DayLogModel()
         }
     }
 }
 
 struct FoodLogListView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodLogListView()
+        DayLogListView()
     }
 }
