@@ -56,7 +56,6 @@ struct IntroductionView: View {
             CustomButton(label: "Lanjut", isEnabled: $isButtonEnabled) {
                 do {
                     try MyUserManager.instance.setMyUser(user: userState.toModel())
-                    try DayLogManager.instance.addCurrentDayLog(dayLog: dayLogState.toModel())
                     isGoingToTargetView = true
                 } catch {
                     isShowAlert = true
@@ -65,20 +64,16 @@ struct IntroductionView: View {
             .frame(alignment: .bottom)
         }
         .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
-            Button("Ok", role: .cancel) { }
+            Button("Ok", role: .cancel) {}
         }
         .onAppear() {
             if let myUser = MyUserManager.instance.getMyUser() {
                 userState = myUser.toState()
             }
-            
-            if let dayLog = DayLogManager.instance.getCurrentDayLog() {
-                dayLogState = dayLog.toState()
-            }
         }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToTargetView) {
-            TargetView()
+            TargetView(currDayLog: dayLogState.toModel())
         }
         .navigationBarBackButtonHidden(true)
     }

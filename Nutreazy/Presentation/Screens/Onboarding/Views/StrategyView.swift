@@ -10,9 +10,11 @@ import RealmSwift
 
 struct StrategyView: View {
     @ObservedResults(RegisterModel.self) var register
-    @ObservedResults(DayLogModel.self, where: ({ $0.date == Date().withoutTime() })) var dayLogs
     @ObservedResults(UserModel.self) var users
     @State private var isGoingToWelcomeView: Bool = false
+    @State private var isShowAlert: Bool = false
+    
+    var currDayLog: DayLogModel
     
     private func getExplanationString(name: String, maintenanceCal: Int, dietTarget: DietTarget) -> String {
         var result: String = "Agar berat badan \(name) "
@@ -27,6 +29,15 @@ struct StrategyView: View {
         }
         
         return result
+    }
+    
+    private func registerLocally() {
+        do {
+            try DayLogManager.instance.addCurrentDayLog(dayLog: currDayLog)
+            $register.append(RegisterModel())
+        } catch {
+            isShowAlert = true
+        }
     }
     
     var body: some View {
@@ -45,8 +56,8 @@ struct StrategyView: View {
                     Text(
                         getExplanationString(
                             name: users.first?.name ?? "",
-                            maintenanceCal: Int(dayLogs.first?.maintenanceCalorie ?? 0),
-                            dietTarget: dayLogs.first?.dietTarget ?? DietTarget.Decrease
+                            maintenanceCal: Int(currDayLog.maintenanceCalorie),
+                            dietTarget: currDayLog.dietTarget
                         )
                     )
                         .font(PARAGRAPH_1)
@@ -56,7 +67,7 @@ struct StrategyView: View {
                         Text("Nizy coba targetin asupan kalori \(users.first?.name ?? "") di ")
                             .font(HEADING_5)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(Int(dayLogs.first?.targetCalorie ?? 0))cal")
+                        Text("\(Int(currDayLog.targetCalorie))cal")
                             .font(HEADING_3)
                             .foregroundColor(PRIMARY_COLOR) +
                         Text(" ya")
@@ -75,20 +86,21 @@ struct StrategyView: View {
             }
             .padding(.bottom, 24)
             
-            CustomButton(label: "Mulai!") {
-                $register.append(RegisterModel())
-            }
+            CustomButton(label: "Mulai!") { registerLocally() }
         }
         .padding(40)
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $isGoingToWelcomeView) {
             WelcomeView()
         }
+        .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
+            Button("Ok", role: .cancel) {}
+        }
     }
 }
 
 struct StrategyView_Previews: PreviewProvider {
     static var previews: some View {
-        StrategyView()
+        StrategyView(currDayLog: DayLogModel())
     }
 }

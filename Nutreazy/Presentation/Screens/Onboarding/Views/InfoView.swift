@@ -12,6 +12,8 @@ struct InfoView: View {
     @ObservedResults(UserModel.self) var users
     @State var isGoingToStrategyView: Bool = false
     
+    var currDayLog: DayLogModel
+    
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
@@ -108,7 +110,7 @@ struct InfoView: View {
         }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToStrategyView) {
-            StrategyView()
+            StrategyView(currDayLog: currDayLog)
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -116,6 +118,6 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
+        InfoView(currDayLog: DayLogModel())
     }
 }

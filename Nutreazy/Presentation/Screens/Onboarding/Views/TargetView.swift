@@ -14,18 +14,14 @@ struct TargetView: View {
     @State private var isShowAlert: Bool = false
     @State private var isGoingToInfoView: Bool = false
     
+    var currDayLog: DayLogModel
+    
     private func updateDietTarget(dietTarget: DietTarget) {
-        do {
-            try DayLogManager.instance.setCurrentDayLog(dietTarget: dietTarget)
-            if let currDayLog = DayLogManager.instance.getCurrentDayLog() {
-                currDayLog.setMaintenanceCalorie()
-                currDayLog.setTargetCalorie()
-                currDayLog.setTargetProtein()
-            }
-            isGoingToInfoView = true
-        } catch {
-            isShowAlert = true
-        }
+        currDayLog.dietTarget = dietTarget
+        currDayLog.setMaintenanceCalorie()
+        currDayLog.setTargetCalorie()
+        currDayLog.setTargetProtein()
+        isGoingToInfoView = true
     }
     
     var body: some View {
@@ -53,12 +49,9 @@ struct TargetView: View {
                 }
             }
         }
-        .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
-            Button("Ok", role: .cancel) { }
-        }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToInfoView) {
-            InfoView()
+            InfoView(currDayLog: currDayLog)
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -66,6 +59,6 @@ struct TargetView: View {
 
 struct TargetView_Previews: PreviewProvider {
     static var previews: some View {
-        TargetView()
+        TargetView(currDayLog: DayLogModel())
     }
 }
