@@ -32,6 +32,8 @@ struct DayLogListView: View {
                     }
 
                     StatsView(date: $date, dayLogByDate: $dayLogByDate)
+                    
+                    FoodDiaryView(dayLogByDate: $dayLogByDate)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding(.horizontal, 20)
