@@ -9,14 +9,15 @@ import Foundation
 
 extension Date {
     func withoutTime() -> Date {
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
+        var components = Calendar.current.dateComponents([.year, .month, .day], from: self)
+        components.timeZone = NSTimeZone.system
         let date = Calendar.current.date(from: components)
         return date!
     }
     
     func getFormattedDate() -> String {
         let today = Date().withoutTime()
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)!
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)!.withoutTime()
 
         let dateFormatter1 = DateFormatter()
         dateFormatter1.dateFormat = "d MMM"
