@@ -28,4 +28,12 @@ class FoodInfoModel: Object, ObjectKeyIdentifiable {
         self.protein = protein
         self.fat = fat
     }
+    
+    func getSummaryString() -> String {
+        let servingSizeString = (floor(servingSize) == servingSize)
+            ? String(Int(servingSize))
+            : String(format: "%.2f", servingSize)
+        
+        return "\(self.name) (\(servingSizeString)\(self.servingName))"
+    }
 }
