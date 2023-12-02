@@ -36,18 +36,18 @@ struct CustomDialog<Content: View>: View {
 struct CustomDialog_Previews: PreviewProvider {
     static var previews: some View {
         CustomDialog(isActive: .constant(true)) {
-            VStack(alignment: .leading, spacing: 24) {
-                Text("Tambah Berat Badan")
-                    .font(HEADING_5)
-                    .foregroundColor(TEXT_COLOR)
-                
-                DoubleEditText(value: .constant("0"), unitName: "kg", width: 100, isCenter: true, maxLength: 3)
-                    .frame(maxWidth: .infinity)
-                
-                CustomButton(label: "Tambah") {
-                    print("Something")
-                }
-            }
+            AddFoodLogView(
+                foodInfo: FoodInfoModel(
+                    name: "Dada Ayam",
+                    servingName: "g",
+                    servingSize: 1,
+                    calories: 2,
+                    carbohydrate: 2,
+                    protein: 1,
+                    fat: 1
+                ),
+                isShowDialog: .constant(false)
+            )
         }
     }
 }

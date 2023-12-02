@@ -23,6 +23,8 @@
 		60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD02ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
 		60020DD12ADD390B00209EE7 /* EditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60020DCE2ADD390B00209EE7 /* EditText.swift */; };
+		60034C622B1B4115001758DF /* AddFoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60034C612B1B4115001758DF /* AddFoodInfoView.swift */; };
+		60034C642B1B4148001758DF /* FoodLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60034C632B1B4148001758DF /* FoodLogState.swift */; };
 		6006F9842B177B5000FE366F /* DayLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6006F9832B177B5000FE366F /* DayLogState.swift */; };
 		60225C782B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */; };
 		60225C792B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */; };
@@ -64,6 +66,7 @@
 		607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E5AF32B0F940100E8452A /* FloatingButton.swift */; };
 		609840402B1B25B700C451A8 /* FoodInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098403F2B1B25B700C451A8 /* FoodInfoListView.swift */; };
 		609840422B1B377100C451A8 /* FoodInfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609840412B1B377100C451A8 /* FoodInfoRowView.swift */; };
+		609840442B1B3B2400C451A8 /* AddFoodLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609840432B1B3B2400C451A8 /* AddFoodLogView.swift */; };
 		609B1F5A2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
 		609B1F5B2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
 		609B1F5C2B089E0B00AAC37B /* IntEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B1F592B089E0B00AAC37B /* IntEditText.swift */; };
@@ -124,6 +127,8 @@
 		60020DC92ADD353300209EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60020DCA2ADD37A700209EE7 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		60020DCE2ADD390B00209EE7 /* EditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditText.swift; sourceTree = "<group>"; };
+		60034C612B1B4115001758DF /* AddFoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodInfoView.swift; sourceTree = "<group>"; };
+		60034C632B1B4148001758DF /* FoodLogState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogState.swift; sourceTree = "<group>"; };
 		6006F9832B177B5000FE366F /* DayLogState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLogState.swift; sourceTree = "<group>"; };
 		60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		60295DC52B0B969D00E6955C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		607E5AF32B0F940100E8452A /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		6098403F2B1B25B700C451A8 /* FoodInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoListView.swift; sourceTree = "<group>"; };
 		609840412B1B377100C451A8 /* FoodInfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoRowView.swift; sourceTree = "<group>"; };
+		609840432B1B3B2400C451A8 /* AddFoodLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodLogView.swift; sourceTree = "<group>"; };
 		609B1F592B089E0B00AAC37B /* IntEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntEditText.swift; sourceTree = "<group>"; };
 		609B1F5E2B08A87C00AAC37B /* DoubleEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEditText.swift; sourceTree = "<group>"; };
 		609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTextField.swift; sourceTree = "<group>"; };
@@ -263,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				607017C82AD6B871000ECF18 /* FoodLogModel.swift */,
+				60034C632B1B4148001758DF /* FoodLogState.swift */,
 			);
 			path = FoodLog;
 			sourceTree = "<group>";
@@ -470,8 +477,10 @@
 			children = (
 				60AC71AF2B123CA300DCB0AB /* StatsView.swift */,
 				60AC71B12B123CF000DCB0AB /* FoodDiaryView.swift */,
-				60E392772B1A2328007BFB89 /* AddWeightView.swift */,
 				609840412B1B377100C451A8 /* FoodInfoRowView.swift */,
+				60E392772B1A2328007BFB89 /* AddWeightView.swift */,
+				609840432B1B3B2400C451A8 /* AddFoodLogView.swift */,
+				60034C612B1B4115001758DF /* AddFoodInfoView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -650,6 +659,7 @@
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
 				60E3927A2B1A267D007BFB89 /* CustomDialog.swift in Sources */,
 				60B1639D2B1386B700ADFE24 /* DayLogModel.swift in Sources */,
+				60034C622B1B4115001758DF /* AddFoodInfoView.swift in Sources */,
 				60020DCF2ADD390B00209EE7 /* EditText.swift in Sources */,
 				60E392782B1A2328007BFB89 /* AddWeightView.swift in Sources */,
 				6069A7462AE8D0DA005288AB /* TargetView.swift in Sources */,
@@ -666,6 +676,7 @@
 				607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */,
 				60E683642AE66D2500D3F3E8 /* WelcomeView.swift in Sources */,
 				60AC71A42B11A89200DCB0AB /* FoodLogRow.swift in Sources */,
+				609840442B1B3B2400C451A8 /* AddFoodLogView.swift in Sources */,
 				607017C92AD6B871000ECF18 /* FoodLogModel.swift in Sources */,
 				609840422B1B377100C451A8 /* FoodInfoRowView.swift in Sources */,
 				609B1F652B08A9FE00AAC37B /* DoubleTextField.swift in Sources */,
@@ -673,6 +684,7 @@
 				609F669F2ADE71030007C42D /* LongStringTextField.swift in Sources */,
 				607017CB2AD6B88E000ECF18 /* FoodInfoModel.swift in Sources */,
 				609840402B1B25B700C451A8 /* FoodInfoListView.swift in Sources */,
+				60034C642B1B4148001758DF /* FoodLogState.swift in Sources */,
 				604E94162ADE7BAB007B1FF2 /* Dropdown.swift in Sources */,
 				6075D13A2AE96C310085E802 /* InfoView.swift in Sources */,
 				607017C72AD6B848000ECF18 /* UserModel.swift in Sources */,

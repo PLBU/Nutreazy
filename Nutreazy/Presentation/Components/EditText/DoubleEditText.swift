@@ -41,7 +41,7 @@ struct DoubleEditText: View {
                     .foregroundColor(ACCENT_COLOR)
             }
         }
-        .frame(width: width)
+        .frame(maxWidth: width)
         .padding(.horizontal, 24)
         .padding(.vertical, 12)
         .overlay(
