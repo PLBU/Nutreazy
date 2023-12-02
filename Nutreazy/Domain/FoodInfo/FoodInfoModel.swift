@@ -12,7 +12,7 @@ class FoodInfoModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var servingName: String // g, grams, spoon(s), cup(s)
-    @Persisted var servingSize: Double
+    @Persisted var servingSize: Double    // in servingName
     @Persisted var calories: Double       // in cal
     @Persisted var carbohydrate: Double   // in grams
     @Persisted var protein: Double        // in grams

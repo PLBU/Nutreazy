@@ -34,6 +34,8 @@
 		603F19122B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
 		603F19132B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
 		603F19172B08FEED006B385B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603F19162B08FEED006B385B /* UserManager.swift */; };
+		60487C952B1B456500136456 /* FoodInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60487C942B1B456500136456 /* FoodInfoState.swift */; };
+		60487C972B1B46A700136456 /* ShortStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60487C962B1B46A700136456 /* ShortStringTextField.swift */; };
 		604E94162ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
 		604E94172ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
 		604E94182ADE7BAB007B1FF2 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E94152ADE7BAB007B1FF2 /* Dropdown.swift */; };
@@ -134,6 +136,8 @@
 		60295DC52B0B969D00E6955C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		60295DC82B0B979900E6955C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		603F19162B08FEED006B385B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		60487C942B1B456500136456 /* FoodInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoState.swift; sourceTree = "<group>"; };
+		60487C962B1B46A700136456 /* ShortStringTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortStringTextField.swift; sourceTree = "<group>"; };
 		604E94152ADE7BAB007B1FF2 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		605A15322AE802DA007E5CC6 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		6066CE912AE39B53006F2C89 /* DropdownField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownField.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				607017CA2AD6B88E000ECF18 /* FoodInfoModel.swift */,
+				60487C942B1B456500136456 /* FoodInfoState.swift */,
 			);
 			path = FoodInfo;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				609F669A2ADE26140007C42D /* IntTextField.swift */,
 				609F669E2ADE71030007C42D /* LongStringTextField.swift */,
 				609B1F642B08A9FE00AAC37B /* DoubleTextField.swift */,
+				60487C962B1B46A700136456 /* ShortStringTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -654,6 +660,7 @@
 				603F19172B08FEED006B385B /* UserManager.swift in Sources */,
 				60AC71AD2B11F56F00DCB0AB /* Extension.swift in Sources */,
 				6066CE922AE39B53006F2C89 /* DropdownField.swift in Sources */,
+				60487C972B1B46A700136456 /* ShortStringTextField.swift in Sources */,
 				60AC71B02B123CA300DCB0AB /* StatsView.swift in Sources */,
 				60AC71A82B11B68D00DCB0AB /* FoodLogGroup.swift in Sources */,
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
@@ -671,6 +678,7 @@
 				60295DC62B0B969D00E6955C /* MainScreen.swift in Sources */,
 				609B1F5A2B089E0B00AAC37B /* IntEditText.swift in Sources */,
 				6066CE992AE55EB2006F2C89 /* Constant.swift in Sources */,
+				60487C952B1B456500136456 /* FoodInfoState.swift in Sources */,
 				60020DCB2ADD37A700209EE7 /* TextStyles.swift in Sources */,
 				60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */,
 				607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */,

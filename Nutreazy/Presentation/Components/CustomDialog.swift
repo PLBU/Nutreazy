@@ -36,18 +36,7 @@ struct CustomDialog<Content: View>: View {
 struct CustomDialog_Previews: PreviewProvider {
     static var previews: some View {
         CustomDialog(isActive: .constant(true)) {
-            AddFoodLogView(
-                foodInfo: FoodInfoModel(
-                    name: "Dada Ayam",
-                    servingName: "g",
-                    servingSize: 1,
-                    calories: 2,
-                    carbohydrate: 2,
-                    protein: 1,
-                    fat: 1
-                ),
-                isShowDialog: .constant(false)
-            )
+            AddFoodInfoView(isShowDialog: .constant(true))
         }
     }
 }
