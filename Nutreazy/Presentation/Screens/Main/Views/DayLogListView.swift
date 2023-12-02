@@ -9,11 +9,10 @@ import SwiftUI
 import RealmSwift
 
 struct DayLogListView: View {
+    @EnvironmentObject var dayLogManager: DayLogManager
     @ObservedResults(UserModel.self) private var users
-    @ObservedResults(DayLogModel.self) private var dayLogs
     
     @State private var date: Date = Date().withoutTime()
-    @State private var dayLogByDate: DayLogModel = DayLogModel()
     @State private var isShowAddWeightDialog: Bool = false
     
     var body: some View {
@@ -32,9 +31,11 @@ struct DayLogListView: View {
                             .foregroundColor(TEXT_COLOR)
                     }
 
-                    StatsView(date: $date, dayLogByDate: $dayLogByDate)
+                    StatsView(date: $date)
+                        .environmentObject(dayLogManager)
                     
-                    FoodDiaryView(dayLogByDate: $dayLogByDate)
+                    FoodDiaryView()
+                        .environmentObject(dayLogManager)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding(.horizontal, 20)
@@ -64,11 +65,8 @@ struct DayLogListView: View {
             }
         }
         .onChange(of: date, perform: { _ in
-            dayLogByDate = dayLogs.where({ $0.date == date.withoutTime() }).first ?? DayLogModel(date: date.withoutTime())
+            dayLogManager.getCurrentDayLog(date: date)
         })
-        .onAppear {
-            dayLogByDate = dayLogs.where({ $0.date == date.withoutTime() }).first ?? DayLogModel()
-        }
     }
 }
 

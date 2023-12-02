@@ -11,15 +11,15 @@ import RealmSwift
 @main
 struct NutreazyApp: SwiftUI.App {
     @ObservedResults(RegisterModel.self) var register
+    @StateObject var dayLogManager = DayLogManager()
     
     var body: some Scene {
         WindowGroup {
             if (register.first != nil) {
                 MainScreen()
-                    .environment(\.realmConfiguration, globalRealmConfig)
             } else {
                 OnboardingScreen()
-                    .environment(\.realmConfiguration, globalRealmConfig)
+                    .environmentObject(dayLogManager)
             }
         }
     }

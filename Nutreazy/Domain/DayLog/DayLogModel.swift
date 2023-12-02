@@ -59,16 +59,13 @@ class DayLogModel: Object, ObjectKeyIdentifiable {
         dietTarget: DietTarget? = nil
     ) {
         self.init()
-        
-        let lastDayLog = DayLogManager.instance.getLastDayLog(date: date)
-        
         self.date = date
         self.weight = weight ?? 0
-        self.activityIntensity = activityIntensity ?? lastDayLog?.activityIntensity ?? ActivityIntensity.Light
-        self.targetProtein = targetProtein ?? lastDayLog?.targetProtein ?? 0
-        self.targetCalorie = targetCalorie ?? lastDayLog?.targetCalorie ?? 0
-        self.maintenanceCalorie = maintenanceCalorie ?? lastDayLog?.maintenanceCalorie ?? 0
-        self.dietTarget = dietTarget ?? lastDayLog?.dietTarget ?? DietTarget.Decrease
+        self.activityIntensity = activityIntensity ?? ActivityIntensity.Light
+        self.targetProtein = targetProtein ?? 0
+        self.targetCalorie = targetCalorie ?? 0
+        self.maintenanceCalorie = maintenanceCalorie ?? 0
+        self.dietTarget = dietTarget ?? DietTarget.Decrease
         self.foodLogs = List<FoodLogModel>()
     }
     

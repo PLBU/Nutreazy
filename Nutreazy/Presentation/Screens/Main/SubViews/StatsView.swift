@@ -9,9 +9,8 @@ import SwiftUI
 import RealmSwift
 
 struct StatsView: View {
+    @EnvironmentObject var dayLogManager: DayLogManager
     @Binding var date: Date
-    @Binding var dayLogByDate: DayLogModel
-    
     @State private var isShowingDatePicker = false
     
     var body: some View {
@@ -45,7 +44,7 @@ struct StatsView: View {
                         .font(SUBHEADING_5)
                         .foregroundColor(TEXT_COLOR)
 
-                    Chip(text: "\(Int(dayLogByDate.currentCalorie))/\(Int(dayLogByDate.targetCalorie))cal")
+                    Chip(text: "\(Int(dayLogManager.dayLog.currentCalorie))/\(Int(dayLogManager.dayLog.targetCalorie))cal")
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -53,7 +52,7 @@ struct StatsView: View {
                         .font(SUBHEADING_5)
                         .foregroundColor(TEXT_COLOR)
 
-                    Chip(text: "\(Int(dayLogByDate.currentProtein))/\(Int(dayLogByDate.targetProtein))g")
+                    Chip(text: "\(Int(dayLogManager.dayLog.currentProtein))/\(Int(dayLogManager.dayLog.targetProtein))g")
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -61,7 +60,7 @@ struct StatsView: View {
                         .font(SUBHEADING_5)
                         .foregroundColor(TEXT_COLOR)
 
-                    Chip(text: "\(dayLogByDate.weight)kg")
+                    Chip(text: "\(dayLogManager.dayLog.weight)kg")
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -76,6 +75,7 @@ struct StatsView: View {
 
 struct StatsViiew_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(date: .constant(Date()), dayLogByDate: .constant(DayLogModel()))
+        StatsView(date: .constant(Date()))
+            .environmentObject(DayLogManager())
     }
 }

@@ -8,15 +8,16 @@
 import Foundation
 import RealmSwift
 
-class DayLogManager {
+class DayLogManager: ObservableObject {
     private(set) var localRealm: Realm?
-    static let instance = DayLogManager()
+    @Published var dayLog: DayLogModel = DayLogModel()
     
-    private init() {
+    init() {
         openRealm()
+        getCurrentDayLog()
     }
 
-    func openRealm() {
+    private func openRealm() {
         do {
             Realm.Configuration.defaultConfiguration = globalRealmConfig
             localRealm = try Realm()
@@ -25,13 +26,34 @@ class DayLogManager {
         }
     }
     
-    func getCurrentDayLog(date: Date = Date().withoutTime()) -> DayLogModel? {
-        return localRealm?.objects(DayLogModel.self).where({
+    func getCurrentDayLog(date: Date = Date().withoutTime()) {
+        if let currDayLog = localRealm?.objects(DayLogModel.self).where({
             $0.date == date
-        }).first
+        }).first {
+            dayLog = currDayLog
+        } else {
+            if let lastDayLog = getLastDayLog(date: date) {
+                dayLog = DayLogModel(
+                    date: date,
+                    activityIntensity: lastDayLog.activityIntensity,
+                    targetProtein: lastDayLog.targetProtein,
+                    targetCalorie: lastDayLog.targetCalorie,
+                    maintenanceCalorie: lastDayLog.maintenanceCalorie,
+                    dietTarget: lastDayLog.dietTarget
+                )
+            } else {
+                dayLog = DayLogModel()
+            }
+        }
     }
     
-    func getLastDayLog(date: Date = Date().withoutTime()) -> DayLogModel? {
+    private func isCurrentDayLogExist(date: Date = Date().withoutTime()) -> Bool {
+        return localRealm?.objects(DayLogModel.self).where({
+            $0.date == date
+        }).first != nil
+    }
+    
+    private func getLastDayLog(date: Date = Date().withoutTime()) -> DayLogModel? {
         return localRealm?.objects(DayLogModel.self)
             .where({ $0.date <= date })
             .sorted(byKeyPath: "date", ascending: false).first
@@ -42,10 +64,9 @@ class DayLogManager {
         date: Date = Date().withoutTime()
     ) throws {
         do {
-            if (getCurrentDayLog(date: date) == nil) {
-                try localRealm!.write {
-                    localRealm!.add(dayLog)
-                }
+            try localRealm!.write {
+                localRealm!.add(dayLog)
+                getCurrentDayLog(date: date)
             }
         } catch {
             print("Error addCurrentDayLog", error)
@@ -63,42 +84,52 @@ class DayLogManager {
         dietTarget: DietTarget? = nil
     ) throws {
         do {
-            if let currDayLog = getCurrentDayLog(date: date) {
+            if isCurrentDayLogExist(date: date) {
+                getCurrentDayLog(date: date)
+                
                 try localRealm!.write {
                     if let weight = weight {
-                        currDayLog.weight = weight
+                        dayLog.weight = weight
                     }
                     
                     if let activityIntensity = activityIntensity {
-                        currDayLog.activityIntensity = activityIntensity
+                        dayLog.activityIntensity = activityIntensity
                     }
 
                     if let dietTarget = dietTarget {
-                        currDayLog.dietTarget = dietTarget
+                        dayLog.dietTarget = dietTarget
                     }
                     
                     if let targetProtein = targetProtein {
-                        currDayLog.targetProtein = targetProtein
+                        dayLog.targetProtein = targetProtein
                     }
                     
                     if let targetCalorie = targetCalorie {
-                        currDayLog.targetCalorie = targetCalorie
+                        dayLog.targetCalorie = targetCalorie
                     }
                     
                     if let maintenanceCalorie = maintenanceCalorie {
-                        currDayLog.maintenanceCalorie = maintenanceCalorie
+                        dayLog.maintenanceCalorie = maintenanceCalorie
                     }
                 }
+                
+                getCurrentDayLog(date: date)
             } else {
-                try addCurrentDayLog(dayLog: DayLogModel(
-                    date: date,
-                    weight: weight,
-                    activityIntensity: activityIntensity,
-                    targetProtein: targetProtein,
-                    targetCalorie: targetCalorie,
-                    maintenanceCalorie: maintenanceCalorie,
-                    dietTarget: dietTarget
-                ))
+                let lastDayLog = getLastDayLog(date: date)
+                
+                try addCurrentDayLog(
+                    dayLog: DayLogModel(
+                        date: date,
+                        weight: weight,
+                        activityIntensity: activityIntensity ?? lastDayLog?.activityIntensity,
+                        targetProtein: targetProtein ?? lastDayLog?.targetProtein,
+                        targetCalorie: targetCalorie ?? lastDayLog?.targetCalorie,
+                        maintenanceCalorie: maintenanceCalorie ?? lastDayLog?.maintenanceCalorie,
+                        dietTarget: dietTarget ?? lastDayLog?.dietTarget
+                    )
+                )
+                
+                getCurrentDayLog(date: date)
             }
         } catch {
             print("Error setCurrentDayLog", error)

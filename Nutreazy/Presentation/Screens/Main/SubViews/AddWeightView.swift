@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddWeightView: View {
+    @EnvironmentObject var dayLogManager: DayLogManager
     @Binding var date: Date
     @Binding var isShowDialog: Bool
     @State var weight: String = ""
@@ -15,10 +16,12 @@ struct AddWeightView: View {
     
     private func handleAddWeightToDayLog() {
         do {
-            try DayLogManager.instance.setCurrentDayLog(
+            try dayLogManager.setCurrentDayLog(
                 date: date,
                 weight: Double(weight)
             )
+            
+            weight = ""
         } catch {
             isShowDialog = true
         }
@@ -30,7 +33,7 @@ struct AddWeightView: View {
                 .font(HEADING_5)
                 .foregroundColor(TEXT_COLOR)
             
-            DoubleEditText(value: $weight, unitName: "kg", width: 100, isCenter: true, maxLength: 3)
+            DoubleEditText(value: $weight, unitName: "kg", width: 100, isCenter: true, maxLength: 6)
                 .frame(maxWidth: .infinity)
             
             CustomButton(label: "Tambah") {
@@ -49,5 +52,6 @@ struct AddWeightView: View {
 struct AddWeightDialog_Previews: PreviewProvider {
     static var previews: some View {
         AddWeightView(date: .constant(Date()), isShowDialog: .constant(true))
+            .environmentObject(DayLogManager())
     }
 }

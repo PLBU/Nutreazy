@@ -12,7 +12,7 @@ struct DoubleTextField: View {
     @Binding var value: String
     var label: String
     var unitName: String
-    var maxLength = 4
+    var maxLength = 6
 
     var body: some View {
         HStack {

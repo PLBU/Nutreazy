@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct StrategyView: View {
+    @StateObject private var dayLogManager = DayLogManager()
     @ObservedResults(RegisterModel.self) var register
     @ObservedResults(UserModel.self) var users
     @State private var isGoingToWelcomeView: Bool = false
@@ -33,7 +34,7 @@ struct StrategyView: View {
     
     private func registerLocally() {
         do {
-            try DayLogManager.instance.addCurrentDayLog(dayLog: currDayLog)
+            try dayLogManager.addCurrentDayLog(dayLog: currDayLog)
             $register.append(RegisterModel())
         } catch {
             isShowAlert = true

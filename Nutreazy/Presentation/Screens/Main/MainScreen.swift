@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct MainScreen: View {
+    @StateObject private var dayLogManager = DayLogManager()
+    
     var body: some View {
         NavigationStack{
             DayLogListView()
+                .environmentObject(dayLogManager)
         }
     }
 }

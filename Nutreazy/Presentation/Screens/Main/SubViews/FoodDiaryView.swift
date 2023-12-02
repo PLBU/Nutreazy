@@ -9,13 +9,13 @@ import SwiftUI
 import RealmSwift
 
 struct FoodDiaryView: View {
-    @Binding var dayLogByDate: DayLogModel
+    @EnvironmentObject var dayLogManager: DayLogManager
     @State private var filteredFoodLogs = [MealType: [FoodLogModel]]()
     
     private func filterFoodLogs() {
         filteredFoodLogs = [MealType: [FoodLogModel]]()
         
-        for foodLog in dayLogByDate.foodLogs {
+        for foodLog in dayLogManager.dayLog.foodLogs {
             if filteredFoodLogs.keys.contains(foodLog.mealType!) {
                 filteredFoodLogs[foodLog.mealType!]!.append(foodLog)
             } else {
@@ -69,7 +69,7 @@ struct FoodDiaryView: View {
                 }
             }
         }
-        .onChange(of: dayLogByDate, perform: { _ in
+        .onChange(of: dayLogManager.dayLog, perform: { _ in
             filterFoodLogs()
         })
         .onAppear {
@@ -80,6 +80,7 @@ struct FoodDiaryView: View {
 
 struct FoodDiaryView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodDiaryView(dayLogByDate: .constant(DayLogModel()))
+        FoodDiaryView()
+            .environmentObject(DayLogManager())
     }
 }
