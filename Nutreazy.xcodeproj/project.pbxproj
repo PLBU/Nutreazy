@@ -65,6 +65,7 @@
 		6075D13A2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		6075D13B2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
 		6075D13C2AE96C310085E802 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075D1392AE96C310085E802 /* InfoView.swift */; };
+		607A5F3A2B1CB35E00A26560 /* FoodInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607A5F392B1CB35E00A26560 /* FoodInfoManager.swift */; };
 		607E5AF42B0F940100E8452A /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E5AF32B0F940100E8452A /* FloatingButton.swift */; };
 		609840402B1B25B700C451A8 /* FoodInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098403F2B1B25B700C451A8 /* FoodInfoListView.swift */; };
 		609840422B1B377100C451A8 /* FoodInfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609840412B1B377100C451A8 /* FoodInfoRowView.swift */; };
@@ -161,6 +162,7 @@
 		607353182B0E39030049F5AC /* DayLogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLogListView.swift; sourceTree = "<group>"; };
 		6073531A2B0E46780049F5AC /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip.swift; sourceTree = "<group>"; };
 		6075D1392AE96C310085E802 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		607A5F392B1CB35E00A26560 /* FoodInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoManager.swift; sourceTree = "<group>"; };
 		607E5AF32B0F940100E8452A /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		6098403F2B1B25B700C451A8 /* FoodInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoListView.swift; sourceTree = "<group>"; };
 		609840412B1B377100C451A8 /* FoodInfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoRowView.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				607017CA2AD6B88E000ECF18 /* FoodInfoModel.swift */,
 				60487C942B1B456500136456 /* FoodInfoState.swift */,
+				607A5F392B1CB35E00A26560 /* FoodInfoManager.swift */,
 			);
 			path = FoodInfo;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				6066CE922AE39B53006F2C89 /* DropdownField.swift in Sources */,
 				60487C972B1B46A700136456 /* ShortStringTextField.swift in Sources */,
 				60AC71B02B123CA300DCB0AB /* StatsView.swift in Sources */,
+				607A5F3A2B1CB35E00A26560 /* FoodInfoManager.swift in Sources */,
 				60AC71A82B11B68D00DCB0AB /* FoodLogGroup.swift in Sources */,
 				606900B12AD8ED78002280D8 /* CustomButton.swift in Sources */,
 				60E3927A2B1A267D007BFB89 /* CustomDialog.swift in Sources */,

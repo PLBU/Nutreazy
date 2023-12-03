@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct FoodInfoListView: View {
+    @StateObject private var foodInfoManager = FoodInfoManager()
     @State private var searchKey = ""
+    @State private var isShowDialog = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -36,8 +38,17 @@ struct FoodInfoListView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding(20)
             
-            FloatingButton {}
+            FloatingButton {
+                withAnimation {
+                    isShowDialog = true
+                }
+            }
             .padding(20)
+            
+            CustomDialog(isActive: $isShowDialog) {
+                AddFoodInfoView(isShowDialog: $isShowDialog)
+                    .environmentObject(foodInfoManager)
+            }
         }
     }
 }

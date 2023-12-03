@@ -64,7 +64,9 @@ struct IntroductionView: View {
             .frame(alignment: .bottom)
         }
         .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
-            Button("Ok", role: .cancel) {}
+            Button("Ok", role: .cancel) {
+                isShowAlert = false
+            }
         }
         .onAppear() {
             if let myUser = MyUserManager.instance.getMyUser() {

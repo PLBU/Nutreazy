@@ -95,7 +95,9 @@ struct StrategyView: View {
             WelcomeView()
         }
         .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
-            Button("Ok", role: .cancel) {}
+            Button("Ok", role: .cancel) {
+                isShowAlert = false
+            }
         }
     }
 }

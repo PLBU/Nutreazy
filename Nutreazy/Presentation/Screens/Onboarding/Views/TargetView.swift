@@ -11,7 +11,6 @@ import AlertToast
 
 struct TargetView: View {
     @ObservedResults(UserModel.self) var users
-    @State private var isShowAlert: Bool = false
     @State private var isGoingToInfoView: Bool = false
     
     var currDayLog: DayLogModel

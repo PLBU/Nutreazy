@@ -63,6 +63,11 @@ struct AddFoodLogView: View {
         .onChange(of: foodLogState) {
             isButtonEnabled = $0.isValid()
         }
+        .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
+            Button("Ok", role: .cancel) {
+                isShowAlert = false
+            }
+        }
     }
 }
 

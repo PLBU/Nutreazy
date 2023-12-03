@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct AddFoodInfoView: View {
+    @EnvironmentObject var foodInfoManager: FoodInfoManager
     @Binding var isShowDialog: Bool
     @State private var foodInfoState: FoodInfoState = FoodInfoState()
     @State private var isButtonEnabled = false
+    @State private var isShowAlert = false
+    
+    private func handleAddFoodInfo() {
+        do {
+            try foodInfoManager.addFoodInfo(foodInfo: foodInfoState.toModel())
+            withAnimation {
+                isShowDialog = false
+            }
+        } catch {
+            isShowAlert = true
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
@@ -33,11 +46,17 @@ struct AddFoodInfoView: View {
                 
                 DoubleTextField(value: $foodInfoState.fat, label: "Lemak", unitName: "g")
             }
+            .onChange(of: foodInfoState) {
+                isButtonEnabled = $0.isValid()
+            }
             
             CustomButton(label: "Tambah", isEnabled: $isButtonEnabled) {
-                withAnimation {
-                    isShowDialog = false
-                }
+                handleAddFoodInfo()
+            }
+        }
+        .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
+            Button("Ok", role: .cancel) {
+                isShowAlert = false
             }
         }
     }
