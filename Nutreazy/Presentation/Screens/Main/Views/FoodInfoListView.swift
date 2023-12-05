@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FoodInfoListView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject private var foodInfoManager = FoodInfoManager()
     @State private var searchKey = ""
     @State private var isShowDialog = false
@@ -22,6 +23,9 @@ struct FoodInfoListView: View {
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                         .foregroundColor(TEXT_COLOR)
+                        .onTapGesture {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
                     Text("Makanan 🥗")
                         .font(HEADING_4)
                         .foregroundColor(TEXT_COLOR)
@@ -31,7 +35,9 @@ struct FoodInfoListView: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        
+                        ForEach(foodInfoManager.foodInfos) { foodInfo in
+                            FoodInfoRowView(foodInfo: foodInfo)
+                        }
                     }
                 }
             }
@@ -50,6 +56,7 @@ struct FoodInfoListView: View {
                     .environmentObject(foodInfoManager)
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
