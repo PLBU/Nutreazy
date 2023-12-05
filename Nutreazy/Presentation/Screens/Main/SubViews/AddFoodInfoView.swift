@@ -23,6 +23,7 @@ struct AddFoodInfoView: View {
         } catch {
             isShowAlert = true
         }
+        UIApplication.shared.endEditing()
     }
     
     var body: some View {
@@ -40,7 +41,7 @@ struct AddFoodInfoView: View {
                 
                 DoubleTextField(value: $foodInfoState.calories, label: "Kalori", unitName: "cal")
                 
-                DoubleTextField(value: $foodInfoState.calories, label: "Karbohidrat", unitName: "g")
+                DoubleTextField(value: $foodInfoState.carbohydrate, label: "Karbohidrat", unitName: "g")
                 
                 DoubleTextField(value: $foodInfoState.protein, label: "Protein", unitName: "g")
                 

@@ -58,6 +58,7 @@ struct AddFoodLogView: View {
                 withAnimation {
                     isShowDialog = false
                 }
+                UIApplication.shared.endEditing()
             }
         }
         .onChange(of: foodLogState) {

@@ -21,6 +21,9 @@ struct DoubleEditText: View {
         HStack {
             TextField(placeholder, text: $value)
                 .keyboardType(.decimalPad)
+                .onSubmit {
+                    UIApplication.shared.endEditing()
+                }
                 .onReceive(Just(value)) { newValue in
                     let filtered = newValue.replacingOccurrences(of: ",", with: ".").filter { Set("0123456789.").contains($0) }
                     if filtered.count > maxLength {

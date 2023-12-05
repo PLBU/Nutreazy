@@ -26,6 +26,9 @@ struct CustomDialog<Content: View>: View {
                 .padding(20)
                 .background(BACKGROUND_COLOR)
                 .cornerRadius(24)
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
                 .padding(20)
         }
         .background(.thinMaterial)

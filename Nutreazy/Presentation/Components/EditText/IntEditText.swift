@@ -21,6 +21,9 @@ struct IntEditText: View {
         HStack {
             TextField(placeholder, text: $value)
                 .keyboardType(.numberPad)
+                .onSubmit {
+                    UIApplication.shared.endEditing()
+                }
                 .onReceive(Just(value)) { newValue in
                     let filtered = newValue.filter { Set("0123456789").contains($0) }
                     if filtered.count > maxLength {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Date {
     func withoutTime() -> Date {
@@ -38,5 +39,11 @@ extension Date {
     
     func getCurrentYear() -> Int {
         return Calendar.current.component(.year, from: Date())
+    }
+}
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

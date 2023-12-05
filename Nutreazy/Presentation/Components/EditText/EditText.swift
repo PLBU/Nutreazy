@@ -21,6 +21,9 @@ struct EditText: View {
         HStack {
             TextField(placeholder, text: $value)
                 .keyboardType(.default)
+                .onSubmit {
+                    UIApplication.shared.endEditing()
+                }
                 .onReceive(Just(value)) { newValue in
                     if newValue.count > maxLength {
                         self.value = String(value.prefix(maxLength))

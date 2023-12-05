@@ -14,6 +14,7 @@ struct DayLogListView: View {
     
     @State private var date: Date = Date().withoutTime()
     @State private var isShowAddWeightDialog: Bool = false
+    @State private var isGoingToFoodInfoListView: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -54,7 +55,9 @@ struct DayLogListView: View {
                     ),
                     ExpandableButtonItem(
                         label: Image(systemName: "fork.knife"),
-                        action: { print("I am clicked 2") }
+                        action: {
+                            isGoingToFoodInfoListView = true
+                        }
                     )
                 ]
             ) {}
@@ -67,6 +70,9 @@ struct DayLogListView: View {
         .onChange(of: date, perform: { _ in
             dayLogManager.getCurrentDayLog(date: date)
         })
+        .navigationDestination(isPresented: $isGoingToFoodInfoListView) {
+            FoodInfoListView()
+        }
     }
 }
 

@@ -22,9 +22,14 @@ struct AddWeightView: View {
             )
             
             weight = ""
+            withAnimation {
+                isShowDialog = false
+            }
         } catch {
             isShowDialog = true
         }
+        
+        UIApplication.shared.endEditing()
     }
     
     var body: some View {
@@ -38,9 +43,6 @@ struct AddWeightView: View {
             
             CustomButton(label: "Tambah") {
                 handleAddWeightToDayLog()
-                withAnimation {
-                    isShowDialog = false
-                }
             }
         }
         .alert("Terjadi kesalahan", isPresented: $isShowAlert) {

@@ -73,6 +73,9 @@ struct IntroductionView: View {
                 userState = myUser.toState()
             }
         }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
         .padding(40)
         .navigationDestination(isPresented: $isGoingToTargetView) {
             TargetView(currDayLog: dayLogState.toModel())
