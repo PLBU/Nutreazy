@@ -40,7 +40,7 @@ struct IntroductionView: View {
                     
                     IntTextField(value: $userState.height, label: "Tinggi Badan", unitName: "cm", maxLength: 3)
                     
-                    DoubleTextField(value: $dayLogState.weight, label: "Berat Badan", unitName: "kg", maxLength: 5)
+                    IntTextField(value: $dayLogState.weight, label: "Berat Badan", unitName: "kg", maxLength: 3)
                     
                     DropdownField(value: $dayLogState.actIntesity, label: "Aktivitas*", options: activityIntensityListID, info: "Mageran => Tidak olahraga\nRingan => Olahraga 1-2x seminggu\nSedang => 3-5x seminggu\nBerat => 6-7x seminggu\nAtlet => 2x sehari")
                         .padding(.bottom, 16)

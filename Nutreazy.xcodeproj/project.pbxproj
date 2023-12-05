@@ -31,6 +31,8 @@
 		60225C7A2B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */; };
 		60295DC62B0B969D00E6955C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60295DC52B0B969D00E6955C /* MainScreen.swift */; };
 		60295DC92B0B979900E6955C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60295DC82B0B979900E6955C /* RegisterModel.swift */; };
+		6035387F2B1F558C00D740C6 /* nutrients.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6035387E2B1F558C00D740C6 /* nutrients.csv */; };
+		603538822B1F61DB00D740C6 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 603538812B1F61DB00D740C6 /* SwiftCSV */; };
 		603F19122B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
 		603F19132B08FEAF006B385B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607017C62AD6B848000ECF18 /* UserModel.swift */; };
 		603F19172B08FEED006B385B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603F19162B08FEED006B385B /* UserManager.swift */; };
@@ -136,6 +138,7 @@
 		60225C772B0CFA280036A8FC /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		60295DC52B0B969D00E6955C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		60295DC82B0B979900E6955C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		6035387E2B1F558C00D740C6 /* nutrients.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nutrients.csv; sourceTree = "<group>"; };
 		603F19162B08FEED006B385B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		60487C942B1B456500136456 /* FoodInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoState.swift; sourceTree = "<group>"; };
 		60487C962B1B46A700136456 /* ShortStringTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortStringTextField.swift; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603538822B1F61DB00D740C6 /* SwiftCSV in Frameworks */,
 				60DA93502B03B3790004EA5C /* RealmSwift in Frameworks */,
 				60DA934E2B03B3790004EA5C /* Realm in Frameworks */,
 			);
@@ -429,6 +433,7 @@
 		607017C42AD6B7C1000ECF18 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6035387E2B1F558C00D740C6 /* nutrients.csv */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 			packageProductDependencies = (
 				60DA934D2B03B3790004EA5C /* Realm */,
 				60DA934F2B03B3790004EA5C /* RealmSwift */,
+				603538812B1F61DB00D740C6 /* SwiftCSV */,
 			);
 			productName = Nutreazy;
 			productReference = 607017942AD6B4E0000ECF18 /* Nutreazy.app */;
@@ -598,6 +604,7 @@
 			mainGroup = 6070178B2AD6B4E0000ECF18;
 			packageReferences = (
 				60DA934C2B03B3790004EA5C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				603538802B1F61DB00D740C6 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 			);
 			productRefGroup = 607017952AD6B4E0000ECF18 /* Products */;
 			projectDirPath = "";
@@ -615,6 +622,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6035387F2B1F558C00D740C6 /* nutrients.csv in Resources */,
 				607017A02AD6B4E1000ECF18 /* Preview Assets.xcassets in Resources */,
 				60225C782B0CFA280036A8FC /* Poppins-LightItalic.ttf in Resources */,
 				60020DC62ADD340200209EE7 /* Poppins-Light.ttf in Resources */,
@@ -1089,6 +1097,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		603538802B1F61DB00D740C6 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
 		60DA934C2B03B3790004EA5C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1100,6 +1116,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		603538812B1F61DB00D740C6 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 603538802B1F61DB00D740C6 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
 		60DA934D2B03B3790004EA5C /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 60DA934C2B03B3790004EA5C /* XCRemoteSwiftPackageReference "realm-swift" */;
