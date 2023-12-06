@@ -28,7 +28,7 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
     @Persisted var protein: Double        // in grams
     @Persisted var fat: Double            // in grams
 
-    convenience init(foodInfo: FoodInfoModel, createdAt: Date = Date(), amount: Double, mealType: MealType) {
+    convenience init(foodInfo: FoodInfoModel, createdAt: Date = Date().withoutTime(), amount: Double, mealType: MealType) {
         self.init()
         self.foodInfo = foodInfo
         self.createdAt = createdAt

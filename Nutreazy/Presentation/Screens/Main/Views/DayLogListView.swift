@@ -71,7 +71,8 @@ struct DayLogListView: View {
             dayLogManager.getCurrentDayLog(date: date)
         })
         .navigationDestination(isPresented: $isGoingToFoodInfoListView) {
-            FoodInfoListView()
+            FoodInfoListView(date: date)
+                .environmentObject(dayLogManager)
         }
     }
 }

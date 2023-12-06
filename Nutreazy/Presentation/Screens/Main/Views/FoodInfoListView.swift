@@ -9,10 +9,14 @@ import SwiftUI
 
 struct FoodInfoListView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var dayLogManager: DayLogManager
     @StateObject private var foodInfoManager = FoodInfoManager()
     @State private var searchKey = ""
-    @State private var isShowDialog = false
-    
+    @State private var isShowFoodInfoDialog = false
+    @State private var isShowFoodLogDialog = false
+    var date: Date
+    var foodInfo: FoodInfoModel? = nil
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(alignment: .leading, spacing: 20) {
@@ -37,6 +41,10 @@ struct FoodInfoListView: View {
                     VStack {
                         ForEach(foodInfoManager.foodInfos) { foodInfo in
                             FoodInfoRowView(foodInfo: foodInfo)
+                                .onTapGesture {
+                                    foodInfo = foodInfo
+                                    isShowFoodLogDialog = true
+                                }
                         }
                     }
                 }
@@ -46,14 +54,19 @@ struct FoodInfoListView: View {
             
             FloatingButton {
                 withAnimation {
-                    isShowDialog = true
+                    isShowFoodInfoDialog = true
                 }
             }
             .padding(20)
             
-            CustomDialog(isActive: $isShowDialog) {
-                AddFoodInfoView(isShowDialog: $isShowDialog)
+            CustomDialog(isActive: $isShowFoodInfoDialog) {
+                AddFoodInfoView(isShowDialog: $isShowFoodInfoDialog)
                     .environmentObject(foodInfoManager)
+            }
+
+            CustomDialog(isActive: $isShowFoodLogDialog) {
+                AddFoodLogView(isShowDialog: $isShowFoodLogDialog, date: date, foodInfo: foodInfo!)
+                    .environmentObject()
             }
         }
         .navigationBarBackButtonHidden(true)

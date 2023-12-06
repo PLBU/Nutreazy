@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct AddFoodLogView: View {
-    var foodInfo: FoodInfoModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var dayLogManager: DayLogManager
     @Binding var isShowDialog: Bool
     @State private var foodLogState: FoodLogState = FoodLogState()
     @State private var isShowAlert = false
     @State private var isButtonEnabled = false
+    var date: Date
+    var foodInfo: FoodInfoModel
+
+    private func handleAddFoodLog() {
+        do {
+            try dayLogManager.addCurrentDayFoodLog(
+                date,
+                foodLogState.toModel(foodInfo: foodInfo, date: date)
+            )
+
+            withAnimation {
+                isShowDialog = false
+            }
+            UIApplication.shared.endEditing()
+            self.presentationMode.wrappedValue.dismiss()
+        } catch {
+            isShowAlert = true
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
@@ -55,10 +75,7 @@ struct AddFoodLogView: View {
             }
             
             CustomButton(label: "Tambah", isEnabled: $isButtonEnabled) {
-                withAnimation {
-                    isShowDialog = false
-                }
-                UIApplication.shared.endEditing()
+                handleAddFoodLog()
             }
         }
         .onChange(of: foodLogState) {
@@ -75,6 +92,8 @@ struct AddFoodLogView: View {
 struct AddFoodLogView_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodLogView(
+            isShowDialog: .constant(false),
+            date: Date().withoutTime(),
             foodInfo: FoodInfoModel(
                 name: "Dada Ayam",
                 servingName: "g",
@@ -84,7 +103,6 @@ struct AddFoodLogView_Previews: PreviewProvider {
                 protein: 1,
                 fat: 1
             ),
-            isShowDialog: .constant(false)
         )
     }
 }
