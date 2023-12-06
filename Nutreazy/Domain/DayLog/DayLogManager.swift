@@ -136,4 +136,56 @@ class DayLogManager: ObservableObject {
             throw error
         }
     }
+
+    func addCurrentDayFoodLog(
+        date: Date = Date().withoutTime(),
+        foodLog: FoodLogModel
+    ) throws {
+        do {
+            if isCurrentDayLogExist(date: date) {
+                getCurrentDayLog(date: date)
+                
+                try localRealm!.write {
+                    dayLog.foodLogs.append(foodLog)
+                }
+                
+                getCurrentDayLog(date: date)
+            } else {
+                let lastDayLog = getLastDayLog(date: date)
+                
+                try addCurrentDayLog(
+                    dayLog: DayLogModel(
+                        date: date,
+                        activityIntensity: lastDayLog?.activityIntensity,
+                        targetProtein: lastDayLog?.targetProtein,
+                        targetCalorie: lastDayLog?.targetCalorie,
+                        maintenanceCalorie: lastDayLog?.maintenanceCalorie,
+                        dietTarget: lastDayLog?.dietTarget
+                    )
+                )
+                
+                getCurrentDayLog(date: date)
+            }
+        } catch {
+            print("Error addCurrentDayFoodLog", error)
+            throw error
+        }
+    }
+
+    func deleteCurrentDayFoodLog(
+        date: Date = Date().withoutTime,
+        foodLog: FoodLogModel
+    ) throws {
+        do {
+            getCurrentDayLog(date: date)
+            let index = dayLog.index(of: foodLog)
+            try localRealm!.write {
+                dayLog.foodLogs.remove(at: index)
+                
+                getCurrentDayLog(date: date)
+            }
+        } catch {
+            print("Error delete foodLog")
+        }
+    }
 }
