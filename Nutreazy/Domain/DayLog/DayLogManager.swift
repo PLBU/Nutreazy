@@ -183,6 +183,27 @@ class DayLogManager: ObservableObject {
             throw error
         }
     }
+    
+    func updateCurrentDayFoodLog(
+        date: Date = Date().withoutTime(),
+        foodLog: FoodLogModel,
+        newFoodLog: FoodLogModel
+    ) throws {
+        do {
+            try localRealm!.write {
+                let currDayLog = localRealm?.objects(DayLogModel.self).where({
+                    $0.date == date
+                }).first
+                
+                let index = currDayLog!.foodLogs.index(of: foodLog)
+                currDayLog!.foodLogs[index!] = newFoodLog
+                
+                getCurrentDayLog(date: date)
+            }
+        } catch {
+            print("Error update foodLog")
+        }
+    }
 
     func deleteCurrentDayFoodLog(
         date: Date = Date().withoutTime(),

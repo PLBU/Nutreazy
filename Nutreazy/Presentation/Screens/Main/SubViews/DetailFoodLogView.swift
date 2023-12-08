@@ -18,9 +18,10 @@ struct DetailFoodLogView: View {
 
     private func handleUpdateFoodLog() {
         do {
-            try dayLogManager.addCurrentDayFoodLog(
+            try dayLogManager.updateCurrentDayFoodLog(
                 date: date,
-                foodLog: foodLogState.toModel(date: date)
+                foodLog: foodLogModel,
+                newFoodLog: foodLogState.toModel(date: date)
             )
 
             withAnimation {
