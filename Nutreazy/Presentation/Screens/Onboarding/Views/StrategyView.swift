@@ -49,7 +49,7 @@ struct StrategyView: View {
                         Text("Maintenance Calorie kamu\n")
                             .font(HEADING_2)
                             .foregroundColor(TEXT_COLOR) +
-                        Text("\(Int( 0))cal")
+                        Text("\(Int(currDayLog.maintenanceCalorie))cal")
                             .font(HEADING_3)
                             .foregroundColor(TEXT_COLOR)
                     }
