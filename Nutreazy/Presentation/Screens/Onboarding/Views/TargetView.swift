@@ -7,7 +7,6 @@
 
 import SwiftUI
 import RealmSwift
-import AlertToast
 
 struct TargetView: View {
     @ObservedResults(UserModel.self) var users
