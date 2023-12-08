@@ -34,8 +34,8 @@ struct FoodInfoListView: View {
                         .font(HEADING_4)
                         .foregroundColor(TEXT_COLOR)
                 }
-                
-                EditText(value: $searchKey, placeholder: "Cari makananmu di sini", maxLength: 40)
+
+//                EditText(value: $searchKey, placeholder: "Cari makananmu di sini", maxLength: 40)
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
