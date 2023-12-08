@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+typealias FoodRowOnClick = (_ foodLog: FoodLogModel) -> Void
+
 struct FoodLogGroup: View {
     var foodLogs: [FoodLogModel]
+    var foodRowListener: FoodRowOnClick
     @State private var isExpanded = false
+    
     private var totalCalories: Double {
         get {
             foodLogs.reduce(0, { prev, foodLog in
@@ -45,6 +49,9 @@ struct FoodLogGroup: View {
                 VStack(spacing: 8) {
                     ForEach(foodLogs, id: \.id) { foodLog in
                         FoodLogRow(foodLog: foodLog)
+                            .onTapGesture {
+                                foodRowListener(foodLog)
+                            }
                     }
                 }
             } else {
@@ -98,6 +105,8 @@ struct FoodLogGroup_Previews: PreviewProvider {
                 amount: 125,
                 mealType: MealType.Breakfast
             )
-        ])
+        ], foodRowListener: { foodLog in
+            print(foodLog)
+        })
     }
 }

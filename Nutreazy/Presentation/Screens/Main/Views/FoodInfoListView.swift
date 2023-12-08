@@ -40,7 +40,7 @@ struct FoodInfoListView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(foodInfoManager.foodInfos) { newFoodInfo in
-                            FoodInfoRowView(foodInfo: newFoodInfo)
+                            FoodInfoRow(foodInfo: newFoodInfo)
                                 .onTapGesture {
                                     foodLogState = FoodLogState(foodInfo: newFoodInfo)
                                     withAnimation {

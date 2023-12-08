@@ -1,5 +1,5 @@
 //
-//  FoodInfoRowView.swift
+//  FoodInfoRow.swift
 //  Nutreazy
 //
 //  Created by Renaldi Arlin on 02/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodInfoRowView: View {
+struct FoodInfoRow: View {
     var foodInfo: FoodInfoModel
     
     var body: some View {
@@ -23,10 +23,10 @@ struct FoodInfoRowView: View {
     }
 }
 
-struct FoodInfoRowView_Previews: PreviewProvider {
+struct FoodInfoRow_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            FoodInfoRowView(
+            FoodInfoRow(
                 foodInfo: FoodInfoModel(
                     name: "Dada Ayam",
                     servingName: "g",
@@ -37,7 +37,7 @@ struct FoodInfoRowView_Previews: PreviewProvider {
                     fat: 1
                 )
             )
-            FoodInfoRowView(
+            FoodInfoRow(
                 foodInfo: FoodInfoModel(
                     name: "Dada Ayam",
                     servingName: "g",
@@ -48,7 +48,7 @@ struct FoodInfoRowView_Previews: PreviewProvider {
                     fat: 1
                 )
             )
-            FoodInfoRowView(
+            FoodInfoRow(
                 foodInfo: FoodInfoModel(
                     name: "Dada Ayam",
                     servingName: "g",

@@ -12,6 +12,8 @@ struct FoodDiaryView: View {
     @EnvironmentObject var dayLogManager: DayLogManager
     @State private var filteredFoodLogs = [MealType: [FoodLogModel]]()
     
+    var foodRowListener: FoodRowOnClick
+    
     private func filterFoodLogs(_ dayLog: DayLogModel) {
         filteredFoodLogs = [MealType: [FoodLogModel]]()
         
@@ -34,7 +36,7 @@ struct FoodDiaryView: View {
                     .font(HEADING_4)
                     .foregroundColor(TEXT_COLOR)
             }
-
+            
             if filteredFoodLogs.isEmpty {
                 VStack(alignment: .center, spacing: 20) {
                     Text("Kamu belum catat \napapun nih :( ")
@@ -42,7 +44,7 @@ struct FoodDiaryView: View {
                         .font(HEADING_5)
                         .foregroundColor(ACCENT_COLOR)
                         .fixedSize(horizontal: false, vertical: true)
-
+                    
                     Group {
                         Text("Coba ")
                             .foregroundColor(TEXT_COLOR) +
@@ -62,7 +64,10 @@ struct FoodDiaryView: View {
             } else {
                 ForEach(0...(mealTypeListID.count - 1), id: \.self) { index in
                     if let mealType = MealType(rawValue: index), let foodLogs = filteredFoodLogs[mealType] {
-                        FoodLogGroup(foodLogs: foodLogs)
+                        FoodLogGroup(
+                            foodLogs: foodLogs,
+                            foodRowListener: foodRowListener
+                        )
                     } else {
                         EmptyView()
                     }
@@ -72,6 +77,9 @@ struct FoodDiaryView: View {
         .onChange(of: dayLogManager.dayLog, perform: { newDayLogModel in
             filterFoodLogs(newDayLogModel)
         })
+        .onChange(of: dayLogManager.foodLogs, perform: { _ in
+            filterFoodLogs(dayLogManager.dayLog)
+        })
         .onAppear {
             filterFoodLogs(dayLogManager.dayLog)
         }
@@ -80,7 +88,7 @@ struct FoodDiaryView: View {
 
 struct FoodDiaryView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodDiaryView()
+        FoodDiaryView(foodRowListener: { foodLog in print(foodLog) })
             .environmentObject(DayLogManager())
     }
 }

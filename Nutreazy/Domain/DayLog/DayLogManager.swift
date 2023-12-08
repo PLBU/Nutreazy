@@ -11,6 +11,7 @@ import RealmSwift
 class DayLogManager: ObservableObject {
     private(set) var localRealm: Realm?
     @Published var dayLog: DayLogModel = DayLogModel()
+    @Published var foodLogs: [FoodLogModel] = []
     
     init() {
         openRealm()
@@ -30,7 +31,11 @@ class DayLogManager: ObservableObject {
         if let currDayLog = localRealm?.objects(DayLogModel.self).where({
             $0.date == date
         }).first {
+            foodLogs = []
             dayLog = currDayLog
+            dayLog.foodLogs.forEach {
+                foodLogs.append($0)
+            }
         } else {
             if let lastDayLog = getLastDayLog(date: date) {
                 dayLog = DayLogModel(
@@ -44,6 +49,8 @@ class DayLogManager: ObservableObject {
             } else {
                 dayLog = DayLogModel()
             }
+            
+            foodLogs = []
         }
     }
     
@@ -182,10 +189,13 @@ class DayLogManager: ObservableObject {
         foodLog: FoodLogModel
     ) throws {
         do {
-            getCurrentDayLog(date: date)
-            let index = dayLog.index(ofAccessibilityElement: foodLog)
             try localRealm!.write {
-                dayLog.foodLogs.remove(at: index)
+                let currDayLog = localRealm?.objects(DayLogModel.self).where({
+                    $0.date == date
+                }).first
+                
+                let index = currDayLog!.foodLogs.index(of: foodLog)
+                currDayLog!.foodLogs.remove(at: index!)
                 
                 getCurrentDayLog(date: date)
             }

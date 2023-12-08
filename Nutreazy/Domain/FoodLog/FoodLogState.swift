@@ -58,6 +58,12 @@ struct FoodLogState: Equatable {
         self.mealType = ""
     }
     
+    init(foodInfo: FoodInfoModel, amount: Double, mealType: MealType) {
+        self.foodInfo = foodInfo
+        self.amount = String(amount)
+        self.mealType = mealTypeListID[mealType.rawValue]
+    }
+    
     func isValid() -> Bool {
         return !amount.isEmpty && !mealType.isEmpty
     }

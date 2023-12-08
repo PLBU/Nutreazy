@@ -39,4 +39,12 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
         self.protein = foodInfo.protein * amount/foodInfo.servingSize
         self.fat = foodInfo.fat * amount/foodInfo.servingSize
     }
+    
+    func toState() -> FoodLogState {
+        return FoodLogState(
+            foodInfo: self.foodInfo ?? FoodInfoModel(),
+            amount: self.amount,
+            mealType: self.mealType ?? MealType.Breakfast
+        )
+    }
 }

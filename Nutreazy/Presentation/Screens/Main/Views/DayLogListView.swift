@@ -13,7 +13,10 @@ struct DayLogListView: View {
     @ObservedResults(UserModel.self) private var users
     
     @State private var date: Date = Date().withoutTime()
+    @State private var foodLogModel: FoodLogModel = FoodLogModel()
+    @State private var foodLogState: FoodLogState = FoodLogState(foodInfo: FoodInfoModel())
     @State private var isShowAddWeightDialog: Bool = false
+    @State private var isShowFoodLogDialog: Bool = false
     @State private var isGoingToFoodInfoListView: Bool = false
     
     var body: some View {
@@ -35,7 +38,13 @@ struct DayLogListView: View {
                     StatsView(date: $date)
                         .environmentObject(dayLogManager)
                     
-                    FoodDiaryView()
+                    FoodDiaryView(foodRowListener: { foodLog in
+                        foodLogModel = foodLog
+                        foodLogState = foodLog.toState()
+                        withAnimation{
+                            isShowFoodLogDialog = true
+                        }
+                    })
                         .environmentObject(dayLogManager)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -65,6 +74,16 @@ struct DayLogListView: View {
             
             CustomDialog(isActive: $isShowAddWeightDialog) {
                 AddWeightView(date: $date, isShowDialog: $isShowAddWeightDialog)
+            }
+            
+            CustomDialog(isActive: $isShowFoodLogDialog) {
+                DetailFoodLogView(
+                    isShowDialog: $isShowFoodLogDialog,
+                    foodLogModel: $foodLogModel,
+                    foodLogState: $foodLogState,
+                    date: date
+                )
+                .environmentObject(dayLogManager)
             }
         }
         .onChange(of: date, perform: { _ in
