@@ -11,17 +11,16 @@ struct AddFoodLogView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var dayLogManager: DayLogManager
     @Binding var isShowDialog: Bool
-    @State private var foodLogState: FoodLogState = FoodLogState()
+    @Binding var foodLogState: FoodLogState
     @State private var isShowAlert = false
     @State private var isButtonEnabled = false
     var date: Date
-    var foodInfo: FoodInfoModel
 
     private func handleAddFoodLog() {
         do {
             try dayLogManager.addCurrentDayFoodLog(
-                date,
-                foodLogState.toModel(foodInfo: foodInfo, date: date)
+                date: date,
+                foodLog: foodLogState.toModel(date: date)
             )
 
             withAnimation {
@@ -36,11 +35,11 @@ struct AddFoodLogView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
-            Text(foodInfo.name)
+            Text(foodLogState.foodInfo.name)
                 .font(HEADING_5)
                 .foregroundColor(TEXT_COLOR)
             
-            DoubleEditText(value: $foodLogState.amount, unitName: foodInfo.servingName, isCenter: true, maxLength: 7)
+            DoubleEditText(value: $foodLogState.amount, unitName: foodLogState.foodInfo.servingName, isCenter: true, maxLength: 7)
             
             Dropdown(value: $foodLogState.mealType, options: mealTypeListID)
             
@@ -49,28 +48,28 @@ struct AddFoodLogView: View {
                     Text("Kalori")
                         .font(PARAGRAPH_1)
                     Spacer()
-                    Chip(text: "\(Int(foodInfo.calories))cal")
+                    Chip(text: "\(foodLogState.calories)cal")
                 }
                 
                 HStack {
                     Text("Karbohidrat")
                         .font(PARAGRAPH_1)
                     Spacer()
-                    Chip(text: "\(Int(foodInfo.carbohydrate))g")
+                    Chip(text: "\(foodLogState.carbohydrate)g")
                 }
                 
                 HStack {
                     Text("Protein")
                         .font(PARAGRAPH_1)
                     Spacer()
-                    Chip(text: "\(Int(foodInfo.protein))g")
+                    Chip(text: "\(foodLogState.protein)g")
                 }
                 
                 HStack {
                     Text("Lemak")
                         .font(PARAGRAPH_1)
                     Spacer()
-                    Chip(text: "\(Int(foodInfo.fat))g")
+                    Chip(text: "\(foodLogState.fat)g")
                 }
             }
             
@@ -93,16 +92,18 @@ struct AddFoodLogView_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodLogView(
             isShowDialog: .constant(false),
-            date: Date().withoutTime(),
-            foodInfo: FoodInfoModel(
-                name: "Dada Ayam",
-                servingName: "g",
-                servingSize: 1,
-                calories: 2,
-                carbohydrate: 2,
-                protein: 1,
-                fat: 1
-            ),
+            foodLogState: .constant(FoodLogState(
+                foodInfo: FoodInfoModel(
+                    name: "Dada Ayam",
+                    servingName: "g",
+                    servingSize: 1,
+                    calories: 2,
+                    carbohydrate: 2,
+                    protein: 1,
+                    fat: 1
+                )
+            )),
+            date: Date().withoutTime()
         )
     }
 }

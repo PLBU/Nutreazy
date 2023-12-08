@@ -12,10 +12,10 @@ struct FoodDiaryView: View {
     @EnvironmentObject var dayLogManager: DayLogManager
     @State private var filteredFoodLogs = [MealType: [FoodLogModel]]()
     
-    private func filterFoodLogs() {
+    private func filterFoodLogs(_ dayLog: DayLogModel) {
         filteredFoodLogs = [MealType: [FoodLogModel]]()
         
-        for foodLog in dayLogManager.dayLog.foodLogs {
+        for foodLog in dayLog.foodLogs {
             if filteredFoodLogs.keys.contains(foodLog.mealType!) {
                 filteredFoodLogs[foodLog.mealType!]!.append(foodLog)
             } else {
@@ -69,11 +69,11 @@ struct FoodDiaryView: View {
                 }
             }
         }
-        .onChange(of: dayLogManager.dayLog, perform: { _ in
-            filterFoodLogs()
+        .onChange(of: dayLogManager.dayLog, perform: { newDayLogModel in
+            filterFoodLogs(newDayLogModel)
         })
         .onAppear {
-            filterFoodLogs()
+            filterFoodLogs(dayLogManager.dayLog)
         }
     }
 }

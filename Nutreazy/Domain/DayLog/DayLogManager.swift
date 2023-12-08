@@ -143,25 +143,30 @@ class DayLogManager: ObservableObject {
     ) throws {
         do {
             if isCurrentDayLogExist(date: date) {
-                getCurrentDayLog(date: date)
+                let currDayLog = localRealm?.objects(DayLogModel.self).where({
+                    $0.date == date
+                }).first
                 
                 try localRealm!.write {
-                    dayLog.foodLogs.append(foodLog)
+                    currDayLog!.foodLogs.append(foodLog)
                 }
                 
                 getCurrentDayLog(date: date)
             } else {
                 let lastDayLog = getLastDayLog(date: date)
+                let newDayLog = DayLogModel(
+                    date: date,
+                    activityIntensity: lastDayLog?.activityIntensity,
+                    targetProtein: lastDayLog?.targetProtein,
+                    targetCalorie: lastDayLog?.targetCalorie,
+                    maintenanceCalorie: lastDayLog?.maintenanceCalorie,
+                    dietTarget: lastDayLog?.dietTarget
+                )
+                
+                newDayLog.foodLogs.append(foodLog)
                 
                 try addCurrentDayLog(
-                    dayLog: DayLogModel(
-                        date: date,
-                        activityIntensity: lastDayLog?.activityIntensity,
-                        targetProtein: lastDayLog?.targetProtein,
-                        targetCalorie: lastDayLog?.targetCalorie,
-                        maintenanceCalorie: lastDayLog?.maintenanceCalorie,
-                        dietTarget: lastDayLog?.dietTarget
-                    )
+                    dayLog: newDayLog
                 )
                 
                 getCurrentDayLog(date: date)
@@ -173,12 +178,12 @@ class DayLogManager: ObservableObject {
     }
 
     func deleteCurrentDayFoodLog(
-        date: Date = Date().withoutTime,
+        date: Date = Date().withoutTime(),
         foodLog: FoodLogModel
     ) throws {
         do {
             getCurrentDayLog(date: date)
-            let index = dayLog.index(of: foodLog)
+            let index = dayLog.index(ofAccessibilityElement: foodLog)
             try localRealm!.write {
                 dayLog.foodLogs.remove(at: index)
                 

@@ -14,8 +14,8 @@ struct FoodInfoListView: View {
     @State private var searchKey = ""
     @State private var isShowFoodInfoDialog = false
     @State private var isShowFoodLogDialog = false
+    @State private var foodLogState: FoodLogState = FoodLogState(foodInfo: FoodInfoModel())
     var date: Date
-    var foodInfo: FoodInfoModel? = nil
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -39,11 +39,13 @@ struct FoodInfoListView: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(foodInfoManager.foodInfos) { foodInfo in
-                            FoodInfoRowView(foodInfo: foodInfo)
+                        ForEach(foodInfoManager.foodInfos) { newFoodInfo in
+                            FoodInfoRowView(foodInfo: newFoodInfo)
                                 .onTapGesture {
-                                    foodInfo = foodInfo
-                                    isShowFoodLogDialog = true
+                                    foodLogState = FoodLogState(foodInfo: newFoodInfo)
+                                    withAnimation {
+                                        isShowFoodLogDialog = true
+                                    }
                                 }
                         }
                     }
@@ -65,8 +67,12 @@ struct FoodInfoListView: View {
             }
 
             CustomDialog(isActive: $isShowFoodLogDialog) {
-                AddFoodLogView(isShowDialog: $isShowFoodLogDialog, date: date, foodInfo: foodInfo!)
-                    .environmentObject()
+                AddFoodLogView(
+                    isShowDialog: $isShowFoodLogDialog,
+                    foodLogState: $foodLogState,
+                    date: date
+                )
+                .environmentObject(dayLogManager)
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -75,6 +81,8 @@ struct FoodInfoListView: View {
 
 struct FoodInfoListView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodInfoListView()
+        FoodInfoListView(
+            date: Date().withoutTime()
+        )
     }
 }

@@ -34,9 +34,9 @@ class FoodLogModel: Object, ObjectKeyIdentifiable {
         self.createdAt = createdAt
         self.amount = amount
         self.mealType = mealType
-        self.calories = foodInfo.calories * amount
-        self.carbohydrate = foodInfo.carbohydrate * amount
-        self.protein = foodInfo.protein * amount
-        self.fat = foodInfo.fat * amount
+        self.calories = foodInfo.calories * amount/foodInfo.servingSize
+        self.carbohydrate = foodInfo.carbohydrate * amount/foodInfo.servingSize
+        self.protein = foodInfo.protein * amount/foodInfo.servingSize
+        self.fat = foodInfo.fat * amount/foodInfo.servingSize
     }
 }

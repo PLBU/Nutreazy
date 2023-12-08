@@ -13,6 +13,7 @@ struct AddWeightView: View {
     @Binding var isShowDialog: Bool
     @State var weight: String = ""
     @State var isShowAlert: Bool = false
+    @State var isBtnEnabled: Bool = false
     
     private func handleAddWeightToDayLog() {
         do {
@@ -41,9 +42,12 @@ struct AddWeightView: View {
             DoubleEditText(value: $weight, unitName: "kg", width: 100, isCenter: true, maxLength: 6)
                 .frame(maxWidth: .infinity)
             
-            CustomButton(label: "Tambah") {
+            CustomButton(label: "Tambah", isEnabled: $isBtnEnabled) {
                 handleAddWeightToDayLog()
             }
+        }
+        .onChange(of: weight) {
+            isBtnEnabled = !$0.isEmpty
         }
         .alert("Terjadi kesalahan", isPresented: $isShowAlert) {
             Button("Ok", role: .cancel) {
