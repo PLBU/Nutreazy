@@ -85,6 +85,10 @@ struct DetailFoodLogView: View {
                 }
             }
             
+            Text("[*Sumber Data](https://www.kaggle.com/datasets/niharika41298/nutrition-details-for-most-common-foods/)")
+                .font(PARAGRAPH_2)
+                .foregroundColor(ACCENT_COLOR)
+            
             Button() {
                 handleDeleteFoodLog()
             } label : {

@@ -71,7 +71,12 @@ struct AddFoodLogView: View {
                     Spacer()
                     Chip(text: "\(foodLogState.fat)g")
                 }
+                
             }
+            
+            Text("[*Sumber Data](https://www.kaggle.com/datasets/niharika41298/nutrition-details-for-most-common-foods/)")
+                .font(PARAGRAPH_2)
+                .foregroundColor(ACCENT_COLOR)
             
             CustomButton(label: "Tambah", isEnabled: $isButtonEnabled) {
                 handleAddFoodLog()

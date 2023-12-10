@@ -69,6 +69,10 @@ struct StatsView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(PRIMARY_COLOR, lineWidth: 1)
             )
+            
+            Text("[*Dihitung menggunakan Mifflin-St Jeor Formula](https://pubmed.ncbi.nlm.nih.gov/2305711/)")
+                .font(PARAGRAPH_2)
+                .foregroundColor(ACCENT_COLOR)
         }
     }
 }

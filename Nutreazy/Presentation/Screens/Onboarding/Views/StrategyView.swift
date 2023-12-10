@@ -75,6 +75,10 @@ struct StrategyView: View {
                             .font(HEADING_5)
                             .foregroundColor(TEXT_COLOR)
                     }
+                    
+                    Text("[*Dihitung menggunakan Mifflin-St Jeor Formula](https://pubmed.ncbi.nlm.nih.gov/2305711/)")
+                        .font(PARAGRAPH_2)
+                        .foregroundColor(ACCENT_COLOR)
                 }
             }
             
