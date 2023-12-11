@@ -6,4 +6,4 @@ An iOS SwiftUI App for local-based Nutrition & Weight Tracking
 * Realm Swift
 
 ## Download the app on App Store
-Coming Soon
+https://apps.apple.com/id/app/nutreazy-diet-lebih-eazy/id6474010834
