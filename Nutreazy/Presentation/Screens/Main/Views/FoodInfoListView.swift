@@ -51,7 +51,7 @@ struct FoodInfoListView: View {
                     }
                 }
                 
-                Text("[*Sumber Data](https://www.kaggle.com/datasets/niharika41298/nutrition-details-for-most-common-foods/)")
+                Text("[*Sumber Data](https://www.kaggle.com/datasets/anasfikrihanif/indonesian-food-and-drink-nutrition-dataset)")
                     .font(PARAGRAPH_2)
                     .foregroundColor(ACCENT_COLOR)
             }

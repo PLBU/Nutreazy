@@ -41,13 +41,13 @@ class FoodInfoManager: ObservableObject {
                     if row.count >= 8 {
                         localRealm!.add(
                             FoodInfoModel(
-                                name: row["Food"] ?? "",
+                                name: row["name"] ?? "",
                                 servingName: "g",
-                                servingSize: Double(row["Grams"] ?? "") ?? 0,
-                                calories: Double(row["Calories"] ?? "") ?? 0,
-                                carbohydrate: Double(row["Carbs"] ?? "") ?? 0,
-                                protein: Double(row["Protein"] ?? "") ?? 0,
-                                fat: Double(row["Fat"] ?? "") ?? 0
+                                servingSize: 100,
+                                calories: Double(row["calories"] ?? "") ?? 0,
+                                carbohydrate: Double(row["carbohydrate"] ?? "") ?? 0,
+                                protein: Double(row["proteins"] ?? "") ?? 0,
+                                fat: Double(row["fat"] ?? "") ?? 0
                             )
                         )
                     }
