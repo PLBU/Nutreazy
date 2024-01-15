@@ -38,19 +38,18 @@ class FoodInfoManager: ObservableObject {
             
             try localRealm!.write {
                 for row in csv!.rows {
-                    if row.count >= 8 {
-                        localRealm!.add(
-                            FoodInfoModel(
-                                name: row["name"] ?? "",
-                                servingName: "g",
-                                servingSize: 100,
-                                calories: Double(row["calories"] ?? "") ?? 0,
-                                carbohydrate: Double(row["carbohydrate"] ?? "") ?? 0,
-                                protein: Double(row["proteins"] ?? "") ?? 0,
-                                fat: Double(row["fat"] ?? "") ?? 0
-                            )
+                    print(row)
+                    localRealm!.add(
+                        FoodInfoModel(
+                            name: row["name"] ?? "",
+                            servingName: "g",
+                            servingSize: 100,
+                            calories: Double(row["calories"] ?? "") ?? 0,
+                            carbohydrate: Double(row["carbohydrate"] ?? "") ?? 0,
+                            protein: Double(row["proteins"] ?? "") ?? 0,
+                            fat: Double(row["fat"] ?? "") ?? 0
                         )
-                    }
+                    )
                 }
             }
             
