@@ -47,7 +47,7 @@ struct TargetView: View {
                 }
             }
         }
-        .padding(40)
+        .padding(20)
         .navigationDestination(isPresented: $isGoingToInfoView) {
             InfoView(currDayLog: currDayLog)
         }

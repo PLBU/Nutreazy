@@ -25,7 +25,7 @@ struct DropdownField: View {
                         if !info.isEmpty {isInfoShown.toggle()}
                     }
                 Spacer()
-                Dropdown(value: $value, placeholder: placeholder, options: options, width: 140)
+                Dropdown(value: $value, placeholder: placeholder, options: options, width: 100)
             }
             
             if isInfoShown && !info.isEmpty {

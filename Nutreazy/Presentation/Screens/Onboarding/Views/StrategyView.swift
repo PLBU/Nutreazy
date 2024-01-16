@@ -44,7 +44,7 @@ struct StrategyView: View {
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 40) {
+                VStack(alignment: .leading, spacing: 20) {
                     Group {
                         Text("Maintenance Calorie kamu\n")
                             .font(HEADING_2)
@@ -89,11 +89,11 @@ struct StrategyView: View {
                     .font(PARAGRAPH_2)
                     .foregroundColor(ACCENT_COLOR)
             }
-            .padding(.bottom, 24)
+            .padding(.bottom, 12)
             
             CustomButton(label: "Mulai!") { registerLocally() }
         }
-        .padding(40)
+        .padding(20)
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $isGoingToWelcomeView) {
             WelcomeView()

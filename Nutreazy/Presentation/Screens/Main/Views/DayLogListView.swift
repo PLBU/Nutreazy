@@ -48,8 +48,8 @@ struct DayLogListView: View {
                         .environmentObject(dayLogManager)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                .padding(.horizontal, 20)
-                .padding(.top, 20)
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
             }
             
             FloatingButton(
@@ -70,7 +70,7 @@ struct DayLogListView: View {
                     )
                 ]
             ) {}
-            .padding(20)
+            .padding(10)
             
             CustomDialog(isActive: $isShowAddWeightDialog) {
                 AddWeightView(date: $date, isShowDialog: $isShowAddWeightDialog)

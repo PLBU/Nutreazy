@@ -108,7 +108,7 @@ struct InfoView: View {
                 isGoingToStrategyView = true
             }
         }
-        .padding(40)
+        .padding(20)
         .navigationDestination(isPresented: $isGoingToStrategyView) {
             StrategyView(currDayLog: currDayLog)
         }

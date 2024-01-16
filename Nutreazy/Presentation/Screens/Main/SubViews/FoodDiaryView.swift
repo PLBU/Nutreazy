@@ -27,7 +27,7 @@ struct FoodDiaryView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 10) {
             Group {
                 Text("Diari ")
                     .font(HEADING_4)
@@ -38,7 +38,7 @@ struct FoodDiaryView: View {
             }
             
             if filteredFoodLogs.isEmpty {
-                VStack(alignment: .center, spacing: 20) {
+                VStack(alignment: .center, spacing: 10) {
                     Text("Kamu belum catat \napapun nih :( ")
                         .multilineTextAlignment(.center)
                         .font(HEADING_5)

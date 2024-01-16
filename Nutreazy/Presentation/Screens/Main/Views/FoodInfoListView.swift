@@ -19,8 +19,8 @@ struct FoodInfoListView: View {
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            VStack(alignment: .leading, spacing: 20) {
-                HStack(spacing: 20) {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 10) {
                     Image(systemName: "chevron.left")
                         .renderingMode(.template)
                         .resizable()
@@ -56,14 +56,14 @@ struct FoodInfoListView: View {
                     .foregroundColor(ACCENT_COLOR)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding(20)
+            .padding(10)
             
             FloatingButton {
                 withAnimation {
                     isShowFoodInfoDialog = true
                 }
             }
-            .padding(20)
+            .padding(10)
             
             CustomDialog(isActive: $isShowFoodInfoDialog) {
                 AddFoodInfoView(isShowDialog: $isShowFoodInfoDialog)

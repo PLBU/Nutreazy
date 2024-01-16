@@ -32,7 +32,7 @@ struct IntroductionView: View {
                     }
                     
                     LongStringTextField(value: $userState.name, label: "Nama kamu siapa?", placeholder: "Nama kamu", maxLength: 20)
-                        .padding(.top, 24)
+                        .padding(.top, 12)
                     
                     DropdownField(value: $userState.gender, label: "Gender", options: genderListID)
                     
@@ -76,7 +76,7 @@ struct IntroductionView: View {
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
-        .padding(40)
+        .padding(20)
         .navigationDestination(isPresented: $isGoingToTargetView) {
             TargetView(currDayLog: dayLogState.toModel())
         }

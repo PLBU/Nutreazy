@@ -27,7 +27,7 @@ struct AddFoodInfoView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("Tambah Makanan\nCustom Kamu 🍡")
                 .font(HEADING_5)
                 .foregroundColor(TEXT_COLOR)

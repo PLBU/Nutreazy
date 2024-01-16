@@ -19,7 +19,7 @@ struct ShortStringTextField: View {
                 .font(PARAGRAPH_1)
                 .foregroundColor(TEXT_COLOR)
             Spacer()
-            EditText(value: $value, placeholder: placeholder, width: 140, isCenter: true, maxLength: maxLength)
+            EditText(value: $value, placeholder: placeholder, width: 100, isCenter: true, maxLength: maxLength)
         }
     }
 }

@@ -14,7 +14,7 @@ struct StatsView: View {
     @State private var isShowingDatePicker = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Group {
                     Text("Stats")
@@ -64,7 +64,7 @@ struct StatsView: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(20)
+            .padding(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(PRIMARY_COLOR, lineWidth: 1)

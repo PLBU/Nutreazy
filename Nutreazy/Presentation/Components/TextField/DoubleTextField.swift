@@ -20,7 +20,7 @@ struct DoubleTextField: View {
                 .font(PARAGRAPH_1)
                 .foregroundColor(TEXT_COLOR)
             Spacer()
-            DoubleEditText(value: $value, unitName: unitName, width: 140, isCenter: true, maxLength: maxLength)
+            DoubleEditText(value: $value, unitName: unitName, width: 100, isCenter: true, maxLength: maxLength)
         }
     }
 }

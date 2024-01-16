@@ -23,13 +23,13 @@ struct CustomDialog<Content: View>: View {
                 }
             
             content
-                .padding(20)
+                .padding(10)
                 .background(BACKGROUND_COLOR)
                 .cornerRadius(24)
                 .onTapGesture {
                     UIApplication.shared.endEditing()
                 }
-                .padding(20)
+                .padding(10)
         }
         .background(.thinMaterial)
         .opacity(isActive ? 1 : 0)

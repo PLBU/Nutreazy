@@ -34,7 +34,7 @@ struct AddFoodLogView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(foodLogState.foodInfo.name)
                 .font(HEADING_5)
                 .foregroundColor(TEXT_COLOR)
@@ -43,7 +43,7 @@ struct AddFoodLogView: View {
             
             Dropdown(value: $foodLogState.mealType, options: mealTypeListID)
             
-            VStack(spacing: 12) {
+            VStack(spacing: 6) {
                 HStack {
                     Text("Kalori")
                         .font(PARAGRAPH_1)

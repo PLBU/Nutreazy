@@ -21,7 +21,7 @@ struct IntTextField: View {
                 .font(PARAGRAPH_1)
                 .foregroundColor(TEXT_COLOR)
             Spacer()
-            IntEditText(value: $value, placeholder: placeholder, unitName: unitName, width: 140, isCenter: true, maxLength: maxLength)
+            IntEditText(value: $value, placeholder: placeholder, unitName: unitName, width: 100, isCenter: true, maxLength: maxLength)
         }
     }
 }

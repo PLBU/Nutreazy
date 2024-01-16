@@ -34,7 +34,7 @@ struct AddWeightView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("Tambah Berat Badan")
                 .font(HEADING_5)
                 .foregroundColor(TEXT_COLOR)

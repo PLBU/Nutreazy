@@ -45,8 +45,8 @@ struct DoubleEditText: View {
             }
         }
         .frame(maxWidth: width)
-        .padding(.horizontal, 24)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(PRIMARY_COLOR, lineWidth: 1)
